@@ -1,0 +1,31 @@
+{
+    "name": "avz-cmf/zaboy",
+    "description": "library",
+    "type": "library",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "zaboy"
+        }
+    ],
+    "homepage": "https://github.com/avz-cmf/zaboy",
+    "support": {
+        "issues": "https://github.com/avz-cmf/zaboy/issues",
+        "source": "https://github.com/avz-cmf/zaboy"
+    },
+    "require": {
+        "zendframework/zend-config": "^2.5",
+        "zendframework/zend-servicemanager": "^2.7",
+        "zendframework/zend-json": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "zaboy\\": "src/",
+            "zaboy\\test\\": "test/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    }
+}
