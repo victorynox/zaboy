@@ -8,7 +8,7 @@ use zaboy\utils\Json\Serializer as JsonSerializer;
 class SerializerTest extends \PHPUnit_Framework_TestCase
 {
 
-    public function provider_testCoder()
+    public function provider_SimpleType()
     {
         return array(
             array(false, 'false'),
@@ -31,7 +31,7 @@ class SerializerTest extends \PHPUnit_Framework_TestCase
             array(
                 'String строка !"№;%:?*(ХхЁ' . PHP_EOL,
                 '"String \u0441\u0442\u0440\u043e\u043a\u0430 !\"\u2116;%:?*(\u0425\u0445\u0401\r\n"'
-            //  '"String \u0441\u0442\u0440\u043e\u043a\u0430 !\u0022\u2116;%:?*(\u0425\u0445\u0401\r\n"' - in Json\Coder
+//  '"String \u0441\u0442\u0440\u043e\u043a\u0430 !\u0022\u2116;%:?*(\u0425\u0445\u0401\r\n"' - in Json\Coder
             ),
             //
             array(
@@ -56,8 +56,8 @@ class SerializerTest extends \PHPUnit_Framework_TestCase
 //JSON
 //'{"1":"string","2":"array","next":"next string"}' - in Json\Coder
 //          ),
+//
             //
-                //
 //
 // it will not work. Array must be list or association array for convert to object
 // ===============================================================================
@@ -93,16 +93,51 @@ JSON
     }
 
     /**
-     * @dataProvider provider_testCoder
+     * @dataProvider provider_SimpleType
      */
-    public function testCoder($in, $jsonString, $out = null)
+    public function testSerializer_SimpleType($in, $jsonString, $out = null)
     {
-        $out = isset($out) ? $out : $in; //usialy $out === $in
+        $out = !is_null($out) ? $out : $in; //usialy $out === $in
         $this->assertSame(
                 $jsonString, JsonSerializer::jsonSerialize($in)
         );
 
         $this->assertSame(
+                $out, JsonSerializer::jsonUnserialize(JsonSerializer::jsonSerialize($in))
+        );
+    }
+
+    public function provider_ObjectType()
+    {
+        $stdClass = new \stdClass();
+        $stdClass->prop = 1;
+
+        return array(
+            array(
+                $stdClass,
+                <<<JSON
+{
+  "prop": 1,
+  "#type": "stdClass"
+}
+JSON
+//'{"prop":1}' - in Json\Coder
+            ),
+        );
+    }
+
+    /**
+     * @dataProvider provider_ObjectType
+     */
+    public function testCoder_ObjectType($in, $jsonString, $out = null)
+    {
+        $out = isset($out) ? $out : $in; //usialy $out === $in
+
+        $this->assertSame(
+                $jsonString, JsonSerializer::jsonSerialize($in)
+        );
+
+        $this->assertEquals(
                 $out, JsonSerializer::jsonUnserialize(JsonSerializer::jsonSerialize($in))
         );
     }

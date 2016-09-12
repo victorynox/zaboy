@@ -8,7 +8,7 @@ use zaboy\utils\Json\Coder as JsonCoder;
 class CoderTest extends \PHPUnit_Framework_TestCase
 {
 
-    public function provider_testCoder_Int()
+    public function provider_SimpleType()
     {
         return array(
             array(false, 'false'),
@@ -53,14 +53,19 @@ class CoderTest extends \PHPUnit_Framework_TestCase
                 ['one' => 1, 'tow' => 2],
                 '{"one":1,"tow":2}',
             ),
-                //
+            //
+            array(
+                new \stdClass(),
+                '{}',
+                []
+            ),
         );
     }
 
     /**
-     * @dataProvider provider_testCoder_Int
+     * @dataProvider provider_SimpleType
      */
-    public function testCoder_Int($in, $jsonString, $out = null)
+    public function testCoder_SimpleType($in, $jsonString, $out = null)
     {
         $out = isset($out) ? $out : $in; //usialy $out === $in
 
@@ -69,6 +74,36 @@ class CoderTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertSame(
+                $out, JsonCoder::jsonDecode(JsonCoder::jsonEncode($in))
+        );
+    }
+
+    public function provider_ObjectType()
+    {
+        $stdClass = new \stdClass();
+        $stdClass->prop = 1;
+
+        return array(
+            array(
+                $stdClass,
+                '{"prop":1}',
+                ['prop' => 1]
+            ),
+        );
+    }
+
+    /**
+     * @dataProvider provider_ObjectType
+     */
+    public function testCoder_ObjectType($in, $jsonString, $out = null)
+    {
+        $out = isset($out) ? $out : $in; //usialy $out === $in
+
+        $this->assertSame(
+                $jsonString, JsonCoder::jsonEncode($in)
+        );
+
+        $this->assertEquals(
                 $out, JsonCoder::jsonDecode(JsonCoder::jsonEncode($in))
         );
     }
