@@ -9,7 +9,7 @@
 
 namespace zaboy\utils\Json;
 
-use zaboy\Exception;
+use zaboy\Exception as ZaboyException;
 
 /**
  * Exception class
@@ -17,7 +17,7 @@ use zaboy\Exception;
  * @category   utils
  * @package    zaboy
  */
-class Exception extends Exception
+class Exception extends ZaboyException
 {
 
 }
