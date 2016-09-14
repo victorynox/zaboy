@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "589c03aec74cf0fe2748824311786da9",
-    "content-hash": "7885f5f0d51e0fd9fb40a0ac41af0ac4",
+    "hash": "78056cd99a09bfc4b8e11480fd483945",
+    "content-hash": "ebcf2fe8d41fb2046106cd49d435c70b",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -36,16 +36,16 @@
         },
         {
             "name": "mindplay/jsonfreeze",
-            "version": "1.3.1",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mindplay-dk/jsonfreeze.git",
-                "reference": "aaf1d1887cec3d326e4b1eb21f61dc1bbaa009ed"
+                "reference": "e03bd20ad76ad4904d083a584c669c72eb7231bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mindplay-dk/jsonfreeze/zipball/aaf1d1887cec3d326e4b1eb21f61dc1bbaa009ed",
-                "reference": "aaf1d1887cec3d326e4b1eb21f61dc1bbaa009ed",
+                "url": "https://api.github.com/repos/mindplay-dk/jsonfreeze/zipball/e03bd20ad76ad4904d083a584c669c72eb7231bb",
+                "reference": "e03bd20ad76ad4904d083a584c669c72eb7231bb",
                 "shasum": ""
             },
             "require": {
@@ -71,7 +71,7 @@
                 }
             ],
             "description": "JSON Serialization library",
-            "time": "2016-07-20 19:07:26"
+            "time": "2016-09-13 12:04:20"
         },
         {
             "name": "zendframework/zend-config",

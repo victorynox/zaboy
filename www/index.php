@@ -5,31 +5,117 @@ chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
 $container = include 'config/container.php';
 
+use mindplay\jsonfreeze\JsonSerializer;
+use zaboy\utils\Json\Serializer;
+use zaboy\utils\Json\Exception as JsonException;
+
+$serializer = new Serializer();
+
+$previous = new Exception('prop Exception1', 0);
+$exc = new RuntimeException('prop RuntimeException', 0, $previous);
+
+$valueExc = $serializer->jsonUnserialize($serializer->jsonSerialize($exc));
+var_dump(null === $valueExc->getPrevious()); //true
+
+$previous = new RuntimeException('prop RuntimeException', 0);
+$exc = new Exception('prop Exception1', 0, $previous);
+
+$valueExc = $serializer->jsonUnserialize($serializer->jsonSerialize($exc));
+var_dump(null === $valueExc->getPrevious()); //false
+exit;
 
 
-$a = array('<foo>', "'bar'", '"baz"', '&blong&', "\xc3\xa9");
+$o = new stdClass();
+$o->a = 1;
+$o->b = 2;
+var_dump(json_encode($o));
+var_dump((array) json_decode(json_encode($o)));
 
-echo "Обычно: ", json_encode($a), "\n";
-echo "Тэги: ", json_encode($a, JSON_HEX_TAG), "\n";
-echo "Апострофы: ", json_encode($a, JSON_HEX_APOS), "\n";
-echo "Кавычки: ", json_encode($a, JSON_HEX_QUOT), "\n";
-echo "Амперсанды: ", json_encode($a, JSON_HEX_AMP), "\n";
-echo "Юникод: ", json_encode($a, JSON_UNESCAPED_UNICODE), "\n";
-echo "Все: ", json_encode($a, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE), "\n\n";
+exit;
+//use zaboy\utils\Json\Serializer as JsonSerializer;
+//use \RuntimeException;
+//$previous = new Exception('prop Exception1', 0);
+$exc = new RuntimeException('prop RuntimeException', 0, $previous);
 
-$b = array();
+$previous = new RuntimeException('prop RuntimeException', 0);
+$exc = new Exception('prop Exception1', 0, $previous);
 
-echo "Отображение пустого массива как массива: ", json_encode($b), "\n";
-echo "Отображение пустого массива как объекта: ", json_encode($b, JSON_FORCE_OBJECT), "\n\n";
+class A
+{
 
-$c = array(array(1, 2, 3));
+    private $prop;
 
-echo "Отображение неассоциативного массива как массива: ", json_encode($c), "\n";
-echo "Отображение неассоциативного массива как объекта: ", json_encode($c, JSON_FORCE_OBJECT), "\n\n";
+    public function set($p)
+    {
+        $this->prop = $p;
+    }
 
-$d = array('foo' => 'bar', 'baz' => 'long');
+    public function get()
+    {
+        return $this->prop;
+    }
 
-echo "Ассоциативный массив всегда отображается как объект: ", json_encode($d), "\n";
-echo "Ассоциативный массив всегда отображается как объект: ", json_encode($d, JSON_FORCE_OBJECT), "\n\n";
+}
+
+$a = new A();
+
+$a->set(1);
+
+class B extends A
+{
+
+}
+
+$b = new B();
+$b->set(2);
+
+//$serializer = new JsonSerializer();
+//
+//$value = $serializer->unserialize($serializer->serialize($a));
+//var_dump($value->get()); //false
+//
+//$value = $serializer->unserialize($serializer->serialize($b));
+//var_dump($value->get()); //true
+//
+//exit;
+//$closure = function (A $aa) {
+//    return $aa->prop;
+//};
+//// Closure::bind() на самом деле создает новое замыкание
+//$closure = Closure::bind($closure, null, $a);
+//var_dump($closure($b));
+//
+//exit;
+//https://habrahabr.ru/post/186718/
+//https://habrahabr.ru/post/138102/
+
+$refClass = (new \ReflectionClass('B'))->getParentClass();
+$refProperty = $refClass->getProperty('prop');
+$refProperty->setAccessible(true);
+var_dump($refProperty->getValue($b));
+$refProperty->setValue($b, 3);
+var_dump($refProperty->getValue($b));
+$refProperty->setAccessible(false);
+exit;
+
+$str = JsonSerializer::jsonSerialize($previous);
+$out = JsonSerializer::jsonUnserialize($str);
+//var_dump($out); //false
 
 
+$sweetsThief = new ReflectionProperty('Exception', 'trace');
+$sweetsThief->setAccessible(true);
+$properties = $class->getProperties();
+var_dump($properties); //false
+
+class foo
+{
+
+    private $bar = 42;
+
+}
+
+$obj = new foo;
+$propname = "\0foo\0bar";
+$a = (array) $obj;
+echo $a[$propname];

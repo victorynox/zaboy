@@ -20,3 +20,20 @@ JSON SERIALIZER ассоциативные массивы преобразует
 Подробнее видно в тестах:
 [CoderTest.php](https://github.com/avz-cmf/zaboy/blob/master/src/utils/Json/Coder.php/),
 [SerializerTest.php](https://github.com/avz-cmf/zaboy/blob/master/src/utils/Json/Coder.php/).
+
+##Сериализация Exception объектов
+JSON CODER не может кодировать Exception.
+JSON SERIALIZER может кодировать и восстанавливать сложные объекты, если написать плагин для поддержки объектов определенного типа.
+Пример - Exception. [Serializer.php](https://github.com/avz-cmf/zaboy/blob/master/src/utils/Json/Serializer.php/).
+
+    public static function jsonSerialize($value)
+    {
+        $serializer = new JsonSerializer();
+        $serializer->defineSerialization('Exception', [get_class(), 'serializeException'], [get_class(), 'unserializeException']);
+    ....
+    }
+JSON SERIALIZER поддерживает вложенные Exception.
+
+##Выводы
+####JSON CODER следует использовать для сериализации данных. Не следует использовать для работы с объектами.
+####JSON SERIALIZER лучше использовать для сохранения объектов. Не следует использовать для работы с асоциативными массивами.

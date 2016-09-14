@@ -2,7 +2,7 @@
 
 namespace zaboy\test\utils\Json;
 
-use zaboy\Exception;
+use zaboy\Exception as zaboyException;
 use zaboy\utils\Json\Serializer as JsonSerializer;
 
 class SerializerTest extends \PHPUnit_Framework_TestCase
@@ -30,8 +30,8 @@ class SerializerTest extends \PHPUnit_Framework_TestCase
             //
             array(
                 'String строка !"№;%:?*(ХхЁ' . PHP_EOL,
-                '"String \u0441\u0442\u0440\u043e\u043a\u0430 !\"\u2116;%:?*(\u0425\u0445\u0401\r\n"'
-//  '"String \u0441\u0442\u0440\u043e\u043a\u0430 !\u0022\u2116;%:?*(\u0425\u0445\u0401\r\n"' - in Json\Coder
+                '"String \u0441\u0442\u0440\u043e\u043a\u0430 !\"\u2116;%:?*(\u0425\u0445\u0401\r\n"'// - in Json\Serializer
+//              '"String \u0441\u0442\u0440\u043e\u043a\u0430 !\u0022\u2116;%:?*(\u0425\u0445\u0401\r\n"' - in Json\Coder
             ),
             //
             array(
@@ -42,42 +42,35 @@ class SerializerTest extends \PHPUnit_Framework_TestCase
                 [1, 'a', ['array']],
                 '[1,"a",["array"]]'
             ),
-//
-// it will not work. Array must be list or association array for convert to object
-// ===============================================================================
-//            array(
-//                [1 => 'string', 'array', 'next' => 'next string'],
-//                <<<JSON
-//{
-//  1: "string",
-//  2: "array",
-//  "next": "next string"
-//}
-//JSON
+            array(
+                [1 => 'string', 'array', 'next' => 'next string'],
+                <<<JSON
+{
+  "1": "string",
+  "2": "array",
+  "next": "next string"
+}
+JSON
 //'{"1":"string","2":"array","next":"next string"}' - in Json\Coder
-//          ),
-//
+            ),
             //
-//
-// it will not work. Array must be list or association array for convert to object
-// ===============================================================================
-//            array(
-//                [1, 2 => 2, 'next' => 'string', ['array'], [[1 => 'string', 'array', 'next' => 'next string']]],
-//                <<<JSON
-//{
-//  0: 1,
-//  2: 2,
-//  "next": "string",
-//  3: ["array"],
-//  4: [{
-//    1: "string",
-//    2: "array",
-//    "next": "next string"
-//  }]
-//}
-//JSON
+            array(
+                [1, 2 => 2, 'next' => 'string', ['array'], [[1 => 'string', 'array', 'next' => 'next string']]],
+                <<<JSON
+{
+  "0": 1,
+  "2": 2,
+  "next": "string",
+  "3": ["array"],
+  "4": [{
+    "1": "string",
+    "2": "array",
+    "next": "next string"
+  }]
+}
+JSON
 //'{"0":1,"2":2,"next":"string","3":["array"],"4":[{"1":"string","2":"array","next":"next string"}]}' - in Json\Coder
-//           ),
+            ),
             array(
                 ['one' => 1, 'tow' => 2],
                 <<<JSON
@@ -95,7 +88,7 @@ JSON
     /**
      * @dataProvider provider_SimpleType
      */
-    public function testSerializer_SimpleType($in, $jsonString, $out = null)
+    public function testSerialize_SimpleType($in, $jsonString, $out = null)
     {
         $out = !is_null($out) ? $out : $in; //usialy $out === $in
         $this->assertSame(
@@ -129,7 +122,7 @@ JSON
     /**
      * @dataProvider provider_ObjectType
      */
-    public function testCoder_ObjectType($in, $jsonString, $out = null)
+    public function testSerialize_ObjectType($in, $jsonString, $out = null)
     {
         $out = isset($out) ? $out : $in; //usialy $out === $in
 
@@ -142,15 +135,17 @@ JSON
         );
     }
 
-    public function testJsonCoder_ExceptionJsonSerialize()
+    public function testSerialize_ExceptionJsonSerialize()
     {
-        $e1 = new Exception('Exception1', 1);
-        $e11 = new Exception('Exception11', 11, $e1);
+
+        $e1 = new zaboyException('zaboyException', 1);
+        $e11 = new \Exception('\Exception1', 11, $e1);
         $this->assertEquals(
-                $e11, JsonSerializer::jsonUnserialize(JsonSerializer::jsonSerialize($e11))
+                [$e11], [JsonSerializer::jsonUnserialize(JsonSerializer::jsonSerialize($e11))]
         );
     }
 
+//
 // TODO suppoting closures
 //    public function not_testJsonCoder_FunJsonSerialize()
 //    {
