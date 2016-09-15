@@ -9,7 +9,7 @@
             <directory>./test</directory>
         </testsuite>
         <testsuite name="error">
-            <file>./test/ErrorTest.php</file>
+            <file>../test/ErrorTest.php</file>
         </testsuite>
     </testsuites>
 

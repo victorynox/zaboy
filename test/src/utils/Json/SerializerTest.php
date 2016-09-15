@@ -3,120 +3,51 @@
 namespace zaboy\test\utils\Json;
 
 use zaboy\Exception as zaboyException;
+use zaboy\utils\Json\Exception as JsonException;
 use zaboy\utils\Json\Serializer as JsonSerializer;
+use zaboy\test\utils\SerializerTestAbstract;
 
-class SerializerTest extends \PHPUnit_Framework_TestCase
+class SerializerTest extends SerializerTestAbstract
 {
 
-    public function provider_SimpleType()
+    /**
+     * Sets up the fixture, for example, opens a network connection.
+     * This method is called before a test is executed
+     */
+    protected function setUp()
     {
-        return array(
-            array(false, 'false'),
-            array(true, 'true'),
-            //
-            array(-30001, '-30001'),
-            array(-1, '-1'),
-            array(0, '0'),
-            array(1, '1'),
-            array(30001, '30001'),
-            //
-            array(-30001.00001, '-30001.00001'),
-            array(0.0, '0', 0), //we get 0 - not 0.0
-            array(30001.00001, '30001.00001'),
-            //
-            array('-30001', '"-30001"'),
-            array('0', '"0"'),
-            array('30001', '"30001"'),
-            //
-            array(
-                'String строка !"№;%:?*(ХхЁ' . PHP_EOL,
-                '"String \u0441\u0442\u0440\u043e\u043a\u0430 !\"\u2116;%:?*(\u0425\u0445\u0401\r\n"'// - in Json\Serializer
-//              '"String \u0441\u0442\u0440\u043e\u043a\u0430 !\u0022\u2116;%:?*(\u0425\u0445\u0401\r\n"' - in Json\Coder
-            ),
-            //
-            array(
-                [],
-                '[]'
-            ),
-            array(
-                [1, 'a', ['array']],
-                '[1,"a",["array"]]'
-            ),
-            array(
-                [1 => 'string', 'array', 'next' => 'next string'],
-                <<<JSON
-{
-  "1": "string",
-  "2": "array",
-  "next": "next string"
-}
-JSON
-//'{"1":"string","2":"array","next":"next string"}' - in Json\Coder
-            ),
-            //
-            array(
-                [1, 2 => 2, 'next' => 'string', ['array'], [[1 => 'string', 'array', 'next' => 'next string']]],
-                <<<JSON
-{
-  "0": 1,
-  "2": 2,
-  "next": "string",
-  "3": ["array"],
-  "4": [{
-    "1": "string",
-    "2": "array",
-    "next": "next string"
-  }]
-}
-JSON
-//'{"0":1,"2":2,"next":"string","3":["array"],"4":[{"1":"string","2":"array","next":"next string"}]}' - in Json\Coder
-            ),
-            array(
-                ['one' => 1, 'tow' => 2],
-                <<<JSON
-{
-  "one": 1,
-  "tow": 2
-}
-JSON
-//'{"one":1,"tow":2}' - in Json\Coder
-            ),
-                //
-        );
+        $this->encoder = function ($value) {
+            return call_user_func([JsonSerializer::class, 'jsonSerialize'], $value);
+        };
+        $this->decoder = function ($value) {
+            return call_user_func([JsonSerializer::class, 'jsonUnserialize'], $value);
+        };
+    }
+
+    //==========================================================================
+
+    /**
+     * @dataProvider provider_ScalarType
+     */
+    public function testSerialize_ScalarType($in, $jsonString, $out = null)
+    {
+        parent::serialize($in, $jsonString, $out);
     }
 
     /**
-     * @dataProvider provider_SimpleType
+     * @dataProvider provider_StringType
      */
-    public function testSerialize_SimpleType($in, $jsonString, $out = null)
+    public function testSerialize_StringType($in, $jsonString, $out = null)
     {
-        $out = !is_null($out) ? $out : $in; //usialy $out === $in
-        $this->assertSame(
-                $jsonString, JsonSerializer::jsonSerialize($in)
-        );
-
-        $this->assertSame(
-                $out, JsonSerializer::jsonUnserialize(JsonSerializer::jsonSerialize($in))
-        );
+        parent::serialize($in, $jsonString, $out);
     }
 
-    public function provider_ObjectType()
+    /**
+     * @dataProvider provider_ArrayType
+     */
+    public function testSerialize_ArrayType($in, $jsonString, $out = null)
     {
-        $stdClass = new \stdClass();
-        $stdClass->prop = 1;
-
-        return array(
-            array(
-                $stdClass,
-                <<<JSON
-{
-  "prop": 1,
-  "#type": "stdClass"
-}
-JSON
-//'{"prop":1}' - in Json\Coder
-            ),
-        );
+        parent::serialize($in, $jsonString, $out);
     }
 
     /**
@@ -124,45 +55,25 @@ JSON
      */
     public function testSerialize_ObjectType($in, $jsonString, $out = null)
     {
-        $out = isset($out) ? $out : $in; //usialy $out === $in
-
-        $this->assertSame(
-                $jsonString, JsonSerializer::jsonSerialize($in)
-        );
-
-        $this->assertEquals(
-                $out, JsonSerializer::jsonUnserialize(JsonSerializer::jsonSerialize($in))
-        );
+        parent::serialize($in, $jsonString, $out);
     }
 
-    public function testSerialize_ExceptionJsonSerialize()
+    /**
+     * @dataProvider provider_ClosureType
+     */
+    public function testSerialize_ClosureType($in, $jsonString, $out = null)
     {
-
-        $e1 = new zaboyException('zaboyException', 1);
-        $e11 = new \Exception('\Exception1', 11, $e1);
-        $this->assertEquals(
-                [$e11], [JsonSerializer::jsonUnserialize(JsonSerializer::jsonSerialize($e11))]
-        );
+        $this->setExpectedException(JsonException::class);
+        parent::serialize($in, $jsonString, $out);
     }
 
-//
-// TODO suppoting closures
-//    public function not_testJsonCoder_FunJsonSerialize()
-//    {
-//        $e1 = new PromiseException('Exception1', 1);
-//        $message = 'Exception2';
-//
-//        $fun = function($message) use ($e1) {
-//            return new PromiseException($message, 11, $e1);
-//        };
-//
-//        $this->assertEquals(
-//                new PromiseException('Exception2', 11, $e1), $fun($message)
-//        );
-//
-//        $afterFun = JsonCoder::jsonUnserialize(JsonCoder::jsonSerialize($fun));
-//        $this->assertEquals(
-//                $afterFun($message), $fun($message)
-//        );
-//    }
+    /**
+     * @dataProvider provider_ResourceType
+     */
+    public function testSerialize_ResourceType($in, $jsonString, $out = null)
+    {
+        $this->setExpectedException(JsonException::class);
+        parent::serialize($in, $jsonString, $out);
+    }
+
 }

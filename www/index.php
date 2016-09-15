@@ -5,9 +5,73 @@ chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
 $container = include 'config/container.php';
 
+use zaboy\test\utils\Json\CoderTest;
+
+$test = new CoderTest();
+
+$test->run1();
+
 use mindplay\jsonfreeze\JsonSerializer;
 use zaboy\utils\Json\Serializer;
 use zaboy\utils\Json\Exception as JsonException;
+
+class A
+{
+
+    private $prop;
+
+    public function setA($p)
+    {
+        $this->prop = $p;
+    }
+
+    public function getA()
+    {
+        return $this->prop;
+    }
+
+}
+
+$a = new A();
+
+$a->setA("a");
+
+class B extends A
+{
+
+    private $prop;
+
+    public function setB($p)
+    {
+        $this->prop = $p;
+    }
+
+    public function getB()
+    {
+        return $this->prop;
+    }
+
+}
+
+$b = new B();
+
+
+$s = new stdClass;
+$s->a = 1;
+
+//$b->setA($b);
+//$b->setB($a);
+$serializer = new JsonSerializer;
+$str = $serializer->serialize($s);
+
+$out = $serializer->unserialize('{"a": 1}');
+var_dump($out);
+//var_dump($b->getA());
+//var_dump($b->getB());
+
+exit;
+
+
 
 $serializer = new Serializer();
 
@@ -39,36 +103,35 @@ $exc = new RuntimeException('prop RuntimeException', 0, $previous);
 
 $previous = new RuntimeException('prop RuntimeException', 0);
 $exc = new Exception('prop Exception1', 0, $previous);
-
-class A
-{
-
-    private $prop;
-
-    public function set($p)
-    {
-        $this->prop = $p;
-    }
-
-    public function get()
-    {
-        return $this->prop;
-    }
-
-}
-
-$a = new A();
-
-$a->set(1);
-
-class B extends A
-{
-
-}
-
-$b = new B();
-$b->set(2);
-
+//
+//class A
+//{
+//
+//    private $prop;
+//
+//    public function set($p)
+//    {
+//        $this->prop = $p;
+//    }
+//
+//    public function get()
+//    {
+//        return $this->prop;
+//    }
+//
+//}
+//
+//$a = new A();
+//
+//$a->set(1);
+//
+//class B extends A
+//{
+//
+//}
+//
+//$b = new B();
+//$b->set(2);
 //$serializer = new JsonSerializer();
 //
 //$value = $serializer->unserialize($serializer->serialize($a));

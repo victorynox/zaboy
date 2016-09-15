@@ -115,36 +115,32 @@ class ExceptionSerializer
 
     protected static function getClassesFromObject($subject, $typesAndObjects = ['class' => [], 'objects' => []])
     {
-//        if ($subject instanceof stdClass) {
-//            var_dump(8888);
-//        }
-
-        if (is_scalar($subject) || is_resource($subject) || empty($subject) || $subject instanceof Closure) {
+        if (is_scalar($subject) || is_resource($subject) || empty($subject) || $subject instanceof \Closure) {
             return $typesAndObjects;
         }
 
         if (is_array($subject)) {
             foreach ($subject as $value) {
-                $typesAndObjects = static::getClassesFromObject($value, $typesAndObjects);
+                $typesAndObjects = static::getClassesFromObject($value, $typesAndObjects); //Recursion
             }
             return $typesAndObjects;
         }
 
         if (is_object($subject)) {
-
+            //We are looking circular references
             foreach ($typesAndObjects['objects'] as $value) {
                 if ($value === $subject) {
                     return $typesAndObjects;
                 }
             }
             $typesAndObjects['objects'][] = $subject;
-
+            //We collect unique class names
             if (!in_array(get_class($subject), $typesAndObjects['class'])) {
                 $typesAndObjects['class'][] = get_class($subject);
             }
-            $props = static::getClassProperties($subject);
-
-            return static::getClassesFromObject($props, $typesAndObjects);
+            $propsArray = static::getClassProperties($subject);
+            //Recursion
+            return static::getClassesFromObject($propsArray, $typesAndObjects);
         }
 
         throw new JsonException('Unknown type');
