@@ -20,7 +20,7 @@ class InsideConstruct
      * require 'vendor/autoload.php';
      * $container = include 'config/container.php';
      * //add:
-     * InsideConstruct::$container = $container
+     * InsideConstruct::setContainer( $container )
      * <code>
      *
      * @var ContainerInterface
@@ -60,10 +60,8 @@ class InsideConstruct
             //Which are have  service  and not retrived in __construct
             if (!array_key_exists($paramName, $args) && $container->has($paramName)) {
                 $paramValue = $container->get($paramName); // >getType()
-                $paramType = $refParam->getClass()->getName();
-                var_dump($paramName);
-                var_dump($paramType);
-                if ($paramType && !($paramValue instanceof $paramType)) {
+                $paramClass = $refParam->getClass() ? $refParam->getClass()->getName() : null;
+                if ($paramClass && !($paramValue instanceof $paramClass)) {
                     throw new \LogicException(
                     'Wrong type for service: ' . $paramName
                     );
@@ -79,6 +77,11 @@ class InsideConstruct
                 }
             }
         }
+    }
+
+    public static function setContainer(ContainerInterface $container)
+    {
+        static::$container = $container;
     }
 
 }

@@ -10,13 +10,14 @@
 namespace zaboy\Di\Example\InsideConstruct;
 
 use Interop\Container\ContainerInterface;
+use zaboy\Di\InsideConstruct;
 
-class Class1
+class PublicProtectedPrivate
 {
 
     public $propA;
-    public $propB;
-    public $propC;
+    protected $propB;
+    private $propC;
 
     public function __construct($propA = null, $propB = null, $propC = null)
     {
@@ -25,7 +26,16 @@ class Class1
 
 }
 
-new Class1();
+class B
+{
 
+    public $propA;
+    protected $propB;
+    private $private;
 
+    public function __construct(\stdClass $propA = null, $propB = null, $propC = null)
+    {
+        InsideConstruct::initServices();
+    }
 
+}

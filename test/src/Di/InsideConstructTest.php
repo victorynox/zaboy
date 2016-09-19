@@ -2,7 +2,12 @@
 
 namespace zaboy\test\Di;
 
+require_once './src/Di/Example/InsideConstruct/WIthInnerDi.php';
+
+use zaboy\Di\Example\InsideConstruct\PublicProtectedPrivate;
 use Interop\Container\ContainerInterface;
+use zaboy\Di\InsideConstruct;
+use Zend\ServiceManager\ServiceManager;
 
 class InsideConstructTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,14 +23,33 @@ class InsideConstructTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->container = '';
+        $this->container = $this->getMock(ContainerInterface::class);
+        InsideConstruct::setContainer($this->container);
     }
 
     //==========================================================================
 
-    public function testSerialize_ScalarType()
+    public function testInitServices_PublicProtectedPrivate()
     {
-        $this->assertEquals(1, 1);
+        $mapHas = [
+            ['propA', true],
+            ['propB', true],
+            ['propC', false],
+        ];
+        $this->container->method('has')
+                ->will($this->returnValueMap($mapHas));
+
+        $mapGet = [
+            ['propA', new \stdClass()],
+            ['propB', new \ArrayObject()]
+        ];
+        $this->container->method('get')
+                ->will($this->returnValueMap($mapGet));
+
+        $tested = new PublicProtectedPrivate();
+        $expected = new PublicProtectedPrivate(new \stdClass(), new \ArrayObject(), null);
+
+        $this->assertEquals($expected, $tested);
     }
 
 }
