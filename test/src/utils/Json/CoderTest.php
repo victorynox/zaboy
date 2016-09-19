@@ -1,6 +1,6 @@
 <?php
 
-namespace zaboy\test\utils\Json;
+namespace zaboy\test\utils\Php;
 
 use zaboy\utils\Json\Coder as JsonCoder;
 use zaboy\utils\Json\Exception as JsonException;

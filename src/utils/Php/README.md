@@ -1,11 +1,17 @@
 #UTILS
 ##PHP SERIALIZER
 
-###Чего не хватает в PHP serialize.
+###Чего не хватает в нативном PHP serialize.
 
-####Загрузка сервисов из ServiceManager (например DB adapter)
+####Сериализация Closure
+Php\Serializer это умеет (используется библиотека Opis\Closure\SerializableClosure)
+~
+
+####Сериализация объектов содержащих сервисы в качестве свойств (например DB adapter).
+Это решаемо с помощью Di\InsideConstruct.
+~
 
 ####Результат сериализации не строка (могут быть 0 байты и спец символы)
-Результат сериализации кодируется в Base64. Перед десериализацие - обратное преобразование.
+Результат сериализации можно кодируеть в Base64. Перед десериализацие - обратное преобразование.
+~
 
-[Coder.php](https://github.com/avz-cmf/zaboy/blob/master/src/utils/Json/Coder.php/).

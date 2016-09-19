@@ -1,9 +1,28 @@
+# Callback
+##Что это и зачем
+Это invockable объект -  обертка для Callable.  
+Умеет сериализовываться и возвращать (обрабатывать) Promises
+
+##Бытрый старт
+
+###Как работает Callback:
+	$callable = function($val){return 'Hello ' . $val};
+	$callback = new Callback($callable, $interruptor);
+	var_dump($callback($val,$promise));
+
+###Что такое $interruptor
+Это объект, который умеет запускать Callback параллельно (на другом сайте, в другом процессе, ч-з очередь ...).  
+Принимает сериализуемый Callable, параметр для передачи в Callable, и Promise для результата.  
+Возвращает Promise.
+
+###На что влияют параметры
+
 <table>
 	<thead>
 		<tr>
 		  <th>,</th>
-		  <th>Interruptor = null</th>
-		  <th>Interruptor = new \Interrupter()</th>
+		  <th>$interruptor = null</th>
+		  <th>$interruptor = new \Interrupter()</th>
 		</tr>
 	</thead>
 	<tbody>

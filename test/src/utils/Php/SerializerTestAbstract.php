@@ -1,10 +1,10 @@
 <?php
 
-namespace zaboy\test\utils;
+namespace zaboy\test\utils\Php;
 
 use zaboy\Exception as zaboyException;
 use zaboy\utils\Json\Exception as JsonException;
-use zaboy\utils\Json\Coder as JsonCoder;
+use zaboy\utils\Php\Serializer as PhpSerializer;
 use zaboy\utils\Json\Serializer as JsonSerializer;
 
 abstract class SerializerTestAbstract extends \PHPUnit_Framework_TestCase
@@ -62,16 +62,13 @@ abstract class SerializerTestAbstract extends \PHPUnit_Framework_TestCase
         return array(
             //
             array(
-                [],
-                '[]'
+                []
             ),
             array(
                 [1, 'a', ['array']],
-                '[1,"a",["array"]]'
             ),
             array(
                 ['one' => 1, 'a', 'next' => ['array']],
-                '{"one":1,"0":"a","next":["array"]}'
             )
         );
     }
@@ -81,29 +78,27 @@ abstract class SerializerTestAbstract extends \PHPUnit_Framework_TestCase
         return array(
             array(
                 (object) []  // new \stdClass();
-                , '{"#type":"stdClass"}'
             ),
             array(
                 (object) ['prop' => 1]  //$stdClass = new \stdClass(); $stdClass->prop = 1
-                , '{"prop":1,"#type":"stdClass"}'
             ),
             array(
-                new \Exception('Exception', 1)
-                , null
+                new \Exception('Exception', 1, null)
             ),
             array(
-                new JsonException('JsonException', 1, new \Exception('Exception', 1))
-                , null
+                new JsonException('Exception', 1, new \Exception('subException', 1))
             ),
         );
     }
 
     public function provider_ClosureType()
     {
+        $obj = new \stdClass();
         return array(
             array(
-                function ($val) {
-                    return $val;
+                function ($val) use($obj) {
+                    $obj->prop = $val;
+                    return $obj;
                 }
                 , ''
             )
@@ -114,28 +109,17 @@ abstract class SerializerTestAbstract extends \PHPUnit_Framework_TestCase
     {
         return array(
             array(
-                imagecreate(1, 1), ''
+                imagecreate(1, 1)
             )
         );
     }
 
     //==========================================================================
-    public function serialize($value, $expectedJsonString, $expectedValue = null)
+    public function serialize($value, $expectedValue = null)
     {
-        $expectedValue = !is_null($expectedValue) ? $expectedValue : $value; //usialy $expectedValue === $value
-        $callableEncoder = $this->encoder;
-        $callableDecoder = $this->decoder;
-        $jsonString = $callableEncoder($value);
-        $decodedValue = $callableDecoder($jsonString);
-        if ($expectedJsonString !== null) {
-            $jsonStringCopressed = str_replace(chr(13), '', str_replace(chr(10), '', str_replace(' ', '', $jsonString)));
-            $expectedJsonStringCopressed = str_replace(chr(13), '', str_replace(chr(10), '', str_replace(' ', '', $expectedJsonString)));
-            $this->assertSame(
-                    $expectedJsonStringCopressed, $jsonStringCopressed
-            );
-        }
+        //$expectedValue = !is_null($expectedValue) ? $expectedValue : $value; //usialy $expectedValue === $value
         $this->assertEquals(
-                $expectedValue, $decodedValue
+                $value, PhpSerializer::phpUnserialize(PhpSerializer::phpSerialize($value))
         );
     }
 
