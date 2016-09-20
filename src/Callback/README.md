@@ -7,15 +7,23 @@
 
 ###Как работает Callback:
 	$callable = function($val){return 'Hello ' . $val};
-	$callback = new Callback($callable, $interruptor);
-	var_dump($callback($val,$promise));
+	$callback = new Callback($callable);
+	var_dump($callback('World')); //'Hello World'
+
+###Если результат нужен в виде Promise:
+	$callable = function($val){return 'Hello ' . $val};
+	$callback = new Callback($callable);
+	$promise = $callback('World', true)); //true!
+	var_dump($promise->wait()); //'Hello World'
 
 ###Что такое $interruptor
 Это объект, который умеет запускать Callback параллельно (на другом сайте, в другом процессе, ч-з очередь ...).  
 Принимает сериализуемый Callable, параметр для передачи в Callable, и Promise для результата.  
 Возвращает Promise.
 
-###На что влияют параметры
+###На что влияют параметры $interruptor и $promise
+	$callback = new Callback($callable,  $interruptor = null);
+	$result =  $callback($val, $promise = null));
 
 <table>
 	<thead>
@@ -28,7 +36,7 @@
 	<tbody>
 		<tr>
 			<td>
-				<b>Promise = null
+				<b>$promise = null
 			</td>
 			<td>
 				Создание колбэка <br> <code>new Callback($propCallable);</code><br> 
@@ -45,7 +53,7 @@
 		</tr>
 		<tr>
 			<td>
-				<b>Promise = true
+				<b>$promise = true
 			</td>
 			<td>
 				Создание колбэка <br> <code>new Callback($propCallable);</code><br> 
@@ -75,7 +83,7 @@
 		</tr>
 		<tr>
 			<td>
-				<b>Promise = new \Promise()
+				<b>$promise = new \Promise()
 			</td>
 			<td>
 				Создание колбэка<br>  <code>new Callback($propCallable);

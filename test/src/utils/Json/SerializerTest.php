@@ -2,10 +2,9 @@
 
 namespace zaboy\test\utils\Json;
 
-use zaboy\Exception as zaboyException;
 use zaboy\utils\Json\Exception as JsonException;
 use zaboy\utils\Json\Serializer as JsonSerializer;
-use zaboy\test\utils\SerializerTestAbstract;
+use zaboy\test\utils\Json\SerializerTestAbstract;
 
 class SerializerTest extends SerializerTestAbstract
 {

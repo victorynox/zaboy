@@ -1,11 +1,8 @@
 <?php
 
-namespace zaboy\test\utils;
+namespace zaboy\test\utils\Json;
 
-use zaboy\Exception as zaboyException;
 use zaboy\utils\Json\Exception as JsonException;
-use zaboy\utils\Json\Coder as JsonCoder;
-use zaboy\utils\Json\Serializer as JsonSerializer;
 
 abstract class SerializerTestAbstract extends \PHPUnit_Framework_TestCase
 {

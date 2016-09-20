@@ -22,43 +22,43 @@ class SerializerTest extends SerializerTestAbstract
     /**
      * @dataProvider provider_ScalarType
      */
-    public function testSerialize_ScalarType($in, $out = null)
+    public function testSerialize_ScalarType($in)
     {
-        parent::serialize($in, $out);
+        parent::serialize($in);
     }
 
     /**
      * @dataProvider provider_StringType
      */
-    public function testSerialize_StringType($in, $out = null)
+    public function testSerialize_StringType($in)
     {
-        parent::serialize($in, $out);
+        parent::serialize($in);
     }
 
     /**
      * @dataProvider provider_ArrayType
      */
-    public function testSerialize_ArrayType($in, $out = null)
+    public function testSerialize_ArrayType($in)
     {
-        parent::serialize($in, $out);
+        parent::serialize($in);
     }
 
     /**
      * @dataProvider provider_ObjectType
      */
-    public function testSerialize_ObjectType($in, $out = null)
+    public function testSerialize_ObjectType($in)
     {
         if ($in instanceof \Exception) {
             $this->assertEquals($in->getMessage(), 'Exception');
         } else {
-            parent::serialize($in, $out);
+            parent::serialize($in);
         }
     }
 
     /**
      * @dataProvider provider_ClosureType
      */
-    public function testSerialize_ClosureType($in, $out = null)
+    public function testSerialize_ClosureType($in)
     {
         $value = PhpSerializer::phpUnserialize(PhpSerializer::phpSerialize($in));
         $this->assertEquals($value(1), (object) ['prop' => 1]);
@@ -67,10 +67,10 @@ class SerializerTest extends SerializerTestAbstract
     /**
      * @dataProvider provider_ResourceType
      */
-    public function testSerialize_ResourceType($in, $out = null)
+    public function testSerialize_ResourceType($in)
     {
         $this->setExpectedException(\LogicException::class);
-        parent::serialize($in, $out);
+        parent::serialize($in);
     }
 
 }

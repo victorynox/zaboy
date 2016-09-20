@@ -10,6 +10,7 @@
 namespace zaboy\Callback;
 
 use zaboy\Callback\CallbackException;
+use Opis\Closure\SerializableClosure;
 
 /**
  * Callback
@@ -26,16 +27,16 @@ class Callback
      */
     protected $callback;
 
-    public function __construct(Callable $callback)
+    public function __construct(callable $callback)
     {
-        $this->callback = $callback;
+        $this->setCallback($callback);
     }
 
     public function __invoke($value)
     {
-        if (is_callable($this->callback, true)) {
+        if (is_callable($this->getCallback(), true)) {
             try {
-                return call_user_func($this->callback, $value);
+                return call_user_func($this->getCallback(), $value);
             } catch (\Exception $exc) {
                 throw new CallbackException(
                 'Cannot execute Callback. Reason: ' . $exc->getMessage(), 0, $exc
@@ -50,42 +51,32 @@ class Callback
 
     public function __sleep()
     {
-        if ($this->callback instanceof \Closure) {
-            $this->callback = new SerializableClosure($this->callback);
+        $callback = $this->getCallback();
+        if ($callback instanceof \Closure) {
+            $callback = new SerializableClosure($callback);
+            $this->setCallback($callback);
         }
         return array('callback');
     }
 
     public function __wakeup()
     {
-        if ($this->callback instanceof ServicesInitableInterface) {
-
-            $servicesList = $this->callback->getServicesList();
-            $services = $this->getServices($servicesList);
-            $this->callback->setServices($services);
+        $callback = $this->getCallback();
+        if (!is_callable($callback, true)) {
+            throw new CallbackException(
+            'There is not correct instance callable in Callback'
+            );
         }
     }
 
-    protected function getServices($servicesList)
+    protected function getCallback()
     {
-        $services = [];
-        foreach ($servicesList as $propertyName => $serviceName) {
-            if (is_array($serviceName)) {
-                $services[$propertyName] = $this->getServices($serviceName);
-            } else {
-                $services[$propertyName] = $this->getContaner()->get($serviceName);
-            }
-        }
-        return $services;
+        return $this->callback;
     }
 
-    public static function __callStatic($serviceName, $arguments)
+    protected function setCallback(callable $callback)
     {
-        $callable = static::getContaner()->get($serviceName);
-        $callback = new static($callable);
-        $value = $arguments[0];
-        $promise = isset($arguments[1]) ? $arguments[1] : null;
-        return $callback($value, $promise);
+        $this->callback = $callback;
     }
 
 }

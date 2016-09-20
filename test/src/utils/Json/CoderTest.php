@@ -4,7 +4,7 @@ namespace zaboy\test\utils\Php;
 
 use zaboy\utils\Json\Coder as JsonCoder;
 use zaboy\utils\Json\Exception as JsonException;
-use zaboy\test\utils\SerializerTestAbstract;
+use zaboy\test\utils\Json\SerializerTestAbstract;
 
 class CoderTest extends SerializerTestAbstract
 {
