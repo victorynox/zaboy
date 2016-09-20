@@ -10,17 +10,20 @@
 namespace zaboy\async\Entity;
 
 /**
- * Client
+ * Base
+ *
+ * Parent (base) class for all Clients and Entities
  *
  * @category   async
  * @package    zaboy
  */
-abstract class AsyncAbstract
+class Base
 {
 
     const EXCEPTION_CLASS = '\Exception';
     const ID_SEPARATOR = '_';
 
+    // id has specific structoure - prefix__1234567890_12346__jljkHU6h4sgvYu...n67_
     private $idPattern;
 
     /**

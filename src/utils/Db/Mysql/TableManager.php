@@ -9,7 +9,6 @@
 
 namespace zaboy\utils\Db\Mysql;
 
-use zaboy\rest\DataStore\DataStoreException;
 use Zend\Db\Sql\Ddl\CreateTable;
 use Zend\Db\Sql\Ddl\Constraint;
 use zaboy\rest\RestException;
@@ -81,6 +80,7 @@ use Zend\Db\Metadata\Source;
 class TableManager
 {
 
+    const ID = 'id';
     const FIELD_TYPE = 'field_type';
     const FIELD_PARAMS = 'field_params';
 
@@ -281,7 +281,7 @@ class TableManager
             $table->addColumn($fieldInstance);
         }
 
-        $table->addConstraint(new Constraint\PrimaryKey('id'));
+        $table->addConstraint(new Constraint\PrimaryKey(self::ID));
 
 
         $ctdMysql = new Sql\Platform\Mysql\Ddl\CreateTableDecorator();
