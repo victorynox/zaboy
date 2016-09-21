@@ -2,16 +2,15 @@
 
 namespace zaboy\async\Entity;
 
+use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Sql\Select;
 use Zend\Db\Sql;
 use zaboy\utils\Db\Mysql\TableManager;
+use \zaboy\Di\InsideConstruct;
 
 /**
  * Store
- *
- * id => Entity_id_123456789qwerty
- * creation_time = 2216125; UTC time when Entity has sarted
  *
  * @category   async
  * @package    zaboy
@@ -19,12 +18,31 @@ use zaboy\utils\Db\Mysql\TableManager;
 class Store extends TableGateway
 {
 
+    const TABLE_NAME = 'entity';
+
     /**
      * Primary key column name - 'id'
      * id has specific structoure - prefix__1234567890_12346__jljkHU6h4sgvYu...n67
      * where __1234567890_ is UTC creation time.
      */
     const ID = TableManager::ID;
+
+    /**
+     *
+     * @var AdapterInterface
+     */
+    private $entityDbAdapter;
+
+    public function __construct(AdapterInterface $entityDbAdapter = null)
+    {
+        //set $this->entityDbAdapter as $cotainer->get('entityDbAdapter');
+        InsideConstruct::initServices();
+        $adapter = $this->entityDbAdapter;
+        unset($this->entityDbAdapter);
+
+        $table = static::TABLE_NAME;
+        parent::__construct($table, $adapter);
+    }
 
     public function beginTransaction()
     {

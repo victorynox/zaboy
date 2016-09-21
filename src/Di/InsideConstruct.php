@@ -30,11 +30,11 @@ class InsideConstruct
     public static function initServices()
     {
         global $container;
-        $container = $container ? $container : static::$container;
-        if (!(isset($container) && $container instanceof ContainerInterface)) {
+        static::$container = static::$container ? static::$container : $container;
+        if (!(isset(static::$container) && static::$container instanceof ContainerInterface)) {
             throw new \UnexpectedValueException(
             'global $contaner or InsideConstruct::$contaner'
-            . 'must be inited'
+            . ' must be inited'
             );
         }
         //Who call me?;
@@ -58,8 +58,8 @@ class InsideConstruct
             $paramName = $refParam->getName();
 
             //Which are have  service  and not retrived in __construct
-            if (!array_key_exists($paramName, $args) && $container->has($paramName)) {
-                $paramValue = $container->get($paramName); // >getType()
+            if (!array_key_exists($paramName, $args) && static::$container->has($paramName)) {
+                $paramValue = static::$container->get($paramName); // >getType()
                 $paramClass = $refParam->getClass() ? $refParam->getClass()->getName() : null;
                 if ($paramClass && !($paramValue instanceof $paramClass)) {
                     throw new \LogicException(

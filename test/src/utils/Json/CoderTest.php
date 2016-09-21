@@ -63,7 +63,6 @@ class CoderTest extends SerializerTestAbstract
      */
     public function testSerialize_ClosureType($in, $jsonString, $out = null)
     {
-        var_dump('testSerialize_ClosureType');
         $this->setExpectedException(JsonException::class);
         parent::serialize($in, $jsonString, $out);
     }

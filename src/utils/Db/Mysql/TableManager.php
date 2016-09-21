@@ -237,7 +237,8 @@ class TableManager
     {
         $dbMetadata = Source\Factory::createSourceFromAdapter($this->db);
         $tableNames = $dbMetadata->getTableNames();
-        return in_array($tableName, $tableNames);
+        $result = in_array($tableName, $tableNames);
+        return $result;
     }
 
     /**
