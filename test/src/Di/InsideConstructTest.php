@@ -2,9 +2,8 @@
 
 namespace zaboy\test\Di;
 
-require_once './src/Di/Example/InsideConstruct/WIthInnerDi.php';
-
-use zaboy\Di\Example\InsideConstruct\PublicProtectedPrivate;
+use zaboy\Di\Example\InsideConstruct\PropertiesDefault;
+use zaboy\Di\Example\InsideConstruct\SettersDefault;
 use Interop\Container\ContainerInterface;
 use zaboy\Di\InsideConstruct;
 use Zend\ServiceManager\ServiceManager;
@@ -29,26 +28,75 @@ class InsideConstructTest extends \PHPUnit_Framework_TestCase
 
     //==========================================================================
 
-    public function testInitServices_PublicProtectedPrivate()
+    public function testInitServices_PropertiesDefault()
     {
         $mapHas = [
-            ['propA', true],
+            ['propA', false],
             ['propB', true],
-            ['propC', false],
+            ['propC', true],
         ];
         $this->container->method('has')
                 ->will($this->returnValueMap($mapHas));
 
         $mapGet = [
-            ['propA', new \stdClass()],
-            ['propB', new \ArrayObject()]
+
+            ['propB', new \ArrayObject()],
+            ['propC', new \stdClass()],
         ];
+
         $this->container->method('get')
                 ->will($this->returnValueMap($mapGet));
 
-        $tested = new PublicProtectedPrivate();
-        $expected = new PublicProtectedPrivate(new \stdClass(), new \ArrayObject(), null);
+        $tested = new PropertiesDefault(true, null);
+        $expected = new PropertiesDefault(false, null, new \ArrayObject(), new \stdClass());
 
+        $this->assertEquals($expected, $tested);
+
+        $this->setExpectedException(\LogicException::class, 'Can not load service - "propA" for param - $propA');
+        $tested = new PropertiesDefault(true);
+    }
+
+    public function testInitServices_SettersDefault()
+    {
+        $mapHas = [
+            ['propA', true],
+            ['propB', true],
+            ['propC', true],
+        ];
+        $this->container->method('has')
+                ->will($this->returnValueMap($mapHas));
+
+        $mapGet = [
+            ['propA', 'PropA value'],
+            ['propB', new \ArrayObject()],
+            ['propC', new \stdClass()],
+        ];
+
+        $this->container->method('get')
+                ->will($this->returnValueMap($mapGet));
+
+
+        $useDiTrue = true;
+        $tested = new SettersDefault($useDiTrue);
+        $diResult = $useDiTrue; //by reference
+        $useDiFalse = false;
+        $expected = new SettersDefault($useDiFalse, 'PropA value', new \ArrayObject(), new \stdClass());
+
+        $this->assertEquals(
+                [ 'propA' => 'PropA value', 'propB' => new \ArrayObject(), 'propC' => new \stdClass()], $diResult
+        );
+        $this->assertEquals($expected, $tested);
+
+
+        $useDiTrue = true;
+        $tested = new SettersDefault($useDiTrue, null, 'PropB value');
+        $diResult = $useDiTrue; //by reference
+        $useDiFalse = false;
+        $expected = new SettersDefault($useDiFalse, null, 'PropB value', new \stdClass());
+
+        $this->assertEquals(
+                [ 'propA' => null, 'propB' => 'PropB value', 'propC' => new \stdClass()], $diResult
+        );
         $this->assertEquals($expected, $tested);
     }
 

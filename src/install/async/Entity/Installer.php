@@ -7,7 +7,7 @@
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 
-namespace zaboy\async\Entity;
+namespace zaboy\install\async\Entity;
 
 use Zend\Db\Adapter\AdapterInterface;
 use zaboy\Installer as ZaboyInstaller;

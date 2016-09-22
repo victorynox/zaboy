@@ -44,26 +44,41 @@ class Store extends TableGateway
         parent::__construct($table, $adapter);
     }
 
-    public function beginTransaction()
+    public function beginTransaction($isAlreadyOpen = false)
     {
+        if ($isAlreadyOpen) {
+            return;
+        }
         $db = $this->getAdapter();
         $db->getDriver()->getConnection()->beginTransaction();
     }
 
-    public function commit()
+    public function commit($isInTransaction = true)
     {
-        $db = $this->getAdapter();
-        $db->getDriver()->getConnection()->commit();
+        if ($isInTransaction) {
+            $db = $this->getAdapter();
+            $db->getDriver()->getConnection()->commit();
+        } else {
+            throw new \LogicException('Commit without Transaction');
+        }
     }
 
-    public function rollback()
+    public function rollback($isInTransaction = true)
     {
-        $db = $this->getAdapter();
-        $db->getDriver()->getConnection()->rollback();
+        if ($isInTransaction) {
+            $db = $this->getAdapter();
+            $db->getDriver()->getConnection()->rollback();
+        } else {
+            throw new \LogicException('Rollback without Transaction');
+        }
     }
 
-    public function readAndLock($id)
+    public function readAndLock($id, $isInTransaction = true)
     {
+        if (!$isInTransaction) {
+            throw new \LogicException('SELECT FOR UPDATE without Transaction');
+        }
+
         $identifier = self::ID;
         $db = $this->getAdapter();
         $queryStr = 'SELECT ' . Select::SQL_STAR

@@ -15,7 +15,7 @@ require 'vendor/autoload.php';
 $container = include 'config/container.php';
 
 use zaboy\utils\Db\Mysql\TableManager;
-use zaboy\async\Entity\Installer as EntityInstaller;
+use zaboy\install\async\Entity\Installer as EntityInstaller;
 
 /**
  * Installer class

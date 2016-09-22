@@ -27,8 +27,9 @@ class InsideConstruct
      */
     protected static $container = null;
 
-    public static function initServices()
+    public static function initServices($aliases = [])
     {
+        $result = [];
         global $container;
         static::$container = static::$container ? static::$container : $container;
         if (!(isset(static::$container) && static::$container instanceof ContainerInterface)) {
@@ -57,8 +58,15 @@ class InsideConstruct
             /* @var $refParam \ReflectionParameter */
             $paramName = $refParam->getName();
 
-            //Which are have  service  and not retrived in __construct
-            if (!array_key_exists($paramName, $args) && static::$container->has($paramName)) {
+            //Is param retrived?
+            if (empty($args)) {
+                //Has service in $container?
+                if (!static::$container->has($paramName)) {
+                    throw new \LogicException(
+                    'Can not load service - "' . $paramName . '" for param - $' . $paramName
+                    );
+                }
+
                 $paramValue = static::$container->get($paramName); // >getType()
                 $paramClass = $refParam->getClass() ? $refParam->getClass()->getName() : null;
                 if ($paramClass && !($paramValue instanceof $paramClass)) {
@@ -66,17 +74,42 @@ class InsideConstruct
                     'Wrong type for service: ' . $paramName
                     );
                 }
-                $refProperty = $reflectionClass->getProperty($paramName);
-                if (isset($refProperty) && $refProperty->isPublic()) {
-                    $refProperty->setValue($object, $paramValue);
-                }
-                if (isset($refProperty) && $refProperty->isPrivate() || $refProperty->isProtected()) {
-                    $refProperty->setAccessible(true);
-                    $refProperty->setValue($object, $paramValue);
-                    $refProperty->setAccessible(false);
-                }
+            } else {
+                $paramValue = array_shift($args);
+            }
+
+            //setters
+            $methodName = 'set' . ucfirst($paramName);
+            $refMethod = $reflectionClass->hasMethod($methodName) ? $reflectionClass->getMethod($methodName) : null;
+            if (isset($refMethod) && $refMethod->isPublic()) {
+                $refMethod->invoke($object, $paramValue);
+                $result[$paramName] = $paramValue;
+                continue;
+            }
+            if (isset($refMethod) && ($refMethod->isPrivate() || $refMethod->isProtected())) {
+                $refMethod->setAccessible(true);
+                $refMethod->invoke($object, $paramValue);
+                $result[$paramName] = $paramValue;
+                $refMethod->setAccessible(false);
+                continue;
+            }
+
+            //properties
+            $refProperty = $reflectionClass->hasProperty($paramName) ? $reflectionClass->getProperty($paramName) : null;
+            if (isset($refProperty) && $refProperty->isPublic()) {
+                $refProperty->setValue($object, $paramValue);
+                $result[$paramName] = $paramValue;
+                continue;
+            }
+            if (isset($refProperty) && ( $refProperty->isPrivate() || $refProperty->isProtected())) {
+                $refProperty->setAccessible(true);
+                $refProperty->setValue($object, $paramValue);
+                $result[$paramName] = $paramValue;
+                $refProperty->setAccessible(false);
+                continue;
             }
         }
+        return $result;
     }
 
     public static function setContainer(ContainerInterface $container)
