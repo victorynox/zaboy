@@ -70,7 +70,7 @@ class Client extends Base
      */
     protected function makeEntity($data = null)
     {
-        $class = __NAMESPACE__ . '\\' . $this->getClass($data);
+        $class = $this->getClass($data);
         $entity = new $class($data);
         try {
             $data = $entity->getData();
@@ -170,6 +170,11 @@ class Client extends Base
         }
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
     /**
      * Returns the class name of Entity
      *
@@ -177,18 +182,8 @@ class Client extends Base
      */
     protected function getClass($data = null)
     {
-        $class = ucfirst($this->getPrefix());
+        $class = __NAMESPACE__ . '\\' . ucfirst($this->getPrefix());
         return $class;
-    }
-
-    /**
-     * Returns the Entity ID
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->id;
     }
 
 }

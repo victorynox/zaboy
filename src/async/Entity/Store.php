@@ -116,9 +116,9 @@ class Store extends TableGateway
         return $rowset->current()['count'];
     }
 
-    public function prepareData(array $data, $fild = null)
+    protected function prepareData(array $data, $fild = null)
     {
-        if (isset($fild) && isset($data[$fild])) {
+        if (isset($fild) && array_key_exists($fild, $data)) {
             return [$fild => $data[$fild]];
         }
         if (isset($fild)) {
@@ -133,9 +133,9 @@ class Store extends TableGateway
         return $data;
     }
 
-    public function restoreData(array $data, $columnName = null)
+    protected function restoreData(array $data, $columnName = null)
     {
-        if (isset($columnName) && isset($data[$columnName])) {
+        if (isset($columnName) && array_key_exists($columnName, $data)) {
             return [$columnName => $data[$columnName]];
         }
         if (isset($columnName)) {

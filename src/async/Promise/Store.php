@@ -1,0 +1,58 @@
+<?php
+
+namespace zaboy\async\Promise;
+
+use Zend\Db\Adapter\AdapterInterface;
+use Zend\Db\TableGateway\TableGateway;
+use Zend\Db\Sql\Select;
+use Zend\Db\Sql;
+use zaboy\utils\Db\Mysql\TableManager;
+use \zaboy\Di\InsideConstruct;
+use zaboy\async\Entity\Store as EntityStore;
+use zaboy\utils\Php\Serializer as PhpSerializer;
+
+/**
+ * Store
+ *
+ * @category   async
+ * @package    zaboy
+ */
+class Store extends EntityStore
+{
+
+    const TABLE_NAME = 'promise';
+    //PROMISE_ADAPTER_DATA_STORE
+    //
+    //'id' - unique id of promise: promise_id_123456789qwerty
+    //const ID = 'id';
+    const STATE = 'state';
+    const RESULT = 'result';
+    const PARENT_ID = 'parent_id';
+    const ON_FULFILLED = 'on_fulfilled';
+    const ON_REJECTED = 'on_rejected';
+
+    public function __construct(AdapterInterface $promiseDbAdapter = null)
+    {
+        //set as $cotainer->get('promiseDbAdapter');
+        $services = InsideConstruct::initServices(['promiseDbAdapter']);
+        $adapter = $services['promiseDbAdapter'];
+        parent::__construct($adapter);
+    }
+
+    protected function prepareData(array $data, $fild = null)
+    {
+        if ($fild === self::ON_FULFILLED || $fild === self::ON_REJECTED) {
+            return [$fild => PhpSerializer::phpSerialize($data[$fild])];
+        }
+        return parent::prepareData($data, $fild);
+    }
+
+    protected function restoreData(array $data, $columnName = null)
+    {
+        if ($columnName === self::ON_FULFILLED || $columnName === self::ON_REJECTED) {
+            return [$columnName => PhpSerializer::phpUnserialize($data[$columnName])];
+        }
+        return parent::restoreData($data, $columnName);
+    }
+
+}

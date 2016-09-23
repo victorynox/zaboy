@@ -16,6 +16,7 @@ $container = include 'config/container.php';
 
 use zaboy\utils\Db\Mysql\TableManager;
 use zaboy\install\async\Entity\Installer as EntityInstaller;
+use zaboy\install\async\Promise\Installer as PromiseInstaller;
 
 /**
  * Installer class
@@ -38,9 +39,13 @@ class Installer
     {
         $entityInstaller = new EntityInstaller();
         $entityInstaller->install();
+
+        $promiseInstaller = new PromiseInstaller();
+        $promiseInstaller->install();
     }
 
 }
 
 Installer::install();
+
 
