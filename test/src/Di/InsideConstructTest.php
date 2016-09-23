@@ -4,6 +4,7 @@ namespace zaboy\test\Di;
 
 use zaboy\Di\Example\InsideConstruct\PropertiesDefault;
 use zaboy\Di\Example\InsideConstruct\SettersDefault;
+use zaboy\Di\Example\InsideConstruct\Inheritance;
 use Interop\Container\ContainerInterface;
 use zaboy\Di\InsideConstruct;
 use Zend\ServiceManager\ServiceManager;
@@ -81,7 +82,7 @@ class InsideConstructTest extends \PHPUnit_Framework_TestCase
         $diResult = $useDiTrue; //by reference
         $useDiFalse = false;
         $expected = new SettersDefault($useDiFalse, 'PropA value', new \ArrayObject(), new \stdClass());
-
+        unset($diResult['useDi']);
         $this->assertEquals(
                 [ 'propA' => 'PropA value', 'propB' => new \ArrayObject(), 'propC' => new \stdClass()], $diResult
         );
@@ -93,11 +94,39 @@ class InsideConstructTest extends \PHPUnit_Framework_TestCase
         $diResult = $useDiTrue; //by reference
         $useDiFalse = false;
         $expected = new SettersDefault($useDiFalse, null, 'PropB value', new \stdClass());
-
+        unset($diResult['useDi']);
         $this->assertEquals(
                 [ 'propA' => null, 'propB' => 'PropB value', 'propC' => new \stdClass()], $diResult
         );
         $this->assertEquals($expected, $tested);
+    }
+
+    public function testInitServices_Inheritance()
+    {
+        $mapHas = [
+            ['propA', true],
+            ['propB', true],
+            ['propC', true],
+            ['newPropA', true],
+        ];
+        $this->container->method('has')
+                ->will($this->returnValueMap($mapHas));
+
+        $mapGet = [
+            ['propA', 'PropA value'],
+            ['propB', new \ArrayObject()],
+            ['propC', new \stdClass()],
+            ['newPropA', 'PropNewA value'],
+        ];
+
+        $this->container->method('get')
+                ->will($this->returnValueMap($mapGet));
+
+        $tested = new Inheritance();
+
+        $this->assertEquals(
+                'PropNewA value', $tested->propA
+        );
     }
 
 }

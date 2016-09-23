@@ -59,6 +59,9 @@
  
 ##Использование
 
+### Что возвращает метод I`nsideConstruct::initServices();`
+Возвращается массив `['param1Name'=>value1', 'param2Name' => 'value2', ...]`
+
 ### Как перекрыть умолчания
 Если так:
 
@@ -70,6 +73,43 @@
 ### Сеттеры  (`$this->setPropA($value)`)
 Если для параметра констрактора определен соответствующий (по имени) сеттер - он будет вызван. Сеттеры имеют приоритет над свойствами. Если для параметра есть и сеттер и свойство, то будет вызван сеттер, а присваивание свойству не будет произведено.
 
+### А если наследование?
+Предположим у нас есть базовый класс:
+	
+	class Class0
+	{
+		public $propA;
+	
+	    public function __construct($propA = null)
+	    {
+	            InsideConstruct::initServices();
+		}
+	}
+
+	$class0 = new Class0;        // $class0->propA = $container->get('propA');
+, а нам нужно изменить используемый сервис:  `// $class0->propA = $container->get('newPropA');`  
+Можно так:
 
 
+	class Class1 extends Class0
+	{
+	    public function __construct($newPropA = null)
+	    {
+	            $params = InsideConstruct::initServices(['newPropA']);
+				$propA = $params['newPropA'];
+				parent::__construct(propA);
+		}
+	};
+
+
+### Параметры вызова
+В прошлом примере `InsideConstruct::initServices(['newPropA']);` добавлен параметр вызова 'newPropA'.  
+Зачем это нужно? Дело в том, что у объекта `Class1` нет ни свойства `$this->newPropA`, 
+ни метода `$this->setNewPropA()`. И он не будет пытаться загрузить сервис 'newPropA' в случае , если параметр не передан в констрактор.  
+Передача параметра `InsideConstruct::initServices(['newPropA']);` явно указывает на `initServices()` загрузить сервис `'newPropA'`.
+
+### Еще раз коротко о главном
+Если есть соответствующий сеттер или свойство - значение будет присвоено.   
+Если параметр передан (даже если `NULL`) - сервис из контейнера загружен не будет.   
+Если параметр не передан, сервис из контейнера буде загружен если есть сеттер, свойство или имя параметра указанно в аргументе вызова функции `InsideConstruct::initServices([...);`   
 

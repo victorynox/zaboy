@@ -9,7 +9,7 @@
 
 namespace zaboy\async\Entity;
 
-use zaboy\async\Entity\Store;
+use zaboy\async\Entity\Store as EntityStore;
 use zaboy\async\Entity\Base;
 
 /**
@@ -35,8 +35,8 @@ class Entity extends Base
     {
         parent::__construct();
 
-        if (!isset($data[Store::ID])) {
-            $data[Store::ID] = $this->makeId();
+        if (!isset($data[EntityStore::ID])) {
+            $data[EntityStore::ID] = $this->makeId();
         }
         $this->setData($data);
     }
@@ -49,8 +49,8 @@ class Entity extends Base
     public function getId()
     {
         $data = $this->getData();
-        if (isset($data[Store::ID])) {
-            return $data[Store::ID];
+        if (isset($data[EntityStore::ID])) {
+            return $data[EntityStore::ID];
         } else {
             throw new \LogicException(
             "ID is not set."
@@ -82,7 +82,7 @@ class Entity extends Base
      */
     protected function setData($data)
     {
-        if (is_array($data) && $this->isId($data[Store::ID])) {
+        if (is_array($data) && isset($data[EntityStore::ID]) && $this->isId($data[EntityStore::ID])) {
             $this->data = $data;
             return $this;
         } else {

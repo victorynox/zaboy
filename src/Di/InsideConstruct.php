@@ -27,7 +27,7 @@ class InsideConstruct
      */
     protected static $container = null;
 
-    public static function initServices($aliases = [])
+    public static function initServices($loadServices = [])
     {
         $result = [];
         global $container;
@@ -57,54 +57,61 @@ class InsideConstruct
         foreach ($refParams as $refParam) {
             /* @var $refParam \ReflectionParameter */
             $paramName = $refParam->getName();
+            //setters
+            $methodName = 'set' . ucfirst($paramName);
+            $refMethod = $reflectionClass->hasMethod($methodName) ?
+                    $reflectionClass->getMethod($methodName) :
+                    null;
+            //properties
+            $refProperty = $reflectionClass->hasProperty($paramName) ?
+                    $reflectionClass->getProperty($paramName) :
+                    null;
+
 
             //Is param retrived?
             if (empty($args)) {
-                //Has service in $container?
-                if (!static::$container->has($paramName)) {
-                    throw new \LogicException(
-                    'Can not load service - "' . $paramName . '" for param - $' . $paramName
-                    );
-                }
-
-                $paramValue = static::$container->get($paramName); // >getType()
-                $paramClass = $refParam->getClass() ? $refParam->getClass()->getName() : null;
-                if ($paramClass && !($paramValue instanceof $paramClass)) {
-                    throw new \LogicException(
-                    'Wrong type for service: ' . $paramName
-                    );
+                //Do this param need in service loading
+                if ($refMethod || $refProperty || in_array($paramName, $loadServices)) {
+                    //Has service in $container?
+                    if (!static::$container->has($paramName)) {
+                        throw new \LogicException(
+                        'Can not load service - "' . $paramName . '" for param - $' . $paramName
+                        );
+                    }
+                    $paramValue = static::$container->get($paramName); // >getType()
+                    $paramClass = $refParam->getClass() ? $refParam->getClass()->getName() : null;
+                    if ($paramClass && !($paramValue instanceof $paramClass)) {
+                        throw new \LogicException(
+                        'Wrong type for service: ' . $paramName
+                        );
+                    }
+                } else {
+                    $paramValue = $refParam->getDefaultValue();
                 }
             } else {
+                //Value for param was retrived in __construct().
                 $paramValue = array_shift($args);
             }
+            $result[$paramName] = $paramValue;
 
-            //setters
-            $methodName = 'set' . ucfirst($paramName);
-            $refMethod = $reflectionClass->hasMethod($methodName) ? $reflectionClass->getMethod($methodName) : null;
             if (isset($refMethod) && $refMethod->isPublic()) {
                 $refMethod->invoke($object, $paramValue);
-                $result[$paramName] = $paramValue;
                 continue;
             }
             if (isset($refMethod) && ($refMethod->isPrivate() || $refMethod->isProtected())) {
                 $refMethod->setAccessible(true);
                 $refMethod->invoke($object, $paramValue);
-                $result[$paramName] = $paramValue;
                 $refMethod->setAccessible(false);
                 continue;
             }
 
-            //properties
-            $refProperty = $reflectionClass->hasProperty($paramName) ? $reflectionClass->getProperty($paramName) : null;
             if (isset($refProperty) && $refProperty->isPublic()) {
                 $refProperty->setValue($object, $paramValue);
-                $result[$paramName] = $paramValue;
                 continue;
             }
             if (isset($refProperty) && ( $refProperty->isPrivate() || $refProperty->isProtected())) {
                 $refProperty->setAccessible(true);
                 $refProperty->setValue($object, $paramValue);
-                $result[$paramName] = $paramValue;
                 $refProperty->setAccessible(false);
                 continue;
             }

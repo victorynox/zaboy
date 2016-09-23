@@ -29,35 +29,36 @@ class Store extends TableGateway
 
     /**
      *
-     * @var AdapterInterface
+     * @var bool
      */
-    private $entityDbAdapter;
+    protected $isInTransaction;
 
     public function __construct(AdapterInterface $entityDbAdapter = null)
     {
         //set $this->entityDbAdapter as $cotainer->get('entityDbAdapter');
-        InsideConstruct::initServices();
-        $adapter = $this->entityDbAdapter;
-        unset($this->entityDbAdapter);
-
+        $services = InsideConstruct::initServices(['entityDbAdapter']);
+        $adapter = $services['entityDbAdapter'];
         $table = static::TABLE_NAME;
+        $this->isInTransaction = false;
         parent::__construct($table, $adapter);
     }
 
-    public function beginTransaction($isAlreadyOpen = false)
+    public function beginTransaction()
     {
-        if ($isAlreadyOpen) {
+        if ($this->isInTransaction) {
             return;
         }
         $db = $this->getAdapter();
         $db->getDriver()->getConnection()->beginTransaction();
+        $this->isInTransaction = true;
     }
 
-    public function commit($isInTransaction = true)
+    public function commit()
     {
-        if ($isInTransaction) {
+        if ($this->isInTransaction) {
             $db = $this->getAdapter();
             $db->getDriver()->getConnection()->commit();
+            $this->isInTransaction = false;
         } else {
             throw new \LogicException('Commit without Transaction');
         }
@@ -65,56 +66,41 @@ class Store extends TableGateway
 
     public function rollback($isInTransaction = true)
     {
-        if ($isInTransaction) {
+        if ($this->isInTransaction) {
             $db = $this->getAdapter();
             $db->getDriver()->getConnection()->rollback();
+            $this->isInTransaction = false;
         } else {
             throw new \LogicException('Rollback without Transaction');
         }
     }
 
-    public function readAndLock($id, $isInTransaction = true)
+    public function read($id)
     {
-        if (!$isInTransaction) {
-            throw new \LogicException('SELECT FOR UPDATE without Transaction');
-        }
-
         $identifier = self::ID;
         $db = $this->getAdapter();
         $queryStr = 'SELECT ' . Select::SQL_STAR
                 . ' FROM ' . $db->platform->quoteIdentifier($this->getTable())
-                . ' WHERE ' . $db->platform->quoteIdentifier($identifier) . ' = ?'
-                . ' FOR UPDATE';
+                . ' WHERE ' . $db->platform->quoteIdentifier($identifier) . ' = ?';
+        $queryStr = $this->isInTransaction ? $queryStr . ' FOR UPDATE' : $queryStr;
 
         $rowset = $db->query($queryStr, array($id));
         $data = $rowset->current();
         if (is_null($data)) {
             return null;
         } else {
-            return $data->getArrayCopy();
-        }
-    }
-
-    public function read($id)
-    {
-        $where = [self::ID => $id];
-        $rowset = $this->select($where);
-        $data = $rowset->current();
-        if (!isset($data)) {
-            return null;
-        } else {
-            return $data->getArrayCopy();
+            return $this->restoreData($data->getArrayCopy());
         }
     }
 
     public function insert($data)
     {
-        return parent::insert($data);
+        return parent::insert($this->prepareData($data));
     }
 
     public function update($data, $where = null)
     {
-        return parent::update($data, $where);
+        return parent::update($this->prepareData($data), $where);
     }
 
     public function count($where = [])
@@ -128,6 +114,40 @@ class Store extends TableGateway
         $statement = $sql->prepareStatementForSqlObject($select);
         $rowset = $statement->execute();
         return $rowset->current()['count'];
+    }
+
+    public function prepareData(array $data, $fild = null)
+    {
+        if (isset($fild) && isset($data[$fild])) {
+            return [$fild => $data[$fild]];
+        }
+        if (isset($fild)) {
+            throw new \RuntimeException('Can not prepare fild' . $fild);
+        }
+        foreach ($data as $key => $value) {
+            $preparedFild = $this->prepareData($data, $key); //['columnName => serializedValue]
+            unset($data[$key]);
+            $columnName = array_keys($preparedFild)[0];
+            $data[$columnName] = $preparedFild[$columnName];
+        }
+        return $data;
+    }
+
+    public function restoreData(array $data, $columnName = null)
+    {
+        if (isset($columnName) && isset($data[$columnName])) {
+            return [$columnName => $data[$columnName]];
+        }
+        if (isset($columnName)) {
+            throw new \RuntimeException('Can not restore column ' . $columnName);
+        }
+        foreach ($data as $key => $value) {
+            $restoredFild = $this->restoreData($data, $key); //['fildName' => serializedValue]
+            unset($data[$key]);
+            $fild = array_keys($restoredFild)[0];
+            $data[$fild] = $restoredFild[$fild];
+        }
+        return $data;
     }
 
 }
