@@ -9,11 +9,12 @@
 
 namespace zaboy\async\Promise\Promise;
 
-use zaboy\async\Promise\Promise\DeterminedPromise;
-use zaboy\async\Promise\Promise\DependentPromise;
-use zaboy\async\Promise\PromiseException;
-use zaboy\async\Promise\Store;
-use zaboy\async\Promise\Interfaces\PromiseInterface;
+use zaboy\async\Promise\Store as PromiseStore;
+use zaboy\async\Promise\Promise\Pending as PendingPromise;
+use zaboy\async\Promise\Promise\Rejected as RejectedPromise;
+use zaboy\async\Promise\Promise\Dependent as DependentPromise;
+use zaboy\async\Entity\Entity;
+use zaboy\async\Promise\PromiseInterface;
 
 /**
  * FulfilledPromise
@@ -21,47 +22,34 @@ use zaboy\async\Promise\Interfaces\PromiseInterface;
  * @category   async
  * @package    zaboy
  */
-class FulfilledPromise extends DeterminedPromise
+class Fulfilled extends PendingPromise
 {
 
     /**
      *
-     * @param Store $store
-     * @throws PromiseException
+     * @param array $promiseData
      */
-    public function __construct($promiseData = [], $result = null)
+    public function __construct($data = [])
     {
-        parent::__construct($promiseData);
-        $this->data[Store::STATE] = PromiseInterface::FULFILLED;
-        if (!isset($this->data[Store::RESULT]) && !is_null($result)) {
-            $this->data[Store::RESULT] = $this->serializeResult($result);
+        parent::__construct($data);
+        if (!array_key_exists(PromiseStore::RESULT, $data)) {
+            throw new \RuntimeException('Wromg RESULT type - promise. ID = ' . $this->getId());
         }
-    }
+        $result = $data[PromiseStore::RESULT];
 
-    public function getState()
-    {
-        return PromiseInterface::FULFILLED;
-    }
-
-    public function resolve($value)
-    {
-        if ($value != $this->data[Store::RESULT]) {
-            throw new PromiseException('Promise is already resolved.  Promise: ' . $this->data[Store::ID]);
+        if (is_object($result) && $result instanceof PromiseInterface) {
+            throw new \RuntimeException('Can not fullfill without result value. ID = ' . $this->getId());
         }
-        return $this->data;
+        $this[PromiseStore::RESULT] = $result;
+        $this[PromiseStore::STATE] = PromiseInterface::FULFILLED;
+        $this[PromiseStore::ON_FULFILLED] = null;
+        $this[PromiseStore::ON_REJECTED] = null;
+        $this[PromiseStore::PARENT_ID] = null;
     }
 
     public function reject($reason)
     {
-        throw new PromiseException('Cannot reject a fulfilled promise.  Promise: ' . $this->data[Store::ID]);
-    }
-
-    public function then(callable $onFulfilled = null, callable $onRejected = null)
-    {
-        $dependentPromise = new DependentPromise([], $this->getId(), $onFulfilled, $onRejected);
-        $result = $this->wait(false);
-        $promiseData = $dependentPromise->resolve($result);
-        return $promiseData;
+        throw new \RuntimeException('Cannot reject a fulfilled promise.  ID: ' . $this->getId());
     }
 
 }

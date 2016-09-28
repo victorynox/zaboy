@@ -40,7 +40,7 @@ class Client extends Base
      * @param EntityStore $entityStore
      * @throws \LogicException
      */
-    public function __construct($data = null, EntityStore $entityStore = null)
+    public function __construct($data = [], EntityStore $entityStore = null)
     {
         parent::__construct();
         $this->store = $entityStore ? $entityStore : new EntityStore();
@@ -49,7 +49,7 @@ class Client extends Base
             $this->id = $data;
             return;
         }
-        if (is_array($data) || is_null($data)) {
+        if (is_array($data)) {
             $entity = $this->makeEntity($data);
             $this->id = $entity->getId();
             return;
@@ -140,8 +140,11 @@ class Client extends Base
             $this->store->beginTransaction();
             $entity = $this->getEntity();
             $methodResult = call_user_func_array([$entity, $methodName], $params);
+
             $resultType = gettype($methodResult);
             switch ($resultType) {
+                case 'object':
+                    $methodResult = $methodResult->getData();
                 case 'array':
                     $data = $entity->getData();
                     $id = $entity->getId();
@@ -156,17 +159,20 @@ class Client extends Base
                     }
                     $this->store->commit();
                     return $id;
-                case '"NULL"':
-                    $dataReturned = $data;
+                case 'NULL':
+                    $dataReturned = null;
                     $id = $this->id;
                     $this->store->commit();
                     return $id;
                 default:
                     throw new \LogicException('Wrong type of result ' . $resultType);
             }
-        } catch (\Exception $e) {
+        } catch (\Exception $exc) {
             $this->store->rollback();
-            throw new \RuntimeException('Error while method  ' . $methodName . ' is running. Id: ' . $this->id, 0, $e);
+            $reason = 'Error while method  ' . $methodName . ' is running.' . PHP_EOL .
+                    'Reason: ' . $exc->getMessage() . PHP_EOL .
+                    ' Id: ' . $this->id;
+            throw new \RuntimeException($reason, 0, $exc);
         }
     }
 

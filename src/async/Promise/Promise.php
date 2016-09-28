@@ -9,10 +9,6 @@
 
 namespace zaboy\async\Promise;
 
-use zaboy\async\Entity\Store as EntityStore;
-use zaboy\async\Entity\Base;
-use zaboy\Di\InsideConstruct;
-use zaboy\async\Entity\Entity;
 use zaboy\async\Entity\Client;
 use zaboy\async\Promise\Store as PromiseStore;
 use zaboy\async\Promise\PromiseInterface;
@@ -39,13 +35,34 @@ class Promise extends Client //implements PromiseInterface
     /**
      * Client constructor.
      *
+     * @see https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md
+     * @see https://github.com/promises-aplus/promises-spec
+     *
      * @param string|array $data
-     * @param EntityStore $entityStore
      * @throws \LogicException
      */
-    public function __construct($data = null)
+    public function __construct($data = [])
     {
         parent::__construct($data, new PromiseStore());
+    }
+
+    public function wait($unwrap = true)
+    {
+        if (!$unwrap) {
+            return $this->getEntity()->wait(false);
+        }
+    }
+
+    public function resolve($value)
+    {
+        $id = $this->runTransaction('resolve', [$value]);
+        return $id;
+    }
+
+    public function reject($value)
+    {
+        $id = $this->runTransaction('reject', [$value]);
+        return $id;
     }
 
     /**
@@ -57,18 +74,16 @@ class Promise extends Client //implements PromiseInterface
     {
         $namespace = '\\' . __NAMESPACE__ . '\\Promise\\';
         switch (true) {
-            case $data === null:
+            case empty($data) || !array_key_exists(PromiseStore::STATE, $data) ||
+            $data[PromiseStore::STATE] === PromiseInterface::PENDING &&
+            empty($data[PromiseStore::PARENT_ID]):
                 return $namespace . 'Pending';
-//            case $data[Store::STATE] === PromiseInterface::FULFILLED:
-//                return '\zaboy\async\Promise\Promise\FulfilledPromise';
-//            case $data[Store::STATE] === PromiseInterface::FULFILLED:
-//                return '\zaboy\async\Promise\Promise\FulfilledPromise';
-//            case $data[Store::STATE] === PromiseInterface::REJECTED:
-//                return '\zaboy\async\Promise\Promise\RejectedPromise';
-            case $data[PromiseStore::PARENT_ID] === null:
-                return $namespace . 'Pending';
-//            default:
-//                return '\zaboy\async\Promise\Promise\DependentPromise';
+            case $data[PromiseStore::STATE] === PromiseInterface::FULFILLED:
+                return $namespace . 'Fulfilled';
+            case $data[PromiseStore::STATE] === PromiseInterface::REJECTED:
+                return $namespace . 'Rejected';
+            default:
+                return $namespace . 'Dependent';
         }
     }
 

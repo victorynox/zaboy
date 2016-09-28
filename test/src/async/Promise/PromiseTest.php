@@ -38,10 +38,34 @@ class PromiseTest extends \PHPUnit_Framework_TestCase
      * @covers zaboy\async\Entity\Promise::getState
      * @todo   Implement testGetState().
      */
-    public function testGetState()
+    public function testGetStatePENDINGPromise()
     {
         $this->object = new Promise;
         $this->assertEquals(PromiseInterface::PENDING, $this->object->getState());
+    }
+
+    public function testCannotResolveNonPendingPromise()
+    {
+        $this->setExpectedExceptionRegExp(\RuntimeException::class, '|.*The promise is already fulfilled.*|');
+        $this->object = new Promise;
+        $this->object->resolve('foo');
+        $this->object->resolve('bar');
+    }
+
+    public function testCanResolveWithSameValue()
+    {
+        $this->object = new Promise;
+        $this->object->resolve('foo');
+        $this->object->resolve('foo');
+        $this->assertEquals('foo', $this->object->wait(false));
+    }
+
+    public function testCannotRejectNonPendingPromise()
+    {
+        $this->setExpectedExceptionRegExp(\RuntimeException::class, '|.*Cannot reject a fulfilled promise.*|');
+        $this->object = new Promise;
+        $this->object->resolve('foo');
+        $this->object->reject('bar');
     }
 
 }

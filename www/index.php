@@ -33,5 +33,14 @@ chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
 $container = include 'config/container.php';
 
+use zaboy\async\Promise\Promise;
+use zaboy\async\Promise\PromiseInterface;
+
+//$this->setExpectedException('\LogicException');
+$object = new Promise;
+$object->resolve('foo');
+$object->resolve('foo');
+var_dump($object->wait(false));
+
 
 
