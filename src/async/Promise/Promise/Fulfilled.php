@@ -47,6 +47,21 @@ class Fulfilled extends PendingPromise
         $this[PromiseStore::PARENT_ID] = null;
     }
 
+    public function resolve($value)
+    {
+        //Don't try resolve with new value
+        $storedValue = is_object($value) && $value instanceof PromiseInterface ? $value->getId() : $value;
+        $isWrongValue = !is_null($this[PromiseStore::RESULT]) && $storedValue !== $this[PromiseStore::RESULT];
+        if ($isWrongValue) {
+            throw new \LogicException('The promise is already fulfilled.' . ' ID = ' . $this->getId());
+        }
+
+        $isDuplicateValue = !is_null($this[PromiseStore::RESULT]) && $storedValue === $this[PromiseStore::RESULT];
+        if ($isDuplicateValue) {
+            return null;
+        }
+    }
+
     public function reject($reason)
     {
         throw new \RuntimeException('Cannot reject a fulfilled promise.  ID: ' . $this->getId());

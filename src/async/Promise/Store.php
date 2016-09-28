@@ -10,6 +10,7 @@ use zaboy\utils\Db\Mysql\TableManager;
 use \zaboy\Di\InsideConstruct;
 use zaboy\async\Entity\Store as EntityStore;
 use zaboy\utils\Php\Serializer as PhpSerializer;
+use zaboy\utils\Json\Serializer as JsonSerializer;
 
 /**
  * Store
@@ -44,6 +45,9 @@ class Store extends EntityStore
         if ($fild === self::ON_FULFILLED || $fild === self::ON_REJECTED) {
             return [$fild => PhpSerializer::phpSerialize($data[$fild])];
         }
+        if ($fild === self::RESULT) {
+            return [$fild => JsonSerializer::jsonSerialize($data[$fild])];
+        }
         return parent::prepareData($data, $fild);
     }
 
@@ -51,6 +55,9 @@ class Store extends EntityStore
     {
         if ($columnName === self::ON_FULFILLED || $columnName === self::ON_REJECTED) {
             return [$columnName => PhpSerializer::phpUnserialize($data[$columnName])];
+        }
+        if ($columnName === self::RESULT) {
+            return [$columnName => JsonSerializer::jsonUnserialize($data[$columnName])];
         }
         return parent::restoreData($data, $columnName);
     }

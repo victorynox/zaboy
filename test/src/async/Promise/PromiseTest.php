@@ -38,34 +38,80 @@ class PromiseTest extends \PHPUnit_Framework_TestCase
      * @covers zaboy\async\Entity\Promise::getState
      * @todo   Implement testGetState().
      */
-    public function testGetStatePENDINGPromise()
+    public function testGetStatePendingPromise()
     {
-        $this->object = new Promise;
-        $this->assertEquals(PromiseInterface::PENDING, $this->object->getState());
+        $promise = new Promise;
+        $this->assertEquals(PromiseInterface::PENDING, $promise->getState());
+    }
+
+    public function testResolvePendingPromise()
+    {
+        $promise = new Promise;
+        $promise->resolve('foo');
+        $this->assertEquals(PromiseInterface::FULFILLED, $promise->getState());
+    }
+
+    public function testCanResolveWithSameValue()
+    {
+        $promise = new Promise;
+        $promise->resolve('foo');
+        $promise->resolve('foo');
+        $this->assertEquals('foo', $promise->wait(false));
     }
 
     public function testCannotResolveNonPendingPromise()
     {
         $this->setExpectedExceptionRegExp(\RuntimeException::class, '|.*The promise is already fulfilled.*|');
-        $this->object = new Promise;
-        $this->object->resolve('foo');
-        $this->object->resolve('bar');
+        $promise = new Promise;
+        $promise->resolve('foo');
+        $promise->resolve('bar');
     }
 
-    public function testCanResolveWithSameValue()
+    public function testRejectPendingPromiseByString()
     {
-        $this->object = new Promise;
-        $this->object->resolve('foo');
-        $this->object->resolve('foo');
-        $this->assertEquals('foo', $this->object->wait(false));
+        $promise = new Promise;
+        $promise->reject('foo');
+        $this->assertEquals(PromiseInterface::REJECTED, $promise->getState());
+    }
+
+    public function testRejectPendingPromiseByException()
+    {
+        $promise = new Promise;
+        $promise->reject(new \LogicException('foo'));
+        $this->assertEquals('foo', $promise->wait(false)->getMessage());
+    }
+
+    public function testCanRejectWithSameValue()
+    {
+        $promise = new Promise;
+        $promise->reject('foo');
+        $promise->reject('foo');
+        $this->assertEquals('foo', $promise->wait(false)->getMessage());
     }
 
     public function testCannotRejectNonPendingPromise()
     {
         $this->setExpectedExceptionRegExp(\RuntimeException::class, '|.*Cannot reject a fulfilled promise.*|');
-        $this->object = new Promise;
-        $this->object->resolve('foo');
-        $this->object->reject('bar');
+        $promise = new Promise;
+        $promise->resolve('foo');
+        $promise->reject('bar');
+    }
+
+    public function testCanResolveByPromise()
+    {
+        $slavePromise = new Promise;
+        $masterPromise = new Promise;
+        $slavePromise->resolve($masterPromise);
+        $this->assertEquals(PromiseInterface::PENDING, $slavePromise->getState());
+    }
+
+    public function testResolveByPendingPromiseAndFulfillIt()
+    {
+        $slavePromise = new Promise;
+        $masterPromise = new Promise;
+        $slavePromise->resolve($masterPromise);
+        $masterPromise->resolve('foo');
+        $this->assertEquals(PromiseInterface::FULFILLED, $slavePromise->getState());
     }
 
 }

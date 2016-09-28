@@ -30,18 +30,30 @@ class Rejected extends PendingPromise
     public function __construct($data = [])
     {
         parent::__construct($data);
-        $data = $this->getData();
-
         if (!array_key_exists(PromiseStore::RESULT, $data)) {
             throw new \RuntimeException('REJECT reason  must be retriveed. ID = ' . $this->getId());
         }
         if (!$data[PromiseStore::RESULT] instanceof \Exception) {
             throw new \RuntimeException('RESULT type must be an exception. ID = ' . $this->getId());
         }
-        $this[Store::STATE] = PromiseInterface::REJECTED;
+        $this[PromiseStore::RESULT] = $data[PromiseStore::RESULT];
+        $this[PromiseStore::STATE] = PromiseInterface::REJECTED;
         $this[PromiseStore::ON_FULFILLED] = null;
         $this[PromiseStore::ON_REJECTED] = null;
         $this[PromiseStore::PARENT_ID] = null;
+    }
+
+    public function resolve($value)
+    {
+        throw new \RuntimeException('Cannot resolve a rejected promise.  ID: ' . $this->getId());
+    }
+
+    public function reject($reason)
+    {
+        if ($reason === $this[PromiseStore::RESULT]->getMessage()) {
+            return null;
+        }
+        throw new \LogicException('The promise is already rejected.' . ' ID = ' . $this->getId());
     }
 
 }

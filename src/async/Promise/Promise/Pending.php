@@ -18,12 +18,12 @@ use zaboy\async\Entity\Entity;
 use zaboy\async\Promise\PromiseInterface;
 
 /**
- * Promise
+ * Pending Promise
  *
  * @category   async
  * @package    zaboy
  */
-class Pending extends Entity
+class Pending extends Entity implements PromiseInterface
 {
 
     /**
@@ -32,7 +32,7 @@ class Pending extends Entity
      */
     public function __construct($data = [])
     {
-        //$id = isset($data[PromiseStore::ID]) ? $data[PromiseStore::ID] : null;
+//$id = isset($data[PromiseStore::ID]) ? $data[PromiseStore::ID] : null;
         parent::__construct($data);
         $this[PromiseStore::STATE] = PromiseInterface::PENDING;
         $this[PromiseStore::RESULT] = null;
@@ -43,34 +43,27 @@ class Pending extends Entity
 
     public function resolve($value)
     {
-        //If promise and x refer to the same object, reject promise with a TypeError as the reason.
+//If promise and x refer to the same object, reject promise with a TypeError as the reason.
         if ($value === $this) {
             $exc = new \UnexpectedValueException('TypeError. ID = ' . $this->getId());
             $this[PromiseStore::RESULT] = $exc;
             return new RejectedPromise($this->getData());
         }
 
-        //Don't try rresolve with new value
-        $storedValue = is_object($value) && $value instanceof PromiseInterface ? $value->getId() : $value;
-        $isWrongValue = !is_null($this[PromiseStore::RESULT]) && $storedValue !== $this[PromiseStore::RESULT];
-        if ($isWrongValue) {
-            throw new \LogicException('The promise is already fulfilled.' . ' ID = ' . $this->getId());
-        }
-
-        $isDuplicateValue = !is_null($this[PromiseStore::RESULT]) && $storedValue === $this[PromiseStore::RESULT];
-        if ($isDuplicateValue) {
-            return null;
-        }
-
-        //If then is not a function, fulfill promise with x.
+//If then is not a function, fulfill promise with x.
         if (!is_object($value) || !$value instanceof PromiseInterface) {
             $this[PromiseStore::RESULT] = $value;
             return new FulfilledPromise($this->getData());
         }
-        //If x is pending, promise must remain pending until x is fulfilled or rejected.
-        //If/when x is fulfilled, fulfill promise with the same value.
-        //If/when x is rejected, reject promise with the same reason
+
+//If x is pending, promise must remain pending until x is fulfilled or rejected.
+//If/when x is fulfilled, fulfill promise with the same value.
+//If/when x is rejected, reject promise with the same reason
         $state = $value->getState();
+        if ($state === PromiseInterface::PENDING) {
+            $lockedPromise = new Promise($value->getId());
+            $state = $lockedPromise->getState();
+        }
         switch ($state) {
             case PromiseInterface::PENDING:
                 $this[PromiseStore::PARENT_ID] = $value->getId();
@@ -88,34 +81,28 @@ class Pending extends Entity
 
     public function reject($reason)
     {
-        $rejectedPromise = new RejectedPromise($this->getData(), $reason);
-        return $rejectedPromise->getData();
+        if ((is_object($reason) && $reason instanceof PromiseInterface)) {
+            $reason = 'Reason is promisee. ID = ' . $reason->getId();
+        }
+        if (!(is_object($reason) && $reason instanceof \Exception)) {
+            set_error_handler(function ($number, $string) {
+                throw new \UnexpectedValueException(
+                'Reason cannot be converted to string.  ID: ' . $this->getId(), null, null
+                );
+            });
+            try {
+                //$reason can be converted to string
+                $reasonStr = strval($reason);
+                $reason = new \Exception($reasonStr);
+            } catch (\Exception $exc) {
+                //$reason can not be converted to string
+                throwException($exc);
+            }
+        }
+        $this[PromiseStore::RESULT] = $reason;
+        $rejectedPromise = new RejectedPromise($this->getData());
+        return $rejectedPromise;
     }
-
-//
-//    public function reject($reason)
-//    {
-//        $rejectedPromise = new RejectedPromise($this->getData(), $reason);
-//        return $rejectedPromise->getData();
-//    }
-//
-//    public function wait($unwrap = true)
-//    {
-//        return $this;
-//    }
-//
-//    public function then(callable $onFulfilled = null, callable $onRejected = null)
-//    {
-//        $dependentPromise = new DependentPromise([], $this->getId(), $onFulfilled, $onRejected);
-//        $dependentPromiseData = $dependentPromise->getData();
-//        return $dependentPromiseData;
-//    }
-//
-//    public function getResult()
-//    {
-//        return $this;
-//    }
-// =============== PromiseInterface =================
 
     public function getState()
     {
@@ -135,13 +122,20 @@ class Pending extends Entity
             return $this[PromiseStore::RESULT];
         }
 
-        //Pending promise
+//Pending promise
         if (is_null($this[PromiseStore::PARENT_ID])) {
             return $this;
         }
-        //dependent promise
+//dependent promise
         $parentPromise = new Promise($this[PromiseStore::PARENT_ID]);
         return $parentPromise;
+    }
+
+    public function then(callable $onFulfilled = null, callable $onRejected = null)
+    {
+        $dependentPromise = new DependentPromise([], $this->getId(), $onFulfilled, $onRejected);
+        $dependentPromiseData = $dependentPromise->getData();
+        return $dependentPromiseData;
     }
 
 }

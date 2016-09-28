@@ -140,14 +140,12 @@ class Client extends Base
             $this->store->beginTransaction();
             $entity = $this->getEntity();
             $methodResult = call_user_func_array([$entity, $methodName], $params);
-
             $resultType = gettype($methodResult);
             switch ($resultType) {
                 case 'object':
                     $methodResult = $methodResult->getData();
                 case 'array':
-                    $data = $entity->getData();
-                    $id = $entity->getId();
+                    $id = $methodResult[EntityStore::ID];
                     unset($methodResult[EntityStore::ID]);
                     //or update
                     $where = [EntityStore::ID => $id];
@@ -160,8 +158,7 @@ class Client extends Base
                     $this->store->commit();
                     return $id;
                 case 'NULL':
-                    $dataReturned = null;
-                    $id = $this->id;
+                    $id = $this->getId();
                     $this->store->commit();
                     return $id;
                 default:
@@ -171,7 +168,7 @@ class Client extends Base
             $this->store->rollback();
             $reason = 'Error while method  ' . $methodName . ' is running.' . PHP_EOL .
                     'Reason: ' . $exc->getMessage() . PHP_EOL .
-                    ' Id: ' . $this->id;
+                    ' Id: ' . $this->getId();
             throw new \RuntimeException($reason, 0, $exc);
         }
     }

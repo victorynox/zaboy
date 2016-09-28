@@ -37,10 +37,11 @@ use zaboy\async\Promise\Promise;
 use zaboy\async\Promise\PromiseInterface;
 
 //$this->setExpectedException('\LogicException');
-$object = new Promise;
-$object->resolve('foo');
-$object->resolve('foo');
-var_dump($object->wait(false));
+$slavePromise = new Promise;
+$masterPromise = new Promise;
+$slavePromise->resolve($masterPromise);
+$masterPromise->resolve('foo');
+
 
 
 

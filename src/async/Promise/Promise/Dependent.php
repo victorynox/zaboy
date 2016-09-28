@@ -36,8 +36,17 @@ class Dependent extends PendingPromise
             throw new \RuntimeException('Wromg PARENT_ID. ID = ' . $this->getId());
         }
         $this[PromiseStore::STATE] = PromiseInterface::PENDING;
+        $this[PromiseStore::PARENT_ID] = $data[PromiseStore::PARENT_ID];
         $this[PromiseStore::ON_FULFILLED] = isset($data[PromiseStore::ON_FULFILLED]) ? $data[PromiseStore::ON_FULFILLED] : null;
         $this[PromiseStore::ON_REJECTED] = isset($data[PromiseStore::ON_REJECTED]) ? $data[PromiseStore::ON_REJECTED] : null;
+    }
+
+    public function resolve($value)
+    {
+        if (is_object($value) && $value instanceof PromiseInterface && $this[PromiseStore::PARENT_ID] === $value->getId()) {
+            return null;
+        }
+        return parent::resolve($value);
     }
 
 }
