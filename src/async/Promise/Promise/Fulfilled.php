@@ -67,4 +67,12 @@ class Fulfilled extends PendingPromise
         throw new \RuntimeException('Cannot reject a fulfilled promise.  ID: ' . $this->getId());
     }
 
+    public function wait($unwrap = true)
+    {
+        if ($unwrap) {
+            return new PromiseException('Do not try to call wait(true)');
+        }
+        return $this[PromiseStore::RESULT];
+    }
+
 }

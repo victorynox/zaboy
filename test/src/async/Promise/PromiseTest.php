@@ -34,6 +34,7 @@ class PromiseTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    //=========== new Promise; resolve(); reject(); ============================
     /**
      * @covers zaboy\async\Entity\Promise::getState
      * @todo   Implement testGetState().
@@ -97,12 +98,53 @@ class PromiseTest extends \PHPUnit_Framework_TestCase
         $promise->reject('bar');
     }
 
-    public function testCanResolveByPromise()
+    //================= Dependent Promise ======================================
+
+    public function testResolveByFulfilledPromise()
+    {
+        $slavePromise = new Promise;
+        $masterPromise = new Promise;
+        $masterPromise->resolve('foo');
+        $slavePromise->resolve($masterPromise);
+        $this->assertEquals(PromiseInterface::FULFILLED, $slavePromise->getState());
+        $this->assertEquals('foo', $slavePromise->wait(false));
+    }
+
+    public function testResolveByRejectedPromise()
+    {
+        $slavePromise = new Promise;
+        $masterPromise = new Promise;
+        $masterPromise->reject('foo');
+        $slavePromise->resolve($masterPromise);
+        $this->assertEquals(PromiseInterface::REJECTED, $slavePromise->getState());
+        $this->assertEquals('foo', $slavePromise->wait(false)->getMessage());
+    }
+
+    public function testResolveByPendingPromise()
     {
         $slavePromise = new Promise;
         $masterPromise = new Promise;
         $slavePromise->resolve($masterPromise);
         $this->assertEquals(PromiseInterface::PENDING, $slavePromise->getState());
+    }
+
+    public function testRejectByFulfilledPromise()
+    {
+        $slavePromise = new Promise;
+        $masterPromise = new Promise;
+        $masterPromise->resolve('foo');
+        $slavePromise->reject($masterPromise);
+        $this->assertEquals(PromiseInterface::REJECTED, $slavePromise->getState());
+        $this->assertContains('Reason is promise.', $slavePromise->wait(false)->getMessage());
+    }
+
+    public function testRejectByPendingPromise()
+    {
+        $slavePromise = new Promise;
+        $masterPromise = new Promise;
+        $slavePromise->reject($masterPromise);
+        $this->assertEquals(PromiseInterface::REJECTED, $slavePromise->getState());
+        $this->assertContains('Reason is promise.', $slavePromise->wait(false)->getMessage());
     }
 
     public function testResolveByPendingPromiseAndFulfillIt()
@@ -112,6 +154,75 @@ class PromiseTest extends \PHPUnit_Framework_TestCase
         $slavePromise->resolve($masterPromise);
         $masterPromise->resolve('foo');
         $this->assertEquals(PromiseInterface::FULFILLED, $slavePromise->getState());
+    }
+
+    public function testResolveByPendingPromiseAndRejectIt()
+    {
+        $slavePromise = new Promise;
+        $masterPromise = new Promise;
+        $slavePromise->resolve($masterPromise);
+        $masterPromise->reject('foo');
+        $this->assertEquals(PromiseInterface::REJECTED, $slavePromise->getState());
+    }
+
+    //=================== Promise->then() ======================================
+
+    public function testThenAndFulfill()
+    {
+        $masterPromise = new Promise;
+        $slavePromise = $masterPromise->then();
+        $masterPromise->resolve('foo');
+        $this->assertEquals(PromiseInterface::FULFILLED, $slavePromise->getState());
+    }
+
+    public function testThenAndAndReject()
+    {
+        $masterPromise = new Promise;
+        $slavePromise = $masterPromise->then();
+        $masterPromise->reject('foo');
+        $this->assertEquals(PromiseInterface::REJECTED, $slavePromise->getState());
+    }
+
+    public function testThenOnFulfilledAndFulfill()
+    {
+        $masterPromise = new Promise;
+        $onFulfilled = function($value) {
+            return 'After $onFulfilled - ' . $value;
+        };
+        $slavePromise = $masterPromise->then($onFulfilled);
+        $masterPromise->resolve('foo');
+        $this->assertEquals(PromiseInterface::FULFILLED, $slavePromise->getState());
+        $this->assertEquals('After $onFulfilled - foo', $slavePromise->wait(false));
+    }
+
+    public function testThenOnRejectedSuccessAndReject()
+    {
+        $masterPromise = new Promise;
+        $onFulfilled = function($value) {
+            return 'After $onFulfilled - ' . $value;
+        };
+        $onRejected = function($value) {
+            return 'After $onRejected - ' . $value->getMessage();
+        };
+        $slavePromise = $masterPromise->then($onFulfilled, $onRejected);
+        $masterPromise->reject('foo');
+        $this->assertEquals(PromiseInterface::FULFILLED, $slavePromise->getState());
+        $this->assertEquals('After $onRejected - foo', $slavePromise->wait(false));
+    }
+
+    public function testThenOnRejectedErrorAndReject()
+    {
+        $masterPromise = new Promise;
+        $onFulfilled = function($value) {
+            return 'After $onFulfilled - ' . $value;
+        };
+        $onRejected = function($value) {
+            throw new \Exception('After $onRejected - ' . $value->getMessage());
+        };
+        $slavePromise = $masterPromise->then($onFulfilled, $onRejected);
+        $masterPromise->reject('foo');
+        $this->assertEquals(PromiseInterface::REJECTED, $slavePromise->getState());
+        $this->assertEquals('After $onRejected - foo', $slavePromise->wait(false)->getMessage());
     }
 
 }

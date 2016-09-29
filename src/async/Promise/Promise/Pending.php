@@ -44,7 +44,7 @@ class Pending extends Entity implements PromiseInterface
     public function resolve($value)
     {
 //If promise and x refer to the same object, reject promise with a TypeError as the reason.
-        if ($value === $this) {
+        if ($value == $this) {
             $exc = new \UnexpectedValueException('TypeError. ID = ' . $this->getId());
             $this[PromiseStore::RESULT] = $exc;
             return new RejectedPromise($this->getData());
@@ -82,7 +82,7 @@ class Pending extends Entity implements PromiseInterface
     public function reject($reason)
     {
         if ((is_object($reason) && $reason instanceof PromiseInterface)) {
-            $reason = 'Reason is promisee. ID = ' . $reason->getId();
+            $reason = 'Reason is promise. ID = ' . $reason->getId();
         }
         if (!(is_object($reason) && $reason instanceof \Exception)) {
             set_error_handler(function ($number, $string) {
@@ -96,7 +96,7 @@ class Pending extends Entity implements PromiseInterface
                 $reason = new \Exception($reasonStr);
             } catch (\Exception $exc) {
                 //$reason can not be converted to string
-                throwException($exc);
+                $reason = $exc;
             }
         }
         $this[PromiseStore::RESULT] = $reason;
@@ -116,26 +116,16 @@ class Pending extends Entity implements PromiseInterface
         if ($unwrap) {
             return new PromiseException('Do not try to call wait(true)');
         }
-        $state = $this->getState();
-
-        if ($state === PromiseInterface::FULFILLED || $state === PromiseInterface::REJECTED) {
-            return $this[PromiseStore::RESULT];
-        }
-
-//Pending promise
-        if (is_null($this[PromiseStore::PARENT_ID])) {
-            return $this;
-        }
-//dependent promise
-        $parentPromise = new Promise($this[PromiseStore::PARENT_ID]);
-        return $parentPromise;
+        return $this;
     }
 
     public function then(callable $onFulfilled = null, callable $onRejected = null)
     {
-        $dependentPromise = new DependentPromise([], $this->getId(), $onFulfilled, $onRejected);
-        $dependentPromiseData = $dependentPromise->getData();
-        return $dependentPromiseData;
+        return new DependentPromise([
+            PromiseStore::PARENT_ID => $this->getId(),
+            PromiseStore::ON_FULFILLED => $onFulfilled,
+            PromiseStore::ON_REJECTED => $onRejected
+        ]);
     }
 
 }

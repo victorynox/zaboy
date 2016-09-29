@@ -56,4 +56,12 @@ class Rejected extends PendingPromise
         throw new \LogicException('The promise is already rejected.' . ' ID = ' . $this->getId());
     }
 
+    public function wait($unwrap = true)
+    {
+        if ($unwrap) {
+            return new PromiseException('Do not try to call wait(true)');
+        }
+        return $this[PromiseStore::RESULT];
+    }
+
 }
