@@ -24,6 +24,12 @@ class Client extends Base
 {
 
     /**
+     *
+     * @var string
+     */
+    public static $class = null;
+
+    /**
      * @var Store
      */
     protected $store;
@@ -42,6 +48,7 @@ class Client extends Base
      */
     public function __construct($data = [], EntityStore $entityStore = null)
     {
+        static::$class = static::class;
         parent::__construct();
         $this->store = $entityStore ? $entityStore : new EntityStore();
 
@@ -55,6 +62,11 @@ class Client extends Base
             return;
         }
         throw new \LogicException('Wrong format of specified data');
+    }
+
+    public static function getInstance($data = [])
+    {
+        return new static::$class($data);
     }
 
     public function remove()

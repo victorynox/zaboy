@@ -39,9 +39,6 @@ use zaboy\async\Promise\PromiseInterface;
 //$this->setExpectedException('\LogicException');
 $slavePromise = new Promise;
 $masterPromise = new Promise;
-$slavePromise->resolve($masterPromise);
-$masterPromise->resolve('foo');
-
-
-
-
+$masterPromise->reject('foo');
+$slavePromise->reject($masterPromise);
+$slavePromise->wait(false)->getMessage();

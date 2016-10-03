@@ -48,8 +48,10 @@ class Promise extends Client implements PromiseInterface
 
     public function wait($unwrap = true)
     {
-        if (!$unwrap) {
-            return $this->getEntity()->wait(false);
+        try {
+            return $this->getEntity()->wait($unwrap);
+        } catch (\Exception $exc) {
+            throw $exc;
         }
     }
 
@@ -95,7 +97,7 @@ class Promise extends Client implements PromiseInterface
     public function then(callable $onFulfilled = null, callable $onRejected = null)
     {
         $id = $this->runTransaction('then', [ $onFulfilled, $onRejected]);
-        return new static($id);
+        return static::getInstance($id);
     }
 
     protected function runTransaction($methodName, $params = [])
@@ -146,7 +148,7 @@ class Promise extends Client implements PromiseInterface
         $rowsetArray = $rowset->toArray();
         foreach ($rowsetArray as $dependentPromiseData) {
             $dependentPromiseId = $dependentPromiseData[PromiseStore::ID];
-            $dependentPromise = new static($dependentPromiseId);
+            $dependentPromise = static::getInstance($dependentPromiseId);
             try {
                 if (!$isRejected) {
                     $dependentPromise->resolve($result);

@@ -3,7 +3,7 @@
     testsuite="all"
     colors="true"
 >
-
+    <!--   Где перехватывать вход в тест     $this->testResult = $this->runTest();           -->
     <testsuites>
         <testsuite name="all">
             <directory>./test</directory>

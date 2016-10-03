@@ -12,6 +12,7 @@ namespace zaboy\async\Promise\Promise;
 use zaboy\async\Promise\Store as PromiseStore;
 use zaboy\async\Promise\Promise\Pending as PendingPromise;
 use zaboy\async\Promise\PromiseInterface;
+use zaboy\async\Promise\Promise;
 
 /**
  * DependentPromise
@@ -87,15 +88,6 @@ class Dependent extends PendingPromise
             return parent::reject($exc);
         }
         return parent::resolve($result);
-    }
-
-    public function wait($unwrap = true)
-    {
-        if ($unwrap) {
-            return new PromiseException('Do not try to call wait(true)');
-        }
-        $parentPromise = new Promise($this[PromiseStore::PARENT_ID]);
-        return $parentPromise;
     }
 
 }

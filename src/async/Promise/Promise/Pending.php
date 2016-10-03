@@ -16,6 +16,8 @@ use zaboy\async\Promise\Promise\Rejected as RejectedPromise;
 use zaboy\async\Promise\Promise\Dependent as DependentPromise;
 use zaboy\async\Entity\Entity;
 use zaboy\async\Promise\PromiseInterface;
+use zaboy\async\Promise\TimeIsOutException;
+use zaboy\async\Promise\RejectedException;
 
 /**
  * Pending Promise
@@ -44,7 +46,7 @@ class Pending extends Entity implements PromiseInterface
     public function resolve($value)
     {
 //If promise and x refer to the same object, reject promise with a TypeError as the reason.
-        if ($value == $this) {
+        if (is_object($value) && $value == $this) {
             $exc = new \UnexpectedValueException('TypeError. ID = ' . $this->getId());
             $this[PromiseStore::RESULT] = $exc;
             return new RejectedPromise($this->getData());
@@ -82,7 +84,18 @@ class Pending extends Entity implements PromiseInterface
     public function reject($reason)
     {
         if ((is_object($reason) && $reason instanceof PromiseInterface)) {
-            $reason = 'Reason is promise. ID = ' . $reason->getId();
+            $state = $reason->getState();
+            switch ($state) {
+                case PromiseInterface::PENDING:
+                    $reason = 'Reason is pending promise. ID = ' . $reason->getId();
+                    break;
+                case PromiseInterface::FULFILLED:
+                case PromiseInterface::REJECTED:
+                    $reason = $reason->wait(false);
+                    break;
+                default:
+                    throw new RejectedException('Wrong state: ' . $state) . '. ID = ' . $this->getId();
+            }
         }
         if (!(is_object($reason) && $reason instanceof \Exception)) {
             set_error_handler(function ($number, $string) {
@@ -93,7 +106,7 @@ class Pending extends Entity implements PromiseInterface
             try {
                 //$reason can be converted to string
                 $reasonStr = strval($reason);
-                $reason = new \Exception($reasonStr);
+                $reason = new RejectedException($reasonStr);
             } catch (\Exception $exc) {
                 //$reason can not be converted to string
                 $reason = $exc;
@@ -111,12 +124,37 @@ class Pending extends Entity implements PromiseInterface
         return $state;
     }
 
+    /**
+     *
+     * @param bool|int $unwrap false or time in seconds for promise resolving
+     * @return mix
+     */
     public function wait($unwrap = true)
     {
-        if ($unwrap) {
-            return new PromiseException('Do not try to call wait(true)');
+        $id = $this->getId();
+        if (!$unwrap) {
+            return new TimeIsOutException('ID: ' . $id);
         }
-        return $this;
+
+        $waitingCheckInterval = 1; //1 second;
+        $waitingTime = (int) $unwrap; //1 second by default
+        $endTime = time() + $waitingTime;
+        do {
+            sleep($waitingCheckInterval);
+            $promise = Promise::getInstance($id);
+            /* @var $promise \zaboy\async\Promise\Promise */
+            $state = $promise->getState();
+            switch ($state) {
+                case PromiseInterface::FULFILLED:
+                    return $promise->wait(false);
+                case PromiseInterface::REJECTED:
+                    throw $promise->wait(false);
+                case PromiseInterface::PENDING:
+            }
+        } while (time() < $endTime);
+        $reason = new TimeIsOutException('ID: ' . $id);
+        $promise->reject($reason);
+        throw $reason;
     }
 
     public function then(callable $onFulfilled = null, callable $onRejected = null)

@@ -15,6 +15,7 @@ use zaboy\async\Promise\Promise\Rejected as RejectedPromise;
 use zaboy\async\Promise\Promise\Dependent as DependentPromise;
 use zaboy\async\Entity\Entity;
 use zaboy\async\Promise\PromiseInterface;
+use zaboy\utils\Json\Serializer as JsonSerializer;
 
 /**
  * FulfilledPromise
@@ -49,16 +50,15 @@ class Fulfilled extends PendingPromise
 
     public function resolve($value)
     {
-        //Don't try resolve with new value
-        $storedValue = is_object($value) && $value instanceof PromiseInterface ? $value->getId() : $value;
-        $isWrongValue = !is_null($this[PromiseStore::RESULT]) && $storedValue !== $this[PromiseStore::RESULT];
-        if ($isWrongValue) {
-            throw new \LogicException('The promise is already fulfilled.' . ' ID = ' . $this->getId());
+        if ($value instanceof \Exception) {
+            $value = JsonSerializer::jsonUnserialize(JsonSerializer::jsonSerialize($value));
         }
-
-        $isDuplicateValue = !is_null($this[PromiseStore::RESULT]) && $storedValue === $this[PromiseStore::RESULT];
+        //Don't try resolve with new value
+        $isDuplicateValue = $value == $this[PromiseStore::RESULT];
         if ($isDuplicateValue) {
             return null;
+        } else {
+            throw new \RuntimeException('The promise is already fulfilled.' . ' ID = ' . $this->getId());
         }
     }
 
@@ -69,9 +69,6 @@ class Fulfilled extends PendingPromise
 
     public function wait($unwrap = true)
     {
-        if ($unwrap) {
-            return new PromiseException('Do not try to call wait(true)');
-        }
         return $this[PromiseStore::RESULT];
     }
 

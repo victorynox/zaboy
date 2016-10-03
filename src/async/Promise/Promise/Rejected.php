@@ -59,7 +59,7 @@ class Rejected extends PendingPromise
     public function wait($unwrap = true)
     {
         if ($unwrap) {
-            return new PromiseException('Do not try to call wait(true)');
+            throw $this[PromiseStore::RESULT];
         }
         return $this[PromiseStore::RESULT];
     }
