@@ -16,8 +16,8 @@ use zaboy\async\Promise\Promise\Rejected as RejectedPromise;
 use zaboy\async\Promise\Promise\Dependent as DependentPromise;
 use zaboy\async\Entity\Entity;
 use zaboy\async\Promise\PromiseInterface;
-use zaboy\async\Promise\TimeIsOutException;
-use zaboy\async\Promise\RejectedException;
+use zaboy\async\Promise\Exception\TimeIsOutException;
+use zaboy\async\Promise\Exception as PromiseException;
 
 /**
  * Pending Promise
@@ -94,7 +94,7 @@ class Pending extends Entity implements PromiseInterface
                     $reason = $reason->wait(false);
                     break;
                 default:
-                    throw new RejectedException('Wrong state: ' . $state) . '. ID = ' . $this->getId();
+                    throw new PromiseException('Wrong state: ' . $state) . '. ID = ' . $this->getId();
             }
         }
         if (!(is_object($reason) && $reason instanceof \Exception)) {
@@ -106,18 +106,19 @@ class Pending extends Entity implements PromiseInterface
             try {
                 //$reason can be converted to string
                 $reasonStr = strval($reason);
-                $reason = new RejectedException($reasonStr);
+                $reason = new PromiseException($reasonStr);
             } catch (\Exception $exc) {
                 //$reason can not be converted to string
                 $reason = $exc;
             }
+            restore_error_handler();
         }
         $this[PromiseStore::RESULT] = $reason;
         $rejectedPromise = new RejectedPromise($this->getData());
         return $rejectedPromise;
     }
 
-    public function getState()
+    public function getState($dependentAsPending = true)
     {
         $data = $this->getData();
         $state = $data[PromiseStore::STATE];

@@ -15,7 +15,7 @@ namespace zaboy\async\Promise;
  * @category   async
  * @package    zaboy
  */
-class TimeIsOutException extends \Exception
+class Exception extends \Exception
 {
 
 }

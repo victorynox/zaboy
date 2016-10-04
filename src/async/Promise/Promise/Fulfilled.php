@@ -14,6 +14,8 @@ use zaboy\async\Promise\Promise\Pending as PendingPromise;
 use zaboy\async\Promise\Promise\Rejected as RejectedPromise;
 use zaboy\async\Promise\Promise\Dependent as DependentPromise;
 use zaboy\async\Entity\Entity;
+use zaboy\async\Promise\Exception\AlreadyRejectedException;
+use zaboy\async\Promise\Exception\AlreadyFulfilledException;
 use zaboy\async\Promise\PromiseInterface;
 use zaboy\utils\Json\Serializer as JsonSerializer;
 
@@ -50,7 +52,7 @@ class Fulfilled extends PendingPromise
 
     public function resolve($value)
     {
-        if ($value instanceof \Exception) {
+        if (is_object($value) && $value instanceof \Exception) {
             $value = JsonSerializer::jsonUnserialize(JsonSerializer::jsonSerialize($value));
         }
         //Don't try resolve with new value
@@ -58,13 +60,13 @@ class Fulfilled extends PendingPromise
         if ($isDuplicateValue) {
             return null;
         } else {
-            throw new \RuntimeException('The promise is already fulfilled.' . ' ID = ' . $this->getId());
+            throw new AlreadyFulfilledException('Cannot resolve a fulfilled promise.' . ' ID = ' . $this->getId());
         }
     }
 
     public function reject($reason)
     {
-        throw new \RuntimeException('Cannot reject a fulfilled promise.  ID: ' . $this->getId());
+        throw new AlreadyRejectedException('Cannot reject a fulfilled promise.  ID: ' . $this->getId());
     }
 
     public function wait($unwrap = true)

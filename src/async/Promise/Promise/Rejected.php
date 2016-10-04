@@ -10,10 +10,8 @@
 namespace zaboy\async\Promise\Promise;
 
 use zaboy\async\Promise\Store as PromiseStore;
-use zaboy\async\Promise\Promise\Fulfilled as FulfilledPromise;
+use zaboy\async\Promise\Exception\AlreadyRejectedException;
 use zaboy\async\Promise\Promise\Pending as PendingPromise;
-use zaboy\async\Promise\Promise\Dependent as DependentPromise;
-use zaboy\async\Entity\Entity;
 use zaboy\async\Promise\PromiseInterface;
 
 /**
@@ -45,15 +43,25 @@ class Rejected extends PendingPromise
 
     public function resolve($value)
     {
-        throw new \RuntimeException('Cannot resolve a rejected promise.  ID: ' . $this->getId());
+        throw new AlreadyRejectedException('Cannot resolve a rejected promise.  ID: ' . $this->getId());
     }
 
     public function reject($reason)
     {
-        if ($reason === $this[PromiseStore::RESULT]->getMessage()) {
+        $pendingPromise = new PendingPromise([PromiseStore::ID => $this->getId()]);
+        $rejectedPromise = $pendingPromise->reject($reason);
+        $reason = $rejectedPromise->wait(false);
+
+        $message = $reason->getMessage() === $this[PromiseStore::RESULT]->getMessage();
+        $prev = $reason->getPrevious() == $this[PromiseStore::RESULT]->getPrevious();
+        $type = get_class($reason) === get_class($this[PromiseStore::RESULT]);
+        if ($message && $prev && $type) {
             return null;
+        } else {
+            throw new AlreadyRejectedException(
+            'Cannot reject a rejected promise.' . ' ID = ' . $this->getId()
+            );
         }
-        throw new \LogicException('The promise is already rejected.' . ' ID = ' . $this->getId());
     }
 
     public function wait($unwrap = true)

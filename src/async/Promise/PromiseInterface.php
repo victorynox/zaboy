@@ -18,9 +18,10 @@ namespace zaboy\async\Promise;
 interface PromiseInterface
 {
 
-    const PENDING = 'pending';
     const FULFILLED = 'fulfilled';
     const REJECTED = 'rejected';
+    const PENDING = 'pending';
+    const DEPENDENT = 'dependent';
 
     /**
      * Appends fulfillment and rejection handlers to the promise, and returns
@@ -31,31 +32,20 @@ interface PromiseInterface
      *
      * @return PromiseInterface
      */
-    public function then(
-    callable $onFulfilled = null, callable $onRejected = null
-    );
-//
-//    /**
-//     * Appends a rejection handler callback to the promise, and returns a new
-//     * promise resolving to the return value of the callback if it is called,
-//     * or to its original fulfillment value if the promise is instead
-//     * fulfilled.
-//     *
-//     * @param callable $onRejected Invoked when the promise is rejected.
-//     *
-//     * @return PromiseInterface
-//     */
-//    public function otherwise(callable $onRejected);
+    public function then(callable $onFulfilled = null, callable $onRejected = null);
 
     /**
-     * Get the state of the promise ("pending", "rejected", or "fulfilled").
+     * Get the state of the promise ("pending", "rejected", "fulfilled" or "dependent").
      *
      * The three states can be checked against the constants defined on
      * PromiseInterface: PENDING, FULFILLED, and REJECTED.
+     * If $dependentAsPending is false and promise was resolved by pending promise
+     * method return DEPENDENT. Also we get dependent promise as result of then().
      *
-     * @return string
+     * @param bool $dependentAsPending true as default
+     * @return string Status
      */
-    public function getState();
+    public function getState($dependentAsPending = true);
 
     /**
      * Resolve the promise with the given value.
@@ -73,14 +63,6 @@ interface PromiseInterface
      */
     public function reject($reason);
 
-//
-//    /**
-//     * Cancels the promise if possible.
-//     *
-//     * @link https://github.com/promises-aplus/cancellation-spec/issues/7
-//     */
-//    public function cancel();
-//
     /**
      * Waits until the promise completes if possible.
      *

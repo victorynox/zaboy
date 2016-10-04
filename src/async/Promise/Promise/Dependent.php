@@ -13,6 +13,8 @@ use zaboy\async\Promise\Store as PromiseStore;
 use zaboy\async\Promise\Promise\Pending as PendingPromise;
 use zaboy\async\Promise\PromiseInterface;
 use zaboy\async\Promise\Promise;
+use zaboy\async\Promise\Exception\AlreadyResolvedException;
+use zaboy\async\Promise\Exception\TimeIsOutException;
 
 /**
  * DependentPromise
@@ -49,6 +51,15 @@ class Dependent extends PendingPromise
 
     public function resolve($value)
     {
+        if (!(is_object($value) && $value instanceof PromiseInterface && $value->getId() === $this[PromiseStore::PARENT_ID])) {
+            throw new AlreadyResolvedException(
+            'You can resolve dependent promise only by its master promise'
+            );
+        }
+        if ($value->getState() === PromiseInterface::PENDING) {
+            return null;
+        }
+        $value = $value->wait();
         $resultEntity = parent::resolve($value);
         $state = $resultEntity->getState();
         switch ($state) {
@@ -58,7 +69,17 @@ class Dependent extends PendingPromise
                 return $this;
             case PromiseInterface::REJECTED:
                 //parent promise is rejected
-                return $resultEntity;
+                $onRejectedCallback = $this[PromiseStore::ON_REJECTED];
+                if (is_null($onRejectedCallback)) {
+                    return parent::reject($value);
+                }
+                try {
+                    $reason = $resultEntity->wait(false);
+                    $result = call_user_func($onRejectedCallback, $reason);
+                } catch (\Exception $exc) {
+                    return parent::reject($exc);
+                }
+                return parent::resolve($result);
             case PromiseInterface::FULFILLED:
                 //parent promise is fulfilled - we just resolve (there is not ON_FULFILLED)
                 $onFulfilledCallback = $this[PromiseStore::ON_FULFILLED];
@@ -74,20 +95,14 @@ class Dependent extends PendingPromise
         }
     }
 
-    public function reject($value)
+    public function reject($reason)
     {
-        $resultEntity = parent::reject($value);
-        $onRejectedCallback = $this[PromiseStore::ON_REJECTED];
-        if (is_null($onRejectedCallback)) {
-            return $resultEntity;
+        if ($reason instanceof TimeIsOutException) {
+            return parent::reject($reason);
         }
-        try {
-            $reason = $resultEntity->wait(false);
-            $result = call_user_func($onRejectedCallback, $reason);
-        } catch (\Exception $exc) {
-            return parent::reject($exc);
-        }
-        return parent::resolve($result);
+        throw new AlreadyResolvedException(
+        'You can resolve dependent promise only by its master promise'
+        );
     }
 
 }

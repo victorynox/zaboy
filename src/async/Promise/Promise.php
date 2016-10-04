@@ -12,6 +12,7 @@ namespace zaboy\async\Promise;
 use zaboy\async\Entity\Client;
 use zaboy\async\Promise\Store as PromiseStore;
 use zaboy\async\Promise\PromiseInterface;
+use zaboy\async\Promise\Exception as PromiseException;
 
 /**
  * Client
@@ -89,7 +90,7 @@ class Promise extends Client implements PromiseInterface
         }
     }
 
-    public function getState()
+    public function getState($dependentAsPending = true)
     {
         return $this->getEntity()->getState();
     }
@@ -132,6 +133,11 @@ class Promise extends Client implements PromiseInterface
                 default:
                     throw new \LogicException('Wrong type of result ' . $resultType);
             }
+        } catch (PromiseException $exc) {
+            $this->store->rollback();
+            $reason = $exc->getMessage();
+            $prev = $exc->getPrevious();
+            throw new $exc($reason, 0, $prev);
         } catch (\Exception $exc) {
             $this->store->rollback();
             $reason = 'Error while method  ' . $methodName . ' is running.' . PHP_EOL .
@@ -141,6 +147,13 @@ class Promise extends Client implements PromiseInterface
         }
     }
 
+    /**
+     *
+     * @todo catch (\Exception $exc) .. drop circle
+     * @param type $result
+     * @param type $isRejected
+     * @throws \RuntimeException
+     */
     protected function resolveDependent($result, $isRejected)
     {
         //are dependent promises exist?
@@ -151,7 +164,7 @@ class Promise extends Client implements PromiseInterface
             $dependentPromise = static::getInstance($dependentPromiseId);
             try {
                 if (!$isRejected) {
-                    $dependentPromise->resolve($result);
+                    $dependentPromise->resolve($this);
                 } else {
                     $dependentPromise->reject($result);
                 }

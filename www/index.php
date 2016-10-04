@@ -37,8 +37,14 @@ use zaboy\async\Promise\Promise;
 use zaboy\async\Promise\PromiseInterface;
 
 //$this->setExpectedException('\LogicException');
-$slavePromise = new Promise;
+
+
 $masterPromise = new Promise;
+$slavePromise = $masterPromise->then(function($val) {
+    var_dump('Hello ' . $val);
+});
+$masterPromise->resolve('World'); //string 'Hello World' (length=11)
+exit;
 $masterPromise->reject('foo');
 $slavePromise->reject($masterPromise);
 $slavePromise->wait(false)->getMessage();

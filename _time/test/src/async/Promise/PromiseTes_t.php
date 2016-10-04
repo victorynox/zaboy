@@ -15,45 +15,6 @@ class PromiseTest extends \PHPUnit_Framework_TestCase
 {
 
     //=========== new Promise; resolve(); reject(); ============================
-    public function testGetStatePendingPromise()
-    {
-        $promise = new Promise;
-        $this->assertEquals(PromiseInterface::PENDING, $promise->getState());
-    }
-
-    public function testPendingPromiseWait()
-    {
-        $promise = new Promise;
-        $this->assertContainsOnlyInstancesOf(TimeIsOutException::class, [$promise->wait(false)]);
-        $this->setExpectedException(TimeIsOutException::class);
-        $promise->wait();
-    }
-
-    public function testCanResolveWithSameValue()
-    {
-        $promise = new Promise;
-        $promise->resolve('foo');
-        $promise->resolve('foo');
-        $this->assertEquals('foo', $promise->wait(false));
-        $this->assertEquals('foo', $promise->wait());
-    }
-
-    public function testCannotResolveNonPendingPromise()
-    {
-        $this->setExpectedExceptionRegExp(\RuntimeException::class, '|.*The promise is already fulfilled.*|');
-        $promise = new Promise;
-        $promise->resolve('foo');
-        $promise->resolve('bar');
-    }
-
-    public function testRejectPendingPromiseByString()
-    {
-        $promise = new Promise;
-        $promise->reject('foo');
-        $this->assertEquals(PromiseInterface::REJECTED, $promise->getState());
-        $this->setExpectedException(RejectedException::class, 'foo');
-        $promise->wait(true);
-    }
 
     public function testRejectPendingPromiseByException()
     {
