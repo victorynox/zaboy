@@ -51,7 +51,6 @@ class Client extends Base
         static::$class = static::class;
         parent::__construct();
         $this->store = $entityStore ? $entityStore : new EntityStore();
-
         if ($this->isId($data)) {
             $this->id = $data;
             return;
@@ -198,6 +197,17 @@ class Client extends Base
     {
         $class = __NAMESPACE__ . '\\' . ucfirst($this->getPrefix());
         return $class;
+    }
+
+    public function __sleep()
+    {
+        return array('id', 'idPattern');
+    }
+
+    public function __wakeup()
+    {
+        $this->store = new EntityStore();
+        static::$class = static::class;
     }
 
 }

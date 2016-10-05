@@ -24,7 +24,7 @@ class Base
     const ID_SEPARATOR = '_';
 
     // id has specific structoure - prefix__1234567890_12346__jljkHU6h4sgvYu...n67_
-    private $idPattern;
+    protected $idPattern;
 
     /**
      * AsyncAbstract constructor.

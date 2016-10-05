@@ -24,16 +24,6 @@ class Promise extends Client implements PromiseInterface
 {
 
     /**
-     * @var Store
-     */
-    protected $store;
-
-    /**
-     * @var string
-     */
-    protected $id;
-
-    /**
      * Client constructor.
      *
      * @see https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md
@@ -170,6 +160,12 @@ class Promise extends Client implements PromiseInterface
                 , 0, $exc);
             }
         }
+    }
+
+    public function __wakeup()
+    {
+        $this->store = new PromiseStore();
+        static::$class = get_class($this);
     }
 
 }

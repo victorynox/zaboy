@@ -11,6 +11,7 @@ namespace zaboy\Callback;
 
 use zaboy\Callback\CallbackException;
 use Opis\Closure\SerializableClosure;
+use zaboy\async\Promise\Promise;
 
 /**
  * Callback
@@ -32,7 +33,14 @@ class Callback
         $this->setCallback($callback);
     }
 
-    public function __invoke($value)
+    /**
+     *
+     * @param mix $value
+     * @param Promise|true|null $promise
+     * @return Promise|mix if Interrupter is retrived in __construct - Promise returned
+     * @throws CallbackException
+     */
+    public function __invoke($value, $promise = null)
     {
         if (is_callable($this->getCallback(), true)) {
             try {
