@@ -79,5 +79,10 @@ interface PromiseInterface
      */
     public function wait($unwrap = true);
 
+    /**
+     * Return id (primary key value in db)
+     *
+     * @return string promise__1469864422_189511__579c84162e43e4_34952052
+     */
     public function getId();
 }

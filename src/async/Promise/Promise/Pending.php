@@ -121,7 +121,13 @@ class Pending extends Entity implements PromiseInterface
     public function getState($dependentAsPending = true)
     {
         $data = $this->getData();
-        $state = $data[PromiseStore::STATE];
+        $state = $dependentAsPending || $data[PromiseStore::STATE] !== PromiseInterface::PENDING ?
+                $data[PromiseStore::STATE] :
+                (
+                $data[PromiseStore::PARENT_ID] ?
+                        PromiseInterface::DEPENDENT :
+                        PromiseInterface::PENDING
+                );
         return $state;
     }
 
@@ -136,9 +142,9 @@ class Pending extends Entity implements PromiseInterface
         if (!$unwrap) {
             return new TimeIsOutException('ID: ' . $id);
         }
-
         $waitingCheckInterval = 1; //1 second;
-        $waitingTime = (int) $unwrap; //1 second by default
+        $defaultMaxInterval = 2; //2 second;
+        $waitingTime = true === $unwrap ? $defaultMaxInterval : (int) $unwrap;
         $endTime = time() + $waitingTime;
         do {
             sleep($waitingCheckInterval);

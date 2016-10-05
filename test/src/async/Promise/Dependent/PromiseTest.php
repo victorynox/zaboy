@@ -126,4 +126,83 @@ class PromiseTest extends DataProvider
     }
 
     //====================== then(); ===========================================
+
+    public function test_then()
+    {
+        $masterPromise = new Promise;
+        $slavePromise = $masterPromise->then();
+        $slaveOfSlavePromise = $slavePromise->then();
+        $this->assertEquals(PromiseInterface::DEPENDENT, $slaveOfSlavePromise->getState(false));
+        $this->assertContainsOnlyInstancesOf(TimeIsOutException::class, [$slavePromise->wait(false)]);
+    }
+
+    public function test_then_with_callbacks_resolve_onFulfilled_fulfilled()
+    {
+        $onFulfilled = function($value) {
+            return 'After $onFulfilled - ' . $value;
+        };
+        $onRejected = function($value) {
+            return 'After $onRejected - ' . $value->getMessage();
+        };
+        $masterPromise = new Promise;
+        $slavePromise = $masterPromise->then();
+        $slaveOfSlavePromise = $slavePromise->then($onFulfilled, $onRejected);
+        $masterPromise->resolve('foo');
+        $this->assertEquals(PromiseInterface::FULFILLED, $slavePromise->getState());
+        $this->assertEquals('foo', $slavePromise->wait(false));
+        $this->assertEquals(PromiseInterface::FULFILLED, $slaveOfSlavePromise->getState());
+        $this->assertEquals('After $onFulfilled - foo', $slaveOfSlavePromise->wait(false));
+    }
+
+    public function test_then_with_callbacks_reject_onRejected_fulfilled()
+    {
+        $onFulfilled = function($value) {
+            return 'After $onFulfilled - ' . $value;
+        };
+        $onRejected = function($value) {
+            return 'After $onRejected - ' . $value->getMessage();
+        };
+        $masterPromise = new Promise;
+        $slavePromise = $masterPromise->then();
+        $slaveOfSlavePromise = $slavePromise->then($onFulfilled, $onRejected);
+        $masterPromise->reject('foo');
+        $this->assertEquals(PromiseInterface::REJECTED, $slavePromise->getState());
+        $this->assertEquals('foo', $slavePromise->wait(false)->getMessage());
+        $this->assertEquals(PromiseInterface::FULFILLED, $slaveOfSlavePromise->getState());
+        $this->assertEquals('After $onRejected - foo', $slaveOfSlavePromise->wait(false));
+    }
+
+    public function test_then_with_callbacks_reject_onRejected_rejected()
+    {
+        $onFulfilled = function($value) {
+            return 'After $onFulfilled - ' . $value;
+        };
+        $onRejected = function($value) {
+            throw new \RuntimeException('After $onRejected - ' . $value->getMessage(), 0, $value);
+        };
+        $masterPromise = new Promise;
+        $slavePromise = $masterPromise->then();
+        $slaveOfSlavePromise = $slavePromise->then($onFulfilled, $onRejected);
+        $masterPromise->reject('foo');
+        $this->assertEquals(PromiseInterface::REJECTED, $slavePromise->getState());
+        $this->assertEquals('foo', $slavePromise->wait(false)->getMessage());
+        $this->assertEquals(PromiseInterface::REJECTED, $slaveOfSlavePromise->getState());
+        $this->assertEquals('After $onRejected - foo', $slaveOfSlavePromise->wait(false)->getMessage());
+    }
+
+    public function test_then_with_callbacks_resolve_ExceptionInOnFulfilled()
+    {
+        $onFulfilled = function($value) {
+            throw new \LengthException('Exception in onFulfilled()');
+        };
+        $masterPromise = new Promise;
+        $slavePromise = $masterPromise->then();
+        $slaveOfSlavePromise = $slavePromise->then($onFulfilled);
+        $masterPromise->resolve('foo');
+        $this->assertEquals(PromiseInterface::FULFILLED, $slavePromise->getState());
+        $this->assertEquals('foo', $slavePromise->wait(false));
+        $this->assertEquals(PromiseInterface::REJECTED, $slaveOfSlavePromise->getState());
+        $this->assertEquals('Exception in onFulfilled()', $slaveOfSlavePromise->wait(false)->getMessage());
+    }
+
 }

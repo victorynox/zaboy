@@ -55,12 +55,15 @@ class Dependent extends PendingPromise
             throw new AlreadyResolvedException(
             'You can resolve dependent promise only by its master promise'
             );
+        } else {
+            $slavePromise = $value;
         }
-        if ($value->getState() === PromiseInterface::PENDING) {
+        $slavePromiseState = $slavePromise->getState();
+        if ($slavePromiseState === PromiseInterface::PENDING) {
             return null;
         }
-        $value = $value->wait();
-        $resultEntity = parent::resolve($value);
+        $value = $slavePromise->wait(false);
+        $resultEntity = $slavePromiseState === PromiseInterface::FULFILLED ? parent::resolve($value) : parent::reject($value);
         $state = $resultEntity->getState();
         switch ($state) {
             case PromiseInterface::PENDING:

@@ -96,5 +96,74 @@ class PromiseTest extends DataProvider
         $promise->wait();
     }
 
+    public function test_reject_by_fulfilled_promise()
+    {
+        $promise = new Promise;
+        $valuePromise = new Promise;
+        $valuePromise->resolve('foo');
+        $promise->reject($valuePromise);
+        $this->assertStringStartsWith(
+                'foo', $promise->wait(false)->getMessage()
+        );
+        $this->setExpectedException(PromiseException::class);
+        $promise->wait();
+    }
+
+    public function test_reject_by_rejected_promise()
+    {
+        $promise = new Promise;
+        $valuePromise = new Promise;
+        $valuePromise->reject(new \LengthException('foo'));
+        $promise->reject($valuePromise);
+        $this->assertStringStartsWith(
+                'foo', $promise->wait(false)->getMessage()
+        );
+        $this->setExpectedException(\LengthException::class);
+        $promise->wait();
+    }
+
+    public function test_reject_by_pending_promise()
+    {
+        $promise = new Promise;
+        $valuePromise = new Promise;
+        $promise->reject($valuePromise);
+        $this->assertStringStartsWith(
+                'Reason is pending promise. ID = promise_', $promise->wait(false)->getMessage()
+        );
+        $this->setExpectedException(PromiseException::class);
+        $promise->wait();
+    }
+
     //====================== then(); ===========================================
+
+    public function test_then()
+    {
+        $masterPromise = new Promise;
+        $slavePromise = $masterPromise->then();
+        $this->assertEquals(PromiseInterface::PENDING, $slavePromise->getState());
+        $this->assertEquals(PromiseInterface::DEPENDENT, $slavePromise->getState(false));
+    }
+
+    public function test_then_with_callbacks()
+    {
+        $onFulfilled = function($value) {
+            return 'After $onFulfilled - ' . $value;
+        };
+        $onRejected = function($value) {
+            return 'After $onRejected - ' . $value->getMessage();
+        };
+        $masterPromise = new Promise;
+        $slavePromise = $masterPromise->then($onFulfilled, $onRejected);
+        $this->assertEquals(PromiseInterface::PENDING, $slavePromise->getState());
+        $this->assertEquals(PromiseInterface::DEPENDENT, $slavePromise->getState(false));
+    }
+
+//
+//    public function testThenAndAndReject()
+//    {
+//        $masterPromise = new Promise;
+//        $slavePromise = $masterPromise->then();
+//        $masterPromise->reject('foo');
+//        $this->assertEquals(PromiseInterface::REJECTED, $slavePromise->getState());
+//    }
 }

@@ -100,4 +100,30 @@ class PromiseTest extends DataProvider
     }
 
     //====================== then(); ===========================================
+
+    public function test_then()
+    {
+        $masterPromise = new Promise;
+        $masterPromise->reject('foo');
+        $slavePromise = $masterPromise->then();
+        $this->assertEquals(PromiseInterface::REJECTED, $slavePromise->getState());
+        $this->assertEquals('foo', $slavePromise->wait(false)->getMessage());
+        $this->assertContainsOnlyInstancesOf(PromiseException::class, [$slavePromise->wait(false)]);
+    }
+
+    public function test_then_with_callbacks()
+    {
+        $onFulfilled = function($value) {
+            return 'After $onFulfilled - ' . $value;
+        };
+        $onRejected = function($value) {
+            return 'After $onRejected - ' . $value->getMessage();
+        };
+        $masterPromise = new Promise;
+        $masterPromise->reject('foo');
+        $slavePromise = $masterPromise->then($onFulfilled, $onRejected);
+        $this->assertEquals(PromiseInterface::FULFILLED, $slavePromise->getState());
+        $this->assertEquals('After $onRejected - foo', $slavePromise->wait(false));
+    }
+
 }

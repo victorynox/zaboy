@@ -13,6 +13,7 @@ use zaboy\async\Promise\Store as PromiseStore;
 use zaboy\async\Promise\Exception\AlreadyRejectedException;
 use zaboy\async\Promise\Promise\Pending as PendingPromise;
 use zaboy\async\Promise\PromiseInterface;
+use zaboy\async\Promise\Promise\Dependent as DependentPromise;
 
 /**
  * RejectedPromise
@@ -70,6 +71,16 @@ class Rejected extends PendingPromise
             throw $this[PromiseStore::RESULT];
         }
         return $this[PromiseStore::RESULT];
+    }
+
+    public function then(callable $onFulfilled = null, callable $onRejected = null)
+    {
+        $dependentPromise = new DependentPromise([
+            PromiseStore::PARENT_ID => $this->getId(),
+            PromiseStore::ON_FULFILLED => null,
+            PromiseStore::ON_REJECTED => $onRejected
+        ]);
+        return $dependentPromise->resolve($this);
     }
 
 }

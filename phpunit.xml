@@ -1,17 +1,32 @@
 <phpunit
     bootstrap="./test/bootstrap.php"
-    testsuite="all"
     colors="true"
 >
-    <!--   Где перехватывать вход в тест     $this->testResult = $this->runTest();           -->
+    <!--
+    backupGlobals="false"
+    backupStaticAttributes="false"
+    verbose="true"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    syntaxCheck="true">-->
+
+    <!--   Где перехватывать вход в тест     $this->testResult = $this->runTest();   -->
+
     <testsuites>
-        <testsuite name="all">
+        <testsuite name="test">
             <directory>./test</directory>
         </testsuite>
-        <testsuite name="error">
-            <file>./test/ErrorTest.php</file>
-        </testsuite>
     </testsuites>
+
+    <groups>
+        <exclude>
+            <group>slow</group>
+        </exclude>
+    </groups>
 
     <filter>
         <!-- не смотрим на следующие директории -->

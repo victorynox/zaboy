@@ -168,11 +168,9 @@ class Client extends Base
                         $this->store->insert($methodResult);
                     }
                     $this->store->commit();
-                    return $id;
                 case 'NULL':
                     $id = $this->getId();
                     $this->store->commit();
-                    return $id;
                 default:
                     throw new \LogicException('Wrong type of result ' . $resultType);
             }
@@ -183,6 +181,7 @@ class Client extends Base
                     ' Id: ' . $this->getId();
             throw new \RuntimeException($reason, 0, $exc);
         }
+        return $id;
     }
 
     public function getId()

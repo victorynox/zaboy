@@ -92,7 +92,7 @@ class Promise extends Client implements PromiseInterface
 
     public function getState($dependentAsPending = true)
     {
-        return $this->getEntity()->getState();
+        return $this->getEntity()->getState($dependentAsPending);
     }
 
     public function then(callable $onFulfilled = null, callable $onRejected = null)
@@ -123,11 +123,9 @@ class Promise extends Client implements PromiseInterface
                         $this->store->insert($methodResult->getData());
                     }
                     $this->store->commit();
-                    if ($stateBefore <> $stateAfter) {
-                        $this->resolveDependent($methodResult->wait(false), $stateAfter === PromiseInterface::REJECTED);
-                    }
-                    return $id;
+                    break;
                 case 'NULL':
+                    $stateAfter = $stateBefore;
                     $this->store->commit();
                     return $this->getId();
                 default:
@@ -145,16 +143,18 @@ class Promise extends Client implements PromiseInterface
                     ' Id: ' . $this->id;
             throw new \RuntimeException($reason, 0, $exc);
         }
+
+        if ($stateBefore === PromiseInterface::PENDING && $stateAfter !== PromiseInterface::PENDING) {
+            $this->resolveDependent();
+        }
+        return $id;
     }
 
     /**
      *
      * @todo catch (\Exception $exc) .. drop circle
-     * @param type $result
-     * @param type $isRejected
-     * @throws \RuntimeException
      */
-    protected function resolveDependent($result, $isRejected)
+    protected function resolveDependent()
     {
         //are dependent promises exist?
         $rowset = $this->store->select([PromiseStore::PARENT_ID => $this->getId()]);
@@ -163,15 +163,10 @@ class Promise extends Client implements PromiseInterface
             $dependentPromiseId = $dependentPromiseData[PromiseStore::ID];
             $dependentPromise = static::getInstance($dependentPromiseId);
             try {
-                if (!$isRejected) {
-                    $dependentPromise->resolve($this);
-                } else {
-                    $dependentPromise->reject($result);
-                }
+                $dependentPromise->resolve($this);
             } catch (\Exception $exc) {
                 throw new \RuntimeException(
-                'Cannot ' . $isRejected ? 'reject' : 'resolve' .
-                        '  dependent Promise: ' . $dependentPromiseId
+                'Cannot resolve dependent Promise. ID: ' . $dependentPromiseId
                 , 0, $exc);
             }
         }

@@ -74,4 +74,14 @@ class Fulfilled extends PendingPromise
         return $this[PromiseStore::RESULT];
     }
 
+    public function then(callable $onFulfilled = null, callable $onRejected = null)
+    {
+        $dependentPromise = new DependentPromise([
+            PromiseStore::PARENT_ID => $this->getId(),
+            PromiseStore::ON_FULFILLED => $onFulfilled,
+            PromiseStore::ON_REJECTED => null
+        ]);
+        return $dependentPromise->resolve($this);
+    }
+
 }
