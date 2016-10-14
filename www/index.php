@@ -33,18 +33,59 @@ chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
 $container = include 'config/container.php';
 
+use zaboy\Callback\Callback;
+use zaboy\test\Callback\Interruptor\CallbackTestCallableProvider;
 use zaboy\async\Promise\Promise;
-use zaboy\async\Promise\PromiseInterface;
+use zaboy\Callback\Interruptor\Process;
+use zaboy\Di\InsideConstruct;
+use zaboy\Callback\Promiser;
 
-//$this->setExpectedException('\LogicException');
+InsideConstruct::setContainer($container);
 
+//function prms($val)
+//{
+//    $callback = new Callback([$masterPromise, 'resolve']);
+//    return $callback($val);
+//}
 
 $masterPromise = new Promise;
-$slavePromise = $masterPromise->then(function($val) {
-    var_dump('Hello ' . $val);
-});
-$masterPromise->resolve('World'); //string 'Hello World' (length=11)
+$slavePromise_1 = $masterPromise->then('strtoupper');
+
+$iPromise = new Promise;
+$callback = new Callback('strtolower');
+$i2Promise = $iPromise->then($callback);
+$interruptorProcess = new Process([$iPromise, 'resolve']);
+
+
+$slavePromise_2 = $masterPromise->then($interruptorProcess);
+
+$masterPromise->resolve('qweRTY');
+var_dump($slavePromise_1->wait(3));
+var_dump($i2Promise->wait(3));
 exit;
-$masterPromise->reject('foo');
-$slavePromise->reject($masterPromise);
-$slavePromise->wait(false)->getMessage();
+
+$interruptorProcess = new Process($callback);
+$ret = $interruptorProcess('qweRTY'); //'qweRTY'
+
+
+exit;
+
+
+
+$promise = prms($resultMasterPromise);
+
+var_dump($promise2->wait(3));
+exit;
+
+
+$callback = new Callback('prms');
+
+$masterPromise = new Promise();
+$slavePromise_1 = $masterPromise->then($callback);
+$slavePromise_2 = $masterPromise->then($callback);
+
+$masterPromise->resolve(1); //in sec
+var_dump($slavePromise_2->wait(false));
+sleep(5);
+var_dump($slavePromise_2->wait(false));
+exit;

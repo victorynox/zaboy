@@ -24,6 +24,12 @@ class Promise extends Client implements PromiseInterface
 {
 
     /**
+     *
+     * @var string
+     */
+    public static $class = null;
+
+    /**
      * Client constructor.
      *
      * @see https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md

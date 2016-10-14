@@ -33,8 +33,6 @@ class Entity extends Base implements \ArrayAccess
      */
     public function __construct($data = [])
     {
-        parent::__construct();
-
         if (!isset($data[EntityStore::ID])) {
             $data[EntityStore::ID] = $this->makeId();
         }

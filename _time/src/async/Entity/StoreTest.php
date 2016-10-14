@@ -33,7 +33,7 @@ class StoreTest extends \PHPUnit_Framework_TestCase
      */
     protected function tearDown()
     {
-
+        //$this->object->delete('1=1');
     }
 
     /**

@@ -33,9 +33,6 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 
     }
 
-    /**
-     * @covers zaboy\async\Async::isId
-     */
     public function testIsId()
     {
         $this->assertTrue(
@@ -52,10 +49,6 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @covers zaboy\async\Async::getPrefix
-     * @todo   Implement testGetPrefix().
-     */
     public function testGetPrefix()
     {
         $this->assertEquals(
@@ -85,7 +78,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers zaboy\async\Async::extractId
+     *
      * @dataProvider dataProvider_ExtractId
      */
     public function testExtractId($val, $result)

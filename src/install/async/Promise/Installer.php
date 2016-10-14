@@ -64,21 +64,21 @@ class Installer
             PromiseStore::RESULT => [
                 'field_type' => 'Varchar',
                 'field_params' => [
-                    'length' => 65535,
+                    'length' => 65000,
                     'nullable' => true
                 ]
             ],
             PromiseStore::ON_FULFILLED => [
                 'field_type' => 'Blob',
                 'field_params' => [
-                    'length' => 65535,
+                    'length' => 65000,
                     'nullable' => true
                 ]
             ],
             PromiseStore::ON_REJECTED => [
                 'field_type' => 'Blob',
                 'field_params' => [
-                    'length' => 65535,
+                    'length' => 65000,
                     'nullable' => true
                 ]
             ],

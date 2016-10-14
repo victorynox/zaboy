@@ -42,14 +42,13 @@ class Client extends Base
     /**
      * Client constructor.
      *
-     * @param string|array $data
+     * @param string|array $data if string - it must to be id
      * @param EntityStore $entityStore
      * @throws \LogicException
      */
     public function __construct($data = [], EntityStore $entityStore = null)
     {
         static::$class = static::class;
-        parent::__construct();
         $this->store = $entityStore ? $entityStore : new EntityStore();
         if ($this->isId($data)) {
             $this->id = $data;
@@ -65,6 +64,7 @@ class Client extends Base
 
     public static function getInstance($data = [])
     {
+        static::$class = static::$class ? static::$class : static::class;
         return new static::$class($data);
     }
 
@@ -201,7 +201,7 @@ class Client extends Base
 
     public function __sleep()
     {
-        return array('id', 'idPattern');
+        return array('id');
     }
 
     public function __wakeup()

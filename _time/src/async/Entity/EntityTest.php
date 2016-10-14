@@ -33,10 +33,7 @@ class EntityTest extends \PHPUnit_Framework_TestCase
 
     }
 
-    /**
-     * @covers zaboy\async\Entity::getId
-     */
-    public function test__getId()
+    public function test__isId()
     {
         $this->object = new Entity();
         $this->assertTrue(
@@ -44,9 +41,6 @@ class EntityTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @covers zaboy\async\Entity::getData
-     */
     public function test__getData()
     {
         $this->object = new Entity();

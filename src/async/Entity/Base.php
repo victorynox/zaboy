@@ -27,14 +27,6 @@ class Base
     protected $idPattern;
 
     /**
-     * AsyncAbstract constructor.
-     */
-    public function __construct()
-    {
-        $this->idPattern = '/(' . $this->getPrefix() . '__[0-9]{10}_[0-9]{6}__[a-zA-Z0-9_]{23})/';
-    }
-
-    /**
      * Creates ID for the entity.
      *
      * An algorithm of creation ID is common for the all entities except for prefix string.
@@ -65,7 +57,7 @@ class Base
     public function isId($param)
     {
         $array = [];
-        $regExp = $this->idPattern;
+        $regExp = $this->getIdPattern();
         if (is_string($param) && preg_match_all($regExp, $param, $array)) {
             return $array[0][0] == $param;
         } else {
@@ -81,6 +73,18 @@ class Base
     public function getPrefix()
     {
         return strtolower(explode('\\', get_class($this))[2]);
+    }
+
+    /**
+     * Returns Id Pattern
+     *
+     *  id has specific structoure - prefix__1234567890_12346__jljkHU6h4sgvYu...n67_
+     *
+     * @return string
+     */
+    public function getIdPattern()
+    {
+        return '/(' . $this->getPrefix() . '__[0-9]{10}_[0-9]{6}__[a-zA-Z0-9_]{23})/';
     }
 
     /**
@@ -101,7 +105,7 @@ class Base
             return $idArray;
         }
         $array = [];
-        if (preg_match_all($this->idPattern, $stringOrException, $array)) {
+        if (preg_match_all($this->getIdPattern(), $stringOrException, $array)) {
             return array_merge(array_reverse($array[0]), $idArray);
         } else {
             return [];

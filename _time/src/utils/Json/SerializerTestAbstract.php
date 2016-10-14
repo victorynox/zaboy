@@ -45,9 +45,9 @@ abstract class SerializerTestAbstract extends \PHPUnit_Framework_TestCase
             array('30001.0001', '"30001.0001"'),
             //
             array(
-                'String строка !"№;%:?*(ХхЁ' . PHP_EOL,
+                'String строка !"№;%:?*(ХхЁ',
                 //if use json_encode($data);
-                '"String \u0441\u0442\u0440\u043e\u043a\u0430 !\"\u2116;%:?*(\u0425\u0445\u0401\r\n"'
+                '"String \u0441\u0442\u0440\u043e\u043a\u0430 !\"\u2116;%:?*(\u0425\u0445\u0401"'
             //if use json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_UNESCAPED_SLASHES | SON_HEX_APOS);
 //              '"String \u0441\u0442\u0440\u043e\u043a\u0430 !\u0022\u2116;%:?*(\u0425\u0445\u0401\r\n"' - if Json\Coder
             )

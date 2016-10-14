@@ -51,37 +51,7 @@
 				Что делает: <br> Бросает исключение (Нет второго параметра)
 			</td>
 		</tr>
-		<tr>
-			<td>
-				<b>$promise = true
-			</td>
-			<td>
-				Создание колбэка <br> <code>new Callback($propCallable);</code><br> 
-				Вызов колбэка:<br>  <code>$callback($val, true)); //TRUE</code> <br>
-				Что делает: <br>  Оборачивает результат в новый Promise. <br>
-				<code>
-				$promise = new Promise;<br>
-				$result =$propCallable(val); <br>
-				return  $promise->resolve($result);<br></code>
-				или <br>
-				<code>
-				return  promise->reject(new \Esception());<br></code>
-				</code>
-			</td>
-			<td>
-				Создание колбэка <br> 
-				<code>$interruptor = new Interrupter();<br> 
-				new Callback($propCallable, $interruptor);</code><br> 
-				Вызов колбэка:<br>  <code>$callback($val, true)); //TRUE</code> <br>
-				Что делает: <br> 
-				Создает новый Promise.<br>
-				<code>$promise = new Promise;</code><br>
-				Вызывает интераптор 
-				<code>$result = $interruptor($val, $propCallable, $promise );</code> <br>
-				и возвращает $result - это должен быть промайс, который передан интераптору.
-			</td>
-		</tr>
-		<tr>
+				<tr>
 			<td>
 				<b>$promise = new \Promise()
 			</td>
@@ -95,7 +65,7 @@
 				return  promise->resolve($result);<br></code>
 				или <br>
 				<code>
-				return  $promise->reject(new \Esception());<br></code>
+				return  $promise->reject(new \Exception());<br></code>
 				</code>
 			</td>
 			<td>

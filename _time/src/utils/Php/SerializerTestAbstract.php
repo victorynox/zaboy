@@ -35,7 +35,7 @@ abstract class SerializerTestAbstract extends \PHPUnit_Framework_TestCase
             array('30001.0001'),
             //
             array(
-                'String строка !"№;%:?*(ХхЁ' . PHP_EOL
+                'String строка !"№;%:?*(ХхЁ'
             )
         );
     }

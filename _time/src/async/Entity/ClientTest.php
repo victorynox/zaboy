@@ -37,7 +37,6 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers zaboy\async\Entity\Client::remove
-     * @covers zaboy\async\Entity\__construct
      * @todo   Implement testRemoveEntity().
      */
     public function test_MakeEntity_RemoveEntity()
@@ -46,10 +45,6 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(1, $this->object->remove());
     }
 
-    /**
-     * @covers zaboy\async\Entity\Client::getId
-     * @todo   Implement testGetId().
-     */
     public function testGetId()
     {
         $this->object = new EntityClient();

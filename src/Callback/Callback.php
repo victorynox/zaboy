@@ -12,6 +12,7 @@ namespace zaboy\Callback;
 use zaboy\Callback\CallbackException;
 use Opis\Closure\SerializableClosure;
 use zaboy\async\Promise\Promise;
+use zaboy\async\Callback\Interrupter\InterrupterInterface;
 
 /**
  * Callback
@@ -36,23 +37,23 @@ class Callback
     /**
      *
      * @param mix $value
-     * @param Promise|true|null $promise
-     * @return Promise|mix if Interrupter is retrived in __construct - Promise returned
+     * @return mix
      * @throws CallbackException
      */
-    public function __invoke($value, $promise = null)
+    public function __invoke($value)
     {
-        if (is_callable($this->getCallback(), true)) {
-            try {
-                return call_user_func($this->getCallback(), $value);
-            } catch (\Exception $exc) {
-                throw new CallbackException(
-                'Cannot execute Callback. Reason: ' . $exc->getMessage(), 0, $exc
-                );
-            }
-        } else {
+        if (!is_callable($this->getCallback(), true)) {
             throw new CallbackException(
             'There was not correct instance callable in Callback'
+            );
+        }
+        try {
+            $callback = $this->getCallback();
+            $result = call_user_func($callback, $value);
+            return $result;
+        } catch (\Exception $exc) {
+            throw new CallbackException(
+            'Cannot execute Callback. Reason: ' . $exc->getMessage(), 0, $exc
             );
         }
     }

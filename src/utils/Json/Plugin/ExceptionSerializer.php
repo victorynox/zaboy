@@ -38,7 +38,14 @@ class ExceptionSerializer
     {
 
         $prev = isset($data["prev"]) ? static::exceptionUnserialize($data["prev"]) : null;
-        $exc = new $data[JsonSerializer::TYPE]($data["message"], $data["code"], $prev);
+
+        try {
+            $exc = new $data[JsonSerializer::TYPE]($data["message"], $data["code"], $prev);
+        } catch (\Exception $exc) {
+            $exc = new \RuntimeException('Can not Unserialize Exception '
+                    . $data[JsonSerializer::TYPE], 0, $exc
+            );
+        }
 
         $data['trace'] = [];
         $propArray = ['line', 'file', 'trace'];
