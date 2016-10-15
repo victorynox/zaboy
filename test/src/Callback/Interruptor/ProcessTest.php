@@ -66,13 +66,10 @@ class ProcessTest extends CallbackTestDataProvider
         } else {
             $result = 'in series';
         }
-
-        var_dump(abs($slavePromise_1->wait() - $slavePromise_2->wait()));
-
         if (substr(php_uname(), 0, 7) === "Windows") {
             $this->assertEquals('in series', $result);
         } else {
-            $this->assertNotSame('parallel', $result);
+            $this->assertEquals('parallel', $result);
         }
     }
 

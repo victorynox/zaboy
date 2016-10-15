@@ -85,7 +85,6 @@ class Callback
 
     protected function getCallback()
     {
-        file_put_contents('666.txt', get_class($this) . '   getCallback---  ' . gettype($this->callback) . PHP_EOL . PHP_EOL, FILE_APPEND);
         return $this->callback;
     }
 

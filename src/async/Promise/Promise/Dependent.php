@@ -90,6 +90,8 @@ class Dependent extends PendingPromise
                     return $resultEntity;
                 }
                 try {
+                    $this[PromiseStore::ON_FULFILLED] = null;
+                    $this[PromiseStore::ON_REJECTED] = null;
                     $result = call_user_func($onFulfilledCallback, $value);
                 } catch (\Exception $ex) {
                     return parent::reject($ex);

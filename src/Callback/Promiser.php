@@ -52,6 +52,7 @@ class Promiser extends Callback
 
     public function __invoke($value)
     {
+
         if (isset($this->interruptorResalt) && is_array($this->interruptorResalt)) {
             throw new \LogicException('Do not call twise __invoke()');
         }

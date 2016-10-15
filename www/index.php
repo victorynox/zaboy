@@ -42,15 +42,26 @@ use zaboy\Callback\Promiser;
 
 InsideConstruct::setContainer($container);
 
+$masterPromise = new Promise;
+
+$promiser1 = new Promiser('strtoupper');
+$slavePromise_1 = $masterPromise->then($promiser1);
+
+$promiser2 = new Promiser('strtolower');
+$slavePromise_2 = $masterPromise->then($promiser2);
+//file_put_contents('666.txt', '$slavePromise_1' . $slavePromise_1->getId() . PHP_EOL, FILE_APPEND);
+
+$masterPromise->resolve('qweRTY');
+
+sleep(2);
+var_dump($slavePromise_1->wait(false));
+var_dump($slavePromise_2->wait(false));
+
 //function prms($val)
 //{
 //    $callback = new Callback([$masterPromise, 'resolve']);
 //    return $callback($val);
 //}
-
-
-
-$masterPromise = new Promise;
 
 //$slavePromise_1 = $masterPromise->then('strtoupper');
 //$iPromise = new Promise;
@@ -58,47 +69,3 @@ $masterPromise = new Promise;
 //$i2Promise = $iPromise->then($callback);
 //$interruptorProcess = new Process([$iPromise, 'resolve']);
 //$slavePromise_2 = $masterPromise->then($interruptorProcess);
-file_put_contents('666.txt', '+++index then($promiser1) +++' . PHP_EOL, FILE_APPEND);
-$promiser1 = new Promiser('strtoupper');
-//$slavePromise_1 = $promiser->then($masterPromise);
-$slavePromise_1 = $masterPromise->then($promiser1);
-file_put_contents('666.txt', '---- index then($promiser1) ---' . PHP_EOL, FILE_APPEND);
-
-$promiser2 = new Promiser('strtolower');
-$slavePromise_2 = $masterPromise->then($promiser2);
-//
-
-file_put_contents('666.txt', '+++index $masterPromise->resolve +++' . PHP_EOL, FILE_APPEND);
-$masterPromise->resolve('qweRTY');
-file_put_contents('666.txt', '---index $masterPromise->resolve ----' . PHP_EOL, FILE_APPEND);
-
-sleep(3);
-var_dump($slavePromise_1->wait(false));
-var_dump($slavePromise_2->wait(false));
-exit;
-
-$interruptorProcess = new Process($callback);
-$ret = $interruptorProcess('qweRTY'); //'qweRTY'
-
-
-exit;
-
-
-
-$promise = prms($resultMasterPromise);
-
-var_dump($promise2->wait(3));
-exit;
-
-
-$callback = new Callback('prms');
-
-$masterPromise = new Promise();
-$slavePromise_1 = $masterPromise->then($callback);
-$slavePromise_2 = $masterPromise->then($callback);
-
-$masterPromise->resolve(1); //in sec
-var_dump($slavePromise_2->wait(false));
-sleep(5);
-var_dump($slavePromise_2->wait(false));
-exit;
