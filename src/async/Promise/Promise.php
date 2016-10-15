@@ -99,6 +99,7 @@ class Promise extends Client implements PromiseInterface
 
     protected function runTransaction($methodName, $params = [])
     {
+
         try {
             $this->store->beginTransaction();
             $entity = $this->getEntity();
@@ -143,6 +144,7 @@ class Promise extends Client implements PromiseInterface
         if ($stateBefore === PromiseInterface::PENDING && $stateAfter !== PromiseInterface::PENDING) {
             $this->resolveDependent();
         }
+
         return $id;
     }
 

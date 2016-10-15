@@ -55,9 +55,8 @@ class Process extends Callback
         if (substr(php_uname(), 0, 7) !== "Windows") {
             $cmd .= " & echo $!";
         }
-        var_dump($cmd);
-        //from apache
-        //$command = 'nohup '.$this->command.' > /dev/null 2>&1 & echo $!';
+
+        //from apache - $command = 'nohup '.$this->command.' > /dev/null 2>&1 & echo $!';
         $result[self::PID_KEY] = trim(shell_exec($cmd));
         return $result;
 

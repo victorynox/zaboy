@@ -42,20 +42,7 @@ class Callback
      */
     public function __invoke($value)
     {
-        if (!is_callable($this->getCallback(), true)) {
-            throw new CallbackException(
-            'There was not correct instance callable in Callback'
-            );
-        }
-        try {
-            $callback = $this->getCallback();
-            $result = call_user_func($callback, $value);
-            return $result;
-        } catch (\Exception $exc) {
-            throw new CallbackException(
-            'Cannot execute Callback. Reason: ' . $exc->getMessage(), 0, $exc
-            );
-        }
+        return $this->run($value);
     }
 
     public function __sleep()
@@ -78,8 +65,27 @@ class Callback
         }
     }
 
+    protected function run($value)
+    {
+        if (!is_callable($this->getCallback(), true)) {
+            throw new CallbackException(
+            'There was not correct instance callable in Callback'
+            );
+        }
+        try {
+            $callback = $this->getCallback();
+            $result = call_user_func($callback, $value);
+            return $result;
+        } catch (\Exception $exc) {
+            throw new CallbackException(
+            'Cannot execute Callback. Reason: ' . $exc->getMessage(), 0, $exc
+            );
+        }
+    }
+
     protected function getCallback()
     {
+        file_put_contents('666.txt', get_class($this) . '   getCallback---  ' . gettype($this->callback) . PHP_EOL . PHP_EOL, FILE_APPEND);
         return $this->callback;
     }
 

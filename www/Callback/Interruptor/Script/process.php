@@ -27,10 +27,11 @@ $value = array_key_exists(Process::VALUE_KEY, $paramsArray) ?
         $paramsArray[Process::VALUE_KEY] : null;
 
 try {
+
     if (!is_callable($callback)) {
         throw new CallbackException('Callback is not callable');
     }
-    call_user_func($callback, $value);
+    $result = call_user_func($callback, $value);
     exit(0);
 } catch (\Exception $e) {
     exit(1);

@@ -1,0 +1,4958 @@
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+zaboy\test\Callback\CallbackTestDataProvider
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  string
+
+__invoke($value)
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  string
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  string
+
+function run($value)
+
+Array
+
+Array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)Opis\Closure\SerializableClosure
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)Opis\Closure\SerializableClosure
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+zaboy\test\Callback\CallbackTestDataProvider
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  string
+
+__invoke($value)
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  string
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  string
+
+function run($value)
+
+Array
+
+Array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)Opis\Closure\SerializableClosure
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)Opis\Closure\SerializableClosure
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+__invoke($value)zaboy\Callback\Example\CallMe
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  object
+
+function run($value)
+
+CallMeCallMeWorld
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  array
+
+__invoke($value)
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  array
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  array
+
+function run($value)
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  array
+
+__invoke($value)
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  array
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  array
+
+function run($value)
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  array
+
+__invoke($value)
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  array
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  array
+
+function run($value)
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+runInProcess
+
+World
+
+start run($value)
+
+zaboy\Callback\Promiser   getCallback---  object
+
+mid run($value)  
+
+zaboy\Callback\Promiser   getCallback---  object
+
+function run($value)
+
+zaboy\Callback\Callback   getCallback---  string
+
+__invoke($value)
+
+start run($value)
+
+zaboy\Callback\Callback   getCallback---  string
+
+mid run($value)  
+
+zaboy\Callback\Callback   getCallback---  string
+
+function run($value)
+
+Hello World
+
+Hello World
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Callback   getCallback---  string
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Interruptor\Process   getCallback---  array
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Promiser   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+
+zaboy\Callback\Callback   getCallback---  object
+

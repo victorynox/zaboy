@@ -19,53 +19,53 @@ class CallbackTestDataProvider extends \PHPUnit_Framework_TestCase
 
         //function
         return array(
-//            [
-//                'class_parents',
-//                self::class,
-//                [
-//                    'PHPUnit_Framework_TestCase' => "PHPUnit_Framework_TestCase",
-//                    'PHPUnit_Framework_Assert' => "PHPUnit_Framework_Assert"
-//                ]
-//            ],
-//            //closure
-//            [
-//                function ($val) {
-//                    return 'Hello ' . $val;
-//                },
-//                'World',
-//                'Hello World'
-//            ],
-//            //closure with uses
-//            [
-//                function ($val) use ($stdObject) {
-//                    return $stdObject->prop . $val;
-//                },
-//                'World',
-//                'Hello World'
-//            ],
-//            //invokable object
-//            [
-//                new CallMe(),
-//                'World',
-//                'Hello World'
-//            ],
-//            //method
-//            [
-//                [ new CallMe(), 'method'],
-//                'World',
-//                'Hello World'
-//            ],
-//            //static method
-//            [
-//                [ new CallMe(), 'staticMethod'],
-//                'World',
-//                'Hello World'
-//            ],
-//            [
-//                [CallMe::class, 'staticMethod'],
-//                'World',
-//                'Hello World'
-//            ],
+            [
+                'class_parents',
+                self::class,
+                [
+                    'PHPUnit_Framework_TestCase' => "PHPUnit_Framework_TestCase",
+                    'PHPUnit_Framework_Assert' => "PHPUnit_Framework_Assert"
+                ]
+            ],
+            //closure
+            [
+                function ($val) {
+                    return 'Hello ' . $val;
+                },
+                'World',
+                'Hello World'
+            ],
+            //closure with uses
+            [
+                function ($val) use ($stdObject) {
+                    return $stdObject->prop . $val;
+                },
+                'World',
+                'Hello World'
+            ],
+            //invokable object
+            [
+                new CallMe(),
+                'World',
+                'Hello World'
+            ],
+            //method
+            [
+                [ new CallMe(), 'method'],
+                'World',
+                'Hello World'
+            ],
+            //static method
+            [
+                [ new CallMe(), 'staticMethod'],
+                'World',
+                'Hello World'
+            ],
+            [
+                [CallMe::class, 'staticMethod'],
+                'World',
+                'Hello World'
+            ],
             [
                 '\\' . CallMe::class . '::staticMethod',
                 'World',

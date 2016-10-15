@@ -48,20 +48,33 @@ InsideConstruct::setContainer($container);
 //    return $callback($val);
 //}
 
+
+
 $masterPromise = new Promise;
-$slavePromise_1 = $masterPromise->then('strtoupper');
 
-$iPromise = new Promise;
-$callback = new Callback('strtolower');
-$i2Promise = $iPromise->then($callback);
-$interruptorProcess = new Process([$iPromise, 'resolve']);
+//$slavePromise_1 = $masterPromise->then('strtoupper');
+//$iPromise = new Promise;
+//$callback = new Callback('strtolower');
+//$i2Promise = $iPromise->then($callback);
+//$interruptorProcess = new Process([$iPromise, 'resolve']);
+//$slavePromise_2 = $masterPromise->then($interruptorProcess);
+file_put_contents('666.txt', '+++index then($promiser1) +++' . PHP_EOL, FILE_APPEND);
+$promiser1 = new Promiser('strtoupper');
+//$slavePromise_1 = $promiser->then($masterPromise);
+$slavePromise_1 = $masterPromise->then($promiser1);
+file_put_contents('666.txt', '---- index then($promiser1) ---' . PHP_EOL, FILE_APPEND);
 
+$promiser2 = new Promiser('strtolower');
+$slavePromise_2 = $masterPromise->then($promiser2);
+//
 
-$slavePromise_2 = $masterPromise->then($interruptorProcess);
-
+file_put_contents('666.txt', '+++index $masterPromise->resolve +++' . PHP_EOL, FILE_APPEND);
 $masterPromise->resolve('qweRTY');
-var_dump($slavePromise_1->wait(3));
-var_dump($i2Promise->wait(3));
+file_put_contents('666.txt', '---index $masterPromise->resolve ----' . PHP_EOL, FILE_APPEND);
+
+sleep(3);
+var_dump($slavePromise_1->wait(false));
+var_dump($slavePromise_2->wait(false));
 exit;
 
 $interruptorProcess = new Process($callback);
