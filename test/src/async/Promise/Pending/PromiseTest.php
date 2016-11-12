@@ -5,7 +5,7 @@ namespace zaboy\test\async\Promise\Pending;
 use zaboy\async\Promise\Promise;
 use zaboy\async\Promise\PromiseInterface;
 use zaboy\async\Promise\Exception\TimeIsOutException;
-use zaboy\Di\InsideConstruct;
+use zaboy\res\Di\InsideConstruct;
 use zaboy\test\async\Promise\DataProvider;
 use zaboy\async\Promise\Exception as PromiseException;
 

@@ -11,7 +11,6 @@ namespace zaboy\async\Entity;
 
 use zaboy\async\Entity\Store as EntityStore;
 use zaboy\async\Entity\Base;
-use zaboy\Di\InsideConstruct;
 use zaboy\async\Entity\Entity;
 
 /**

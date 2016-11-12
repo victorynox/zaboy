@@ -6,8 +6,9 @@ use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Sql\Select;
 use Zend\Db\Sql;
-use zaboy\utils\Db\Mysql\TableManager;
-use \zaboy\Di\InsideConstruct;
+use zaboy\rest\TableGateway\TableManagerMysql as TableManager;
+use zaboy\res\Di\InsideConstruct;
+use zaboy\rest\DataStore\Interfaces\ReadInterface;
 
 /**
  * Store
@@ -25,7 +26,7 @@ class Store extends TableGateway
      * id has specific structoure - prefix__1234567890_12346__jljkHU6h4sgvYu...n67
      * where __1234567890_ is UTC creation time.
      */
-    const ID = TableManager::ID;
+    const ID = ReadInterface::DEF_ID;
 
     /**
      *

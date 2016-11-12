@@ -37,7 +37,7 @@ use zaboy\Callback\Callback;
 use zaboy\test\Callback\Interruptor\CallbackTestCallableProvider;
 use zaboy\async\Promise\Promise;
 use zaboy\Callback\Interruptor\Process;
-use zaboy\Di\InsideConstruct;
+use zaboy\res\Di\InsideConstruct;
 use zaboy\Callback\Promiser;
 
 InsideConstruct::setContainer($container);

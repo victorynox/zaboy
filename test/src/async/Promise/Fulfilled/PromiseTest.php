@@ -4,7 +4,7 @@ namespace zaboy\test\async\Promise\Fulfilled;
 
 use zaboy\async\Promise\Promise;
 use zaboy\async\Promise\PromiseInterface;
-use zaboy\Di\InsideConstruct;
+use zaboy\res\Di\InsideConstruct;
 use zaboy\test\async\Promise\DataProvider;
 use zaboy\async\Promise\Exception\AlreadyRejectedException;
 use zaboy\async\Promise\Exception\AlreadyFulfilledException;

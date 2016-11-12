@@ -10,10 +10,9 @@
 namespace zaboy\install\async\Entity;
 
 use Zend\Db\Adapter\AdapterInterface;
-use zaboy\Installer as ZaboyInstaller;
-use zaboy\utils\Db\Mysql\TableManager;
+use zaboy\rest\TableGateway\TableManagerMysql as TableManager;
 use zaboy\async\Entity\Store as EntityStore;
-use zaboy\Di\InsideConstruct;
+use zaboy\res\Di\InsideConstruct;
 
 /**
  * Installer class

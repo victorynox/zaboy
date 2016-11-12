@@ -5,9 +5,8 @@ namespace zaboy\test\async\Promise\Rejected;
 use zaboy\async\Promise\Promise;
 use zaboy\async\Promise\PromiseInterface;
 use zaboy\async\Promise\Exception as PromiseException;
-use zaboy\async\Promise\Exception\AlreadyFulfilledException;
 use zaboy\async\Promise\Exception\AlreadyRejectedException;
-use zaboy\Di\InsideConstruct;
+use zaboy\res\Di\InsideConstruct;
 use zaboy\test\async\Promise\DataProvider;
 
 /**

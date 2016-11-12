@@ -11,7 +11,7 @@ require './vendor/autoload.php';
 
 use zaboy\async\Callback\CallbackException;
 use zaboy\Callback\Interruptor\Process;
-use zaboy\Di\InsideConstruct;
+use zaboy\res\Di\InsideConstruct;
 
 /** @var Zend\ServiceManager\ServiceManager $container */
 $container = include './config/container.php';

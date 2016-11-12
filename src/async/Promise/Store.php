@@ -3,11 +3,7 @@
 namespace zaboy\async\Promise;
 
 use Zend\Db\Adapter\AdapterInterface;
-use Zend\Db\TableGateway\TableGateway;
-use Zend\Db\Sql\Select;
-use Zend\Db\Sql;
-use zaboy\utils\Db\Mysql\TableManager;
-use \zaboy\Di\InsideConstruct;
+use zaboy\res\Di\InsideConstruct;
 use zaboy\async\Entity\Store as EntityStore;
 use zaboy\utils\Php\Serializer as PhpSerializer;
 use zaboy\utils\Json\Serializer as JsonSerializer;

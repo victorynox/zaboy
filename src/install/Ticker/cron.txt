@@ -1,0 +1,4 @@
+SHELL=/bin/bash
+MAILTO=root
+
+0-59 * * * * php

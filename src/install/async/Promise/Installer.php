@@ -10,10 +10,9 @@
 namespace zaboy\install\async\Promise;
 
 use Zend\Db\Adapter\AdapterInterface;
-use zaboy\Installer as ZaboyInstaller;
-use zaboy\utils\Db\Mysql\TableManager;
+use zaboy\rest\TableGateway\TableManagerMysql as TableManager;
 use zaboy\async\Promise\Store as PromiseStore;
-use zaboy\Di\InsideConstruct;
+use zaboy\res\Di\InsideConstruct;
 
 /**
  * Installer class

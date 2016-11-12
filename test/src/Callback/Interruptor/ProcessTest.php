@@ -5,7 +5,7 @@ namespace zaboy\test\Interruptor\Callback;
 use zaboy\Callback\Callback;
 use zaboy\async\Promise\Promise;
 use zaboy\Callback\Interruptor\Process;
-use zaboy\Di\InsideConstruct;
+use zaboy\res\Di\InsideConstruct;
 use zaboy\Callback\Promiser;
 use zaboy\test\Callback\CallbackTestDataProvider;
 
