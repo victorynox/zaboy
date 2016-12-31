@@ -23,7 +23,8 @@
         "phpunit/phpunit-skeleton-generator": "*",
         "avz-cmf/zaboy-res": "^4.0.0",
         "avz-cmf/zaboy-rest": "^4.0.0",
-        "avz-cmf/zaboy-utils": "^1.0.0"
+        "avz-cmf/zaboy-utils": "^1.0.0",
+        "avz-cmf/zaboy-installer": "^1.0.0"
     },
     "autoload": {
         "psr-4": {
@@ -34,5 +35,10 @@
     "autoload-dev": {
         "psr-4": {
         }
+    },
+    "scripts": {
+        "lib-install": "zaboy\\InstallCommands::install",
+        "lib-uninstall": "zaboy\\InstallCommands::uninstall",
+        "lib-reinstall": "zaboy\\InstallCommands::reinstall"
     }
 }

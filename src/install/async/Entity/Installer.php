@@ -9,6 +9,8 @@
 
 namespace zaboy\install\async\Entity;
 
+use Interop\Container\ContainerInterface;
+use zaboy\AbstractInstaller;
 use Zend\Db\Adapter\AdapterInterface;
 use zaboy\rest\TableGateway\TableManagerMysql as TableManager;
 use zaboy\async\Entity\Store as EntityStore;
@@ -20,7 +22,7 @@ use zaboy\res\Di\InsideConstruct;
  * @category   Zaboy
  * @package    zaboy
  */
-class Installer
+class Installer extends AbstractInstaller
 {
 
     /**
@@ -29,11 +31,12 @@ class Installer
      */
     private $entityDbAdapter;
 
-    public function __construct(AdapterInterface $entityDbAdapter = null)
+    public function __construct(ContainerInterface $container)
     {
-        //set $this->entityDbAdapter as $cotainer->get('entityDbAdapter');
-        InsideConstruct::initServices();
+        parent::__construct($container);
+        $this->entityDbAdapter = $this->container->get('entityDbAdapter');
     }
+
 
     public function install()
     {
@@ -56,4 +59,14 @@ class Installer
         ];
     }
 
+    /**
+     * Clean all installation
+     * @return void
+     */
+    public function uninstall()
+    {
+        $tableManager = new TableManager($this->entityDbAdapter);
+        $tableName = EntityStore::TABLE_NAME;
+        $tableManager->deleteTable($tableName);
+    }
 }

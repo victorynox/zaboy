@@ -22,8 +22,11 @@ class ProcessTest extends CallbackTestDataProvider
     }
 
     /**
-     * @covers zaboy\Callback\Callback::__wakeup
+     * @covers       zaboy\Callback\Callback::__wakeup
      * @dataProvider provider_mainType()
+     * @param $callable
+     * @param $val
+     * @param $expected
      */
     public function test__wakeupWithPromise($callable, $val, $expected)
     {

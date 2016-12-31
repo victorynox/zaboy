@@ -9,7 +9,10 @@
 
 namespace zaboy\install\Callback\Interruptor\Script;
 
+use Interop\Container\ContainerInterface;
+use zaboy\AbstractInstaller;
 use zaboy\Callback\Interruptor\Process;
+use zaboy\installer\Install\InstallerInterface;
 
 /**
  * Installer class
@@ -17,9 +20,8 @@ use zaboy\Callback\Interruptor\Process;
  * @category   Zaboy
  * @package    zaboy
  */
-class Installer
+class Installer extends AbstractInstaller
 {
-
     public function install()
     {
         if (!file_exists(getcwd() . DIRECTORY_SEPARATOR . Process::PATH_SCRIPT_WWW . Process::FILE_NAME)) {
@@ -37,4 +39,14 @@ class Installer
         }
     }
 
+    /**
+     * Clean all installation
+     * @return void
+     */
+    public function uninstall()
+    {
+        if(file_exists(getcwd() . DIRECTORY_SEPARATOR . Process::PATH_SCRIPT_WWW . Process::FILE_NAME)) {
+            unlink(getcwd() . DIRECTORY_SEPARATOR . Process::PATH_SCRIPT_WWW . Process::FILE_NAME);
+        }
+    }
 }

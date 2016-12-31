@@ -9,7 +9,7 @@ chdir(__DIR__ . '/../../../../');
 
 require './vendor/autoload.php';
 
-use zaboy\async\Callback\CallbackException;
+use zaboy\Callback\CallbackException;
 use zaboy\Callback\Interruptor\Process;
 use zaboy\res\Di\InsideConstruct;
 
@@ -27,11 +27,10 @@ $value = array_key_exists(Process::VALUE_KEY, $paramsArray) ?
         $paramsArray[Process::VALUE_KEY] : null;
 
 try {
-
     if (!is_callable($callback)) {
         throw new CallbackException('Callback is not callable');
     }
-    $result = call_user_func($callback, $value);
+    call_user_func($callback, $value);
     exit(0);
 } catch (\Exception $e) {
     exit(1);

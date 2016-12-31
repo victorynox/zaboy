@@ -9,7 +9,7 @@ chdir(__DIR__ . '/../../../../');
 
 require './vendor/autoload.php';
 
-use zaboy\async\Callback\CallbackException;
+use zaboy\Callback\CallbackException;
 use zaboy\Callback\Interruptor\Process;
 use zaboy\res\Di\InsideConstruct;
 

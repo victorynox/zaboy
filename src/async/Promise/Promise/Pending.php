@@ -77,7 +77,7 @@ class Pending extends Entity implements PromiseInterface
                 $this[PromiseStore::RESULT] = $value->wait(false);
                 return new RejectedPromise($this->getData());
             default:
-                throw new \RuntimeException('Wrong state: ' . $state) . '. ID = ' . $this->getId();
+                throw new \RuntimeException('Wrong state: ' . $state . '. ID = ' . $this->getId());
         }
     }
 
@@ -94,7 +94,7 @@ class Pending extends Entity implements PromiseInterface
                     $reason = $reason->wait(false);
                     break;
                 default:
-                    throw new PromiseException('Wrong state: ' . $state) . '. ID = ' . $this->getId();
+                    throw new PromiseException('Wrong state: ' . $state . '. ID = ' . $this->getId());
             }
         }
         if (!(is_object($reason) && $reason instanceof \Exception)) {

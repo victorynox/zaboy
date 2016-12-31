@@ -9,6 +9,8 @@
 
 namespace zaboy\install\async\Promise;
 
+use Interop\Container\ContainerInterface;
+use zaboy\AbstractInstaller;
 use Zend\Db\Adapter\AdapterInterface;
 use zaboy\rest\TableGateway\TableManagerMysql as TableManager;
 use zaboy\async\Promise\Store as PromiseStore;
@@ -20,7 +22,7 @@ use zaboy\res\Di\InsideConstruct;
  * @category   Zaboy
  * @package    zaboy
  */
-class Installer
+class Installer extends AbstractInstaller
 {
 
     /**
@@ -29,11 +31,12 @@ class Installer
      */
     private $promiseDbAdapter;
 
-    public function __construct(AdapterInterface $promiseDbAdapter = null)
+    public function __construct(ContainerInterface $container)
     {
-        //set $this->entityDbAdapter as $cotainer->get('entityDbAdapter');
-        InsideConstruct::initServices();
+        parent::__construct($container);
+        $this->promiseDbAdapter = $this->container->get('promiseDbAdapter');
     }
+
 
     public function install()
     {
@@ -61,7 +64,7 @@ class Installer
                 ]
             ],
             PromiseStore::RESULT => [
-                'field_type' => 'Varchar',
+                'field_type' => 'Blob',
                 'field_params' => [
                     'length' => 65000,
                     'nullable' => true
@@ -91,4 +94,14 @@ class Installer
         ];
     }
 
+    /**
+     * Clean all installation
+     * @return void
+     */
+    public function uninstall()
+    {
+        $tableManager = new TableManager($this->promiseDbAdapter);
+        $tableName = PromiseStore::TABLE_NAME;
+        $tableManager->deleteTable($tableName);
+    }
 }

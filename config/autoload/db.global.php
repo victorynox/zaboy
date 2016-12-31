@@ -6,7 +6,7 @@ return [
         'adapters' => [
             'db' => [
                 'driver' => 'Pdo_Mysql',
-                'database' => 'zaboy',
+                'database' => 'zaboy_test',
                 'username' => 'zaboy_test',
                 'password' => '123321qweewq'
             ],
