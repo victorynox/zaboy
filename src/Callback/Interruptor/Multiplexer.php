@@ -1,0 +1,69 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: root
+ * Date: 03.01.17
+ * Time: 16:40
+ */
+
+namespace zaboy\Callback\Interruptor;
+
+use zaboy\async\Promise\Exception;
+use zaboy\Callback\CallbackException;
+use zaboy\Callback\InterruptorInterface;
+use zaboy\Callback\PromiserInterface;
+
+class Multiplexer implements InterruptorInterface
+{
+    /**
+     * @var InterruptorInterface|PromiserInterface[]
+     */
+    protected $interruptors;
+
+    /**
+     * Multiplexer constructor.
+     * @param InterruptorInterface[] $interruptors
+     * @throws CallbackException
+     */
+    public function __construct(array $interruptors)
+    {
+        if (!$this->checkInterruptors($interruptors)) {
+            throw new CallbackException('Interruptors array contains non InterruptorInterface object!');
+        }
+        $this->interruptors = $interruptors;
+    }
+
+    /**
+     * @param $value
+     * @return array
+     */
+    public function __invoke($value)
+    {
+        $result = [];
+        foreach ($this->interruptors as $interruptor) {
+            try {
+                $result['data'][] = $interruptor($value);
+            }catch (\Exception $e){
+                $result['data'][] = $e;
+            }
+        }
+        $result[Process::INTERRUPTOR_TYPE_KEY] = static::class;
+        $result[strtolower(Process::SERVICE_MACHINE_NAME_KEY)] = getenv(Process::SERVICE_MACHINE_NAME_KEY);
+        return $result;
+    }
+
+    /**
+     * Multiplexer constructor.
+     * @param InterruptorInterface[] $interruptors
+     * @return bool
+     */
+    protected function checkInterruptors(array $interruptors)
+    {
+        foreach ($interruptors as $interruptor) {
+            if (!($interruptor instanceof InterruptorInterface) && !($interruptor instanceof PromiserInterface)){
+                return false;
+            }
+        }
+        return true;
+    }
+}

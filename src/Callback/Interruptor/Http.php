@@ -65,6 +65,7 @@ class Http extends Callback implements InterruptorInterface
 
         $result['data'] = $this->jsonDecode($response->getBody());
         $result[strtolower(Process::SERVICE_MACHINE_NAME_KEY)] = getenv(Process::SERVICE_MACHINE_NAME_KEY);
+        $result[Process::INTERRUPTOR_TYPE_KEY] = static::class;
         return $result;
     }
 

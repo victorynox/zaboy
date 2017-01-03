@@ -13,6 +13,12 @@ use zaboy\async\Promise\Promise;
 interface PromiserInterface
 {
     /**
+     * PromiserInterface constructor.
+     * @param callable $callable
+     */
+    public function __construct(callable $callable);
+
+    /**
      * @return array|Promise
      */
     public function getInterruptorResult();

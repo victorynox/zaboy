@@ -37,6 +37,7 @@ class HttpTest extends CallbackTestDataProvider
         $result = $httpInterraptor($val);
         $this->assertTrue(isset($result['data']));
         $this->assertTrue(isset($result[strtolower(Process::SERVICE_MACHINE_NAME_KEY)]));
+        $this->assertTrue(isset($result[Process::INTERRUPTOR_TYPE_KEY]));
     }
 
     /**
@@ -52,5 +53,6 @@ class HttpTest extends CallbackTestDataProvider
         $result = $httpInterraptor($val);
         $this->assertTrue(isset($result['data']));
         $this->assertTrue(isset($result[strtolower(Process::SERVICE_MACHINE_NAME_KEY)]));
+        $this->assertEquals(Http::class, $result[Process::INTERRUPTOR_TYPE_KEY]);
     }
 }
