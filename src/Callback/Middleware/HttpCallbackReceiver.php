@@ -61,17 +61,21 @@ class HttpCallbackReceiver implements MiddlewareInterface
         try {
             switch ($callback) {
                 case $callback instanceof PromiserInterface:
-                    //todo Some
+                    call_user_func($callback, $value);
+                    $data = $callback->getInterruptorResult();
+                    break;
                 case $callback instanceof InterruptorInterface:
-                    //todo Some
+                    $data = call_user_func($callback, $value);
+                    break;
                 case is_callable($callback):
                     $callback = new Process($callback);
+                    $data = call_user_func($callback, $value);
                     break;
                 default :
                     throw new CallbackException('Callback is not callable');
             }
 
-            $data = call_user_func($callback, $value);
+
             return new JsonResponse([
                 'data' => $data,
                 'status' => 'complete',

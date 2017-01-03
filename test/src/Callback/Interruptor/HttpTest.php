@@ -31,8 +31,23 @@ class HttpTest extends CallbackTestDataProvider
      * @param $expected
      * @dataProvider provider_mainType()
      */
-    public function test_httpInterruptor($callable, $val, $expected)
+    public function test_httpInterruptorCallback($callable, $val, $expected)
     {
+        $httpInterraptor = new Http($callable, $this->url);
+        $result = $httpInterraptor($val);
+        $this->assertTrue(isset($result['data']));
+        $this->assertTrue(isset($result[strtolower(Process::SERVICE_MACHINE_NAME_KEY)]));
+    }
+
+    /**
+     * @param $callable
+     * @param $val
+     * @param $expected
+     * @dataProvider provider_mainType()
+     */
+    public function test_httpInterruptorInterruptor($callable, $val, $expected)
+    {
+        $callable = new Process($callable);
         $httpInterraptor = new Http($callable, $this->url);
         $result = $httpInterraptor($val);
         $this->assertTrue(isset($result['data']));
