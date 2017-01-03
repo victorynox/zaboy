@@ -11,7 +11,11 @@ namespace zaboy\Callback\Middleware;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use zaboy\Callback\Callback;
+use zaboy\Callback\CallbackException;
 use zaboy\Callback\Interruptor\Process;
+use zaboy\Callback\InterruptorInterface;
+use zaboy\Callback\PromiserInterface;
 use Zend\Diactoros\Response\JsonResponse;
 use Zend\Stratigility\MiddlewareInterface;
 
@@ -53,10 +57,20 @@ class HttpCallbackReceiver implements MiddlewareInterface
 
         $value = array_key_exists(Process::VALUE_KEY, $paramsArray) ?
             $paramsArray[Process::VALUE_KEY] : null;
+
         try {
-            if (!is_callable($callback)) {
-                throw new CallbackException('Callback is not callable');
+            switch ($callback) {
+                case $callback instanceof PromiserInterface:
+                    //todo Some
+                case $callback instanceof InterruptorInterface:
+                    //todo Some
+                case is_callable($callback):
+                    $callback = new Process($callback);
+                    break;
+                default :
+                    throw new CallbackException('Callback is not callable');
             }
+
             $data = call_user_func($callback, $value);
             return new JsonResponse([
                 'data' => $data,

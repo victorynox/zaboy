@@ -10,9 +10,7 @@
 namespace zaboy;
 
 use Interop\Container\ContainerInterface;
-use zaboy\install\async\Entity\Installer as EntityInstaller;
-use zaboy\install\async\Promise\Installer as PromiseInstaller;
-use zaboy\install\Callback\Interruptor\Script\Installer as InterruptorScriptInstaller;
+use zaboy\Callback\Interruptor\Process;
 use zaboy\installer\Install\InstallerInterface;
 
 /**
@@ -31,6 +29,9 @@ abstract class AbstractInstaller implements InstallerInterface
 
     public function __construct(ContainerInterface $container)
     {
+        if (!getenv('APP_ENV') || !getenv(Process::SERVICE_MACHINE_NAME_KEY)) {
+            throw new Exception("Environment variable not set! Check 'APP_ENV' and " . Process::SERVICE_MACHINE_NAME_KEY . ".");
+        }
         $this->container = $container;
     }
 

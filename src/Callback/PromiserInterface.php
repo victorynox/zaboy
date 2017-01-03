@@ -1,0 +1,25 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: root
+ * Date: 03.01.17
+ * Time: 13:06
+ */
+
+namespace zaboy\Callback;
+
+use zaboy\async\Promise\Promise;
+
+interface PromiserInterface
+{
+    /**
+     * @return array|Promise
+     */
+    public function getInterruptorResult();
+
+    /**
+     * @param $value
+     * @return array
+     */
+    public function runInProcess($value);
+}

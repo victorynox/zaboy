@@ -11,6 +11,7 @@ namespace zaboy\Callback\Interruptor;
 
 use zaboy\Callback\CallbackException;
 use zaboy\Callback\Callback;
+use zaboy\Callback\InterruptorInterface;
 
 /**
  * AnotherProcess
@@ -18,7 +19,7 @@ use zaboy\Callback\Callback;
  * @category   callback
  * @package    zaboy
  */
-class Process extends Callback
+class Process extends Callback implements InterruptorInterface
 {
 
     const CALLBACK_KEY = 'callback';
@@ -27,6 +28,7 @@ class Process extends Callback
     const STDOUT_KEY = 'stdout';
     const STDERR_KEY = 'stderr';
     const PID_KEY = 'pid';
+    const SERVICE_MACHINE_NAME_KEY = 'SERVICE_MACHINE_NAME';
     //
     const PATH_SCRIPT_SRC = 'src/Callback/Interruptor/Script/';
     const PATH_SCRIPT_WWW = 'www/Callback/Interruptor/Script/';
@@ -58,6 +60,7 @@ class Process extends Callback
 
         //from apache - $command = 'nohup '.$this->command.' > /dev/null 2>&1 & echo $!';
         $result[self::PID_KEY] = trim(shell_exec($cmd));
+        $result[strtolower(self::SERVICE_MACHINE_NAME_KEY)] = getenv(self::SERVICE_MACHINE_NAME_KEY);
         return $result;
 
 //        $errors = $this->parser->parseFile($stdErrFilename);

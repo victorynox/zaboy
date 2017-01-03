@@ -22,7 +22,7 @@ class ProcessTest extends CallbackTestDataProvider
     }
 
     /**
-     * @covers       zaboy\Callback\Callback::__wakeup
+     * @covers       Callback::__wakeup
      * @dataProvider provider_mainType()
      * @param $callable
      * @param $val
@@ -33,7 +33,7 @@ class ProcessTest extends CallbackTestDataProvider
         $callback = new Callback($callable);
         $wakeupedCallback = unserialize(serialize($callback));
         $promiser = new Promiser($wakeupedCallback);
-        $interruptorResaltPromise = $promiser->getInterruptorResalt();
+        $interruptorResaltPromise = $promiser->getInterruptorResult();
 
         $masterPromise = new Promise();
         $slavePromise = $masterPromise->then($promiser);
@@ -54,7 +54,7 @@ class ProcessTest extends CallbackTestDataProvider
     public function test__wakeupWithPromiseParallels()
     {
 
-        $callback = new Callback(function ( $val) {
+        $callback = new Callback(function ($val) {
             sleep(1);
             return microtime(1);
         });

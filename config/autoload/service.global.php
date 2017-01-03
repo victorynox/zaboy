@@ -8,6 +8,6 @@
 
 return [
     'httpInterruptor' => [
-        'url' => 'http://localhost:9090/'
+        'url' => 'http://localhost:9090/api/http'
     ]
 ];

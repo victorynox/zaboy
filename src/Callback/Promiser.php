@@ -9,11 +9,9 @@
 
 namespace zaboy\Callback;
 
-use zaboy\Callback\CallbackException;
+use zaboy\async\Promise\Exception;
 use Opis\Closure\SerializableClosure;
 use zaboy\async\Promise\Promise;
-use zaboy\Callback\Callback;
-use zaboy\async\Callback\Interrupter\InterrupterInterface;
 use zaboy\Callback\Interruptor\Process as InterruptorProcess;
 
 /**
@@ -22,7 +20,7 @@ use zaboy\Callback\Interruptor\Process as InterruptorProcess;
  * @category   callback
  * @package    zaboy
  */
-class Promiser extends Callback
+class Promiser extends Callback implements PromiserInterface
 {
 
     /**
@@ -67,9 +65,14 @@ class Promiser extends Callback
 
     public function runInProcess($value)
     {
-        $result = $this->run($value);
-        $this->promise->resolve($result);
-        return $result;
+        try {
+            $result = $this->run($value);
+            $this->promise->resolve($result);
+            return $result;
+        } catch (Exception $e){
+            $this->promise->reject($e);
+            return [];
+        }
     }
 
     public function __sleep()
@@ -86,7 +89,7 @@ class Promiser extends Callback
         return $array;
     }
 
-    public function getInterruptorResalt()
+    public function getInterruptorResult()
     {
         if (!isset($this->interruptorResalt) || is_array($this->interruptorResalt)) {
             $promise = new Promise;
