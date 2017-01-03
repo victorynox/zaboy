@@ -27,8 +27,10 @@
 Например в `Interruptor\Process` стартует новый процесс.  После вызова  `$info = $interruptor()`, в `$info` будет массив с информацией о процессе (PID, ...).  
 Если нужен результат выполнения **Callable**, используйте **Promise**.
 
-
-
+Все `Interruptor` должны вернуть 
+* Имя машины на которой были запущены (Переменную окружения `SERVICE_MACHINE_NAME`)
+* Тип `Interruptor` (имя класса)
+* Поле `data` - не обязательное поле сожержащее вывод вложеных `Interruptor`
 
 ## Promiser
 
@@ -37,3 +39,21 @@
     $promiser = new Promiser($callable);
 	$resultPromise = $promiser('World');
 	var_dump($resultPromise->wait()); //'Hello World'
+
+
+## Http 
+
+Позволяет отправить **Сallback** выполнятся удаленно - по http.
+На вход принимает сам **Сallback** и **url** куда будет отправлен запрос.
+  
+Так же имеется Middleware pipeLine который обрабатывает запрсы.
+ 
+## Multiplexer
+
+Подвид `Interruptor` который позволяет вызывать массивы других `Interruptor` или `Promiser`.
+На вход принимает массив который содержит перечень `Interruptor` или `Promiser`.
+
+В случае ошибки одноги из членов массива продолжит свое выполение.
+Возвращает массив со списком возвращенных значений `Interruptor` или `Promiser`.
+
+

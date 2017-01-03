@@ -9,6 +9,7 @@
 
 namespace zaboy\Callback\Interruptor;
 
+use Opis\Closure\SerializableClosure;
 use zaboy\Callback\CallbackException;
 use zaboy\Callback\Callback;
 use zaboy\Callback\InterruptorInterface;
@@ -29,6 +30,7 @@ class Process extends Callback implements InterruptorInterface
     const STDERR_KEY = 'stderr';
     const PID_KEY = 'pid';
     const SERVICE_MACHINE_NAME_KEY = 'SERVICE_MACHINE_NAME';
+    const INTERRUPTOR_TYPE_KEY = 'interruptor_type_key';
     //
     const PATH_SCRIPT_SRC = 'src/Callback/Interruptor/Script/';
     const PATH_SCRIPT_WWW = 'www/Callback/Interruptor/Script/';
@@ -52,6 +54,7 @@ class Process extends Callback implements InterruptorInterface
         // Files names for stdout and stderr
         $result[self::STDOUT_KEY] = sys_get_temp_dir() . DIRECTORY_SEPARATOR . uniqid('stdout_', 1);
         $result[self::STDERR_KEY] = sys_get_temp_dir() . DIRECTORY_SEPARATOR . uniqid('stderr_', 1);
+        $result[Process::INTERRUPTOR_TYPE_KEY] = static::class;
         $cmd .= "  1>{$result[self::STDOUT_KEY]} 2>{$result[self::STDERR_KEY]}";
 
         if (substr(php_uname(), 0, 7) !== "Windows") {
@@ -101,5 +104,15 @@ class Process extends Callback implements InterruptorInterface
             throw new CallbackException("The function \"posix_kill\" does not exist or it is not allowed.");
         }
     }
+
+    /**
+     * @param callable $callback
+     */
+    protected function setCallback(callable $callback)
+    {
+        $callback = $callback instanceof \Closure ? new SerializableClosure($callback) : $callback;
+        parent::setCallback($callback);
+    }
+
 
 }
