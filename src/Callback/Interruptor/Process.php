@@ -13,6 +13,7 @@ use Opis\Closure\SerializableClosure;
 use zaboy\Callback\CallbackException;
 use zaboy\Callback\Callback;
 use zaboy\Callback\InterruptorInterface;
+use zaboy\Callback\Interruptor\Job;
 
 /**
  * AnotherProcess
@@ -39,17 +40,14 @@ class Process extends Callback implements InterruptorInterface
     public function __invoke($value)
     {
         if (!is_file($this->getScriptName())) {
-            throw new CallbackException('Sript "' . $this->getScriptName() . '" does not exist in the folder "Script"');
+            throw new CallbackException('Script "' . $this->getScriptName() . '" does not exist in the folder "Script"');
         }
         $cmd = 'php ' . $this->getScriptName();
 
-        $arrayParams = [
-            self::VALUE_KEY => $value,
-            self::CALLBACK_KEY => $this->getCallback()
-        ];
-        $serializedParams = serialize($arrayParams);
-        $params64 = base64_encode($serializedParams);
-        $cmd .= ' ' . $params64;
+        $job = new Job($this->getCallback(), $value);
+
+        $serializedJob = $job->serializeBase64();
+        $cmd .= ' ' . $serializedJob;
 
         // Files names for stdout and stderr
         $result[self::STDOUT_KEY] = sys_get_temp_dir() . DIRECTORY_SEPARATOR . uniqid('stdout_', 1);
@@ -104,15 +102,5 @@ class Process extends Callback implements InterruptorInterface
             throw new CallbackException("The function \"posix_kill\" does not exist or it is not allowed.");
         }
     }
-
-    /**
-     * @param callable $callback
-     */
-    protected function setCallback(callable $callback)
-    {
-        $callback = $callback instanceof \Closure ? new SerializableClosure($callback) : $callback;
-        parent::setCallback($callback);
-    }
-
 
 }

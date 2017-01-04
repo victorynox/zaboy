@@ -45,18 +45,14 @@ class Http extends Callback implements InterruptorInterface
 
     public function __invoke($value)
     {
-        $arrayParams = [
-            self::VALUE_KEY => $value,
-            self::CALLBACK_KEY => $this->getCallback()
-        ];
+        $job = new Job($this->getCallback(), $value);
 
-        $serializedParams = serialize($arrayParams);
-        $params64 = base64_encode($serializedParams);
+        $serializedJob = $job->serializeBase64();
 
         $result = [];
 
         $client = $this->initHttpClient();
-        $client->setRawBody($params64);
+        $client->setRawBody($serializedJob);
 
         //$result[self::STDOUT_KEY] = sys_get_temp_dir() . DIRECTORY_SEPARATOR . uniqid('stdout_', 1);
         //$client->setStream($result[self::STDOUT_KEY]);
@@ -101,14 +97,4 @@ class Http extends Callback implements InterruptorInterface
         }
         return $result;
     }
-
-    /**
-     * @param callable $callback
-     */
-    protected function setCallback(callable $callback)
-    {
-        $callback = $callback instanceof \Closure ? new SerializableClosure($callback) : $callback;
-        parent::setCallback($callback);
-    }
-
 }
