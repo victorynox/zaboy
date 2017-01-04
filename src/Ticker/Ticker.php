@@ -10,7 +10,7 @@
 namespace zaboy\Ticker;
 
 use zaboy\res\Di\InsideConstruct;
-use zaboy\scheduler\DataStore\UTCTime;
+use zaboy\utils\UtcTime;
 
 /**
  * Ticker
@@ -47,10 +47,11 @@ class Ticker
     public function secBySec60ticks()
     {
         for ($index = 0; $index < 60; $index++) {
-            $startTime = UTCTime::getUTCTimestamp(5);
-            $result[$startTime] = $this->everySec($index);
-            $sleepTime = $startTime + 1 - UTCTime::getUTCTimestamp(5);
-            usleep($sleepTime);
+            $startTime = UtcTime::getUtcTimestamp(5);
+            $result[$startTime] = $this->everySec($index) . PHP_EOL . '<br>';
+            $sleepTime = $startTime + 1 - UtcTime::getUtcTimestamp(5);
+            usleep($sleepTime * 1000000);
+            //echo $startTime . '  ';
         }
         return $result;
     }
@@ -58,7 +59,7 @@ class Ticker
     public function everySec()
     {
 
-        return $result;
+        return UtcTime::getUtcTimestamp(5);
     }
 
     public function everyMin()
