@@ -41,7 +41,7 @@ class Job
     }
 
     /**
-     * @param $value
+     * @param string $value
      * @return Job
      */
     public static function unserializeBase64($value)
