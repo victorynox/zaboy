@@ -40,7 +40,7 @@ class Process extends Callback implements InterruptorInterface
     public function __invoke($value)
     {
         if (!is_file($this->getScriptName())) {
-            throw new CallbackException('Sript "' . $this->getScriptName() . '" does not exist in the folder "Script"');
+            throw new CallbackException('Script "' . $this->getScriptName() . '" does not exist in the folder "Script"');
         }
         $cmd = 'php ' . $this->getScriptName();
 
@@ -102,15 +102,5 @@ class Process extends Callback implements InterruptorInterface
             throw new CallbackException("The function \"posix_kill\" does not exist or it is not allowed.");
         }
     }
-
-    /**
-     * @param callable $callback
-     */
-    protected function setCallback(callable $callback)
-    {
-        $callback = $callback instanceof \Closure ? new SerializableClosure($callback) : $callback;
-        parent::setCallback($callback);
-    }
-
 
 }

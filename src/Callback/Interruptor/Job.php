@@ -9,6 +9,7 @@
 
 namespace zaboy\Callback\Interruptor;
 
+use Opis\Closure\SerializableClosure;
 use zaboy\Callback\CallbackException;
 
 class Job
@@ -29,6 +30,9 @@ class Job
         $this->value = $value;
     }
 
+    /**
+     * @return string
+     */
     public function serializeBase64()
     {
         $serializedParams = serialize($this);
@@ -36,16 +40,26 @@ class Job
         return $base64string;
     }
 
+    /**
+     * @param $value
+     * @return Job
+     */
     public static function unserializeBase64($value)
     {
         return unserialize(base64_decode($value, true));
     }
 
+    /**
+     * @return mixed
+     */
     public function getValue()
     {
         return $this->value;
     }
 
+    /**
+     * @return callable|SerializableClosure
+     */
     public function getCallback()
     {
         return $this->callback;

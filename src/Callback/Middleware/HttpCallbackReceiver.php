@@ -13,6 +13,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use zaboy\Callback\Callback;
 use zaboy\Callback\CallbackException;
+use zaboy\Callback\Interruptor\Job;
 use zaboy\Callback\Interruptor\Process;
 use zaboy\Callback\InterruptorInterface;
 use zaboy\Callback\PromiserInterface;
@@ -51,12 +52,10 @@ class HttpCallbackReceiver implements MiddlewareInterface
     {
         $callback = $request->getBody()->getContents();
 
-        $paramsArray = is_null($callback) ? null : unserialize(base64_decode($callback));
-        $callback = array_key_exists(Process::CALLBACK_KEY, $paramsArray) ?
-            $paramsArray[Process::CALLBACK_KEY] : null;
+        $job = Job::unserializeBase64($callback);
 
-        $value = array_key_exists(Process::VALUE_KEY, $paramsArray) ?
-            $paramsArray[Process::VALUE_KEY] : null;
+        $callback = $job->getCallback();
+        $value = $job->getValue();
 
         try {
             switch ($callback) {

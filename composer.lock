@@ -4,9 +4,55 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7b2168259ed7a835529875f8ed5e5d03",
-    "content-hash": "ffc1deabe9a2d3b3b0f633031f3eeb7e",
+    "hash": "2ae05580f08dd4bb3e0f7f1a0c5c7312",
+    "content-hash": "487fd9531a062ef4d4cd8ae10b42e6d1",
     "packages": [
+        {
+            "name": "avz-cmf/zaboy-installer",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/avz-cmf/zaboy-installer.git",
+                "reference": "921f9fc5e3ffbc0ca5e8812ef13d0808397cc9f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/avz-cmf/zaboy-installer/zipball/921f9fc5e3ffbc0ca5e8812ef13d0808397cc9f7",
+                "reference": "921f9fc5e3ffbc0ca5e8812ef13d0808397cc9f7",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1",
+                "composer/composer": "^1.0",
+                "php": "^5.6 || ^7.0",
+                "zendframework/zend-servicemanager": "^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "zaboy\\installer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "avz-cmf",
+                    "email": "email@example.com"
+                },
+                {
+                    "name": "victorynox",
+                    "email": "it.proffesor02@gmail.com"
+                }
+            ],
+            "description": "Installer lib for create and automated install specific app/lib pref",
+            "time": "2016-12-30 11:19:00"
+        },
         {
             "name": "avz-cmf/zaboy-res",
             "version": "4.1.0",
@@ -2471,16 +2517,16 @@
         },
         {
             "name": "sebastian/recursion-context",
-            "version": "1.0.3",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/recursion-context.git",
-                "reference": "79860854756415e1cec8d186c9cf261cafd87dfc"
+                "reference": "913401df809e99e4f47b27cdd781f4a258d58791"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/79860854756415e1cec8d186c9cf261cafd87dfc",
-                "reference": "79860854756415e1cec8d186c9cf261cafd87dfc",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/913401df809e99e4f47b27cdd781f4a258d58791",
+                "reference": "913401df809e99e4f47b27cdd781f4a258d58791",
                 "shasum": ""
             },
             "require": {
@@ -2520,7 +2566,7 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2016-11-14 15:54:23"
+            "time": "2015-11-11 19:50:13"
         },
         {
             "name": "sebastian/version",
