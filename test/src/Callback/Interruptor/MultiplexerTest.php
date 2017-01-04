@@ -8,6 +8,7 @@
 
 namespace zaboy\test\Callback\Interruptor;
 
+use zaboy\Callback\Interruptor\InterruptorAbstract;
 use zaboy\Callback\Interruptor\Multiplexer;
 use zaboy\Callback\Interruptor\Process;
 use zaboy\Callback\Promiser;
@@ -29,7 +30,7 @@ class MultiplexerTest extends CallbackTestDataProvider
         $result = $multiplexer($val);
         $this->assertTrue(isset($result['data']));
         $this->assertEquals(count($interruptors), count($result['data']));
-        $this->assertTrue(isset($result[strtolower(Process::SERVICE_MACHINE_NAME_KEY)]));
-        $this->assertEquals(Multiplexer::class, $result[Process::INTERRUPTOR_TYPE_KEY]);
+        $this->assertTrue(isset($result[InterruptorAbstract::MACHINE_NAME_KEY]));
+        $this->assertEquals(Multiplexer::class, $result[InterruptorAbstract::INTERRUPTOR_TYPE_KEY]);
     }
 }

@@ -16,6 +16,7 @@ use zaboy\Callback\Interruptor\Job;
 use zaboy\Callback\Interruptor\Process;
 use zaboy\Queues\Extractor;
 use zaboy\Queues\Queue;
+use zaboy\Queues\QueueInterface;
 
 
 class ExtractorTest extends \PHPUnit_Framework_TestCase
@@ -23,7 +24,7 @@ class ExtractorTest extends \PHPUnit_Framework_TestCase
     /** @var Extractor*/
     protected $object;
 
-    /** @var Queue */
+    /** @var QueueInterface */
     protected $queue;
 
     protected $config;
@@ -61,18 +62,25 @@ class ExtractorTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    public function addInQueue(array $callbacks, $value)
+    {
+        foreach ($callbacks as $callback){
+            $job = new Job($callback, $value);
+            $this->queue->addMessage($job->serializeBase64());
+        }
+    }
+
     /**
      * @param $callbacks
      * @param $value
      * @dataProvider provider_type()
      */
-    public function test_extractQueue($callbacks, $value)
+    public function test_extractQueue(array $callbacks, $value)
     {
         $this->object = new Extractor($this->queue);
-        foreach ($callbacks as $callback){
-            $job = new Job($callback, $value);
-            $this->queue->addMessage($job->serializeBase64());
-        }
+
+        $this->addInQueue($callbacks, $value);
+
         $i = 0;
         while($this->object->extract()){
             $i++;

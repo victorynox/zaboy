@@ -10,5 +10,11 @@ namespace zaboy\Callback;
 
 interface InterruptorInterface
 {
+    /**
+     * @param $value
+     * @return array
+     * array contains field
+     *
+     */
     public function __invoke($value);
 }

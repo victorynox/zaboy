@@ -15,7 +15,7 @@ use ReputationVIP\QueueClient\Adapter\FileAdapter;
 use ReputationVIP\QueueClient\PriorityHandler\ThreeLevelPriorityHandler;
 use zaboy\Queues\Message;
 
-class Queue
+class Queue implements QueueInterface
 {
 
     const PUBLIC_DIR = 'www';
@@ -38,6 +38,11 @@ class Queue
      */
     protected $delaySeconds;
 
+    /**
+     * Queue constructor.
+     * @param $queueName
+     * @param int $delaySeconds
+     */
     public function __construct($queueName, $delaySeconds = 0)
     {
         $this->queueName = $queueName;
@@ -51,6 +56,10 @@ class Queue
         }
     }
 
+    /**
+     * @param null $priority
+     * @return null|\zaboy\Queues\Message
+     */
     public function getMessage($priority = null)
     {
         $messages = $this->queueClient->getMessages($this->queueName, 1, $priority);
@@ -63,21 +72,37 @@ class Queue
         return $message;
     }
 
+    /**
+     * @param $message
+     * @param null $priority
+     * @return QueueClient|QueueClientInterface
+     */
     public function addMessage($message, $priority = null)
     {
         return $this->queueClient->addMessage($this->queueName, $message, $priority, $this->delaySeconds);
     }
 
+    /**
+     * @param $queueName
+     * @param null $priority
+     * @return QueueClient|QueueClientInterface
+     */
     public function purgeQueue($queueName, $priority = null)
     {
         return $this->queueClient->purgeQueue($queueName, $priority);
     }
 
+    /**
+     * @return string
+     */
     protected function getPublicDir()
     {
         return static::PUBLIC_DIR;
     }
 
+    /**
+     * @return string
+     */
     protected function getQueueDir()
     {
         return $this->getPublicDir() . DIRECTORY_SEPARATOR . 'queues';

@@ -21,7 +21,7 @@ use zaboy\Callback\Interruptor\Job;
  * @category   callback
  * @package    zaboy
  */
-class Process extends Callback implements InterruptorInterface
+class Process extends InterruptorAbstract implements InterruptorInterface
 {
 
     const CALLBACK_KEY = 'callback';
@@ -30,8 +30,6 @@ class Process extends Callback implements InterruptorInterface
     const STDOUT_KEY = 'stdout';
     const STDERR_KEY = 'stderr';
     const PID_KEY = 'pid';
-    const SERVICE_MACHINE_NAME_KEY = 'SERVICE_MACHINE_NAME';
-    const INTERRUPTOR_TYPE_KEY = 'interruptor_type_key';
     //
     const PATH_SCRIPT_SRC = 'src/Callback/Interruptor/Script/';
     const PATH_SCRIPT_WWW = 'www/Callback/Interruptor/Script/';
@@ -52,7 +50,7 @@ class Process extends Callback implements InterruptorInterface
         // Files names for stdout and stderr
         $result[self::STDOUT_KEY] = sys_get_temp_dir() . DIRECTORY_SEPARATOR . uniqid('stdout_', 1);
         $result[self::STDERR_KEY] = sys_get_temp_dir() . DIRECTORY_SEPARATOR . uniqid('stderr_', 1);
-        $result[Process::INTERRUPTOR_TYPE_KEY] = static::class;
+        $result[static::INTERRUPTOR_TYPE_KEY] = static::class;
         $cmd .= "  1>{$result[self::STDOUT_KEY]} 2>{$result[self::STDERR_KEY]}";
 
         if (substr(php_uname(), 0, 7) !== "Windows") {
@@ -61,7 +59,7 @@ class Process extends Callback implements InterruptorInterface
 
         //from apache - $command = 'nohup '.$this->command.' > /dev/null 2>&1 & echo $!';
         $result[self::PID_KEY] = trim(shell_exec($cmd));
-        $result[strtolower(self::SERVICE_MACHINE_NAME_KEY)] = getenv(self::SERVICE_MACHINE_NAME_KEY);
+        $result[static::MACHINE_NAME_KEY] = getenv(static::ENV_VAR_MACHINE_NAME);
         return $result;
 
 //        $errors = $this->parser->parseFile($stdErrFilename);

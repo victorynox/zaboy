@@ -10,6 +10,7 @@ namespace zaboy\test\Interruptor\Callback;
 
 
 use zaboy\Callback\Interruptor\Http;
+use zaboy\Callback\Interruptor\InterruptorAbstract;
 use zaboy\Callback\Interruptor\Process;
 use zaboy\test\Callback\CallbackTestDataProvider;
 
@@ -36,8 +37,8 @@ class HttpTest extends CallbackTestDataProvider
         $httpInterraptor = new Http($callable, $this->url);
         $result = $httpInterraptor($val);
         $this->assertTrue(isset($result['data']));
-        $this->assertTrue(isset($result[strtolower(Process::SERVICE_MACHINE_NAME_KEY)]));
-        $this->assertTrue(isset($result[Process::INTERRUPTOR_TYPE_KEY]));
+        $this->assertTrue(isset($result[InterruptorAbstract::MACHINE_NAME_KEY]));
+        $this->assertTrue(isset($result[InterruptorAbstract::INTERRUPTOR_TYPE_KEY]));
     }
 
     /**
@@ -52,7 +53,7 @@ class HttpTest extends CallbackTestDataProvider
         $httpInterraptor = new Http($callable, $this->url);
         $result = $httpInterraptor($val);
         $this->assertTrue(isset($result['data']));
-        $this->assertTrue(isset($result[strtolower(Process::SERVICE_MACHINE_NAME_KEY)]));
-        $this->assertEquals(Http::class, $result[Process::INTERRUPTOR_TYPE_KEY]);
+        $this->assertTrue(isset($result[InterruptorAbstract::MACHINE_NAME_KEY]));
+        $this->assertEquals(Http::class, $result[InterruptorAbstract::INTERRUPTOR_TYPE_KEY]);
     }
 }

@@ -16,7 +16,7 @@ use zaboy\Callback\InterruptorInterface;
 use Zend\Http\Client;
 use Zend\Json\Json;
 
-class Http extends Callback implements InterruptorInterface
+class Http extends InterruptorAbstract implements InterruptorInterface
 {
     const CALLBACK_KEY = 'callback';
     const VALUE_KEY = 'value';
@@ -60,8 +60,8 @@ class Http extends Callback implements InterruptorInterface
         $response = $client->send();
 
         $result['data'] = $this->jsonDecode($response->getBody());
-        $result[strtolower(Process::SERVICE_MACHINE_NAME_KEY)] = getenv(Process::SERVICE_MACHINE_NAME_KEY);
-        $result[Process::INTERRUPTOR_TYPE_KEY] = static::class;
+        $result[static::MACHINE_NAME_KEY] = getenv(static::ENV_VAR_MACHINE_NAME);
+        $result[static::INTERRUPTOR_TYPE_KEY] = static::class;
         return $result;
     }
 
