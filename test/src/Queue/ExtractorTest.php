@@ -32,14 +32,14 @@ class ExtractorTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->queueName = 'test_extractor';
-        $this->queue = new Queue($this->queueName);
+        $queueName = 'test_extractor';
+        $this->queue = new Queue($queueName);
         /** @var ContainerInterface $container */
         $container = include 'config/container.php';
-        $this->config = $container->get('config');
+       // $this->config = $container->get('config');
     }
 
-    public function provider_multiplexerType()
+    public function provider_type()
     {
         $stdObject = (object)['prop' => 'Hello '];
         //function
@@ -49,59 +49,11 @@ class ExtractorTest extends \PHPUnit_Framework_TestCase
                     function ($val) {
                         return 'Hello ' . $val;
                     },
-                    function ($val) use ($stdObject) {
-                        return $stdObject->prop . $val;
-                    },
-                    new CallMe(),
-                    [new CallMe(), 'method'],
-                    [new CallMe(), 'staticMethod'],
-                    [CallMe::class, 'staticMethod'],
-                    '\\' . CallMe::class . '::staticMethod'
-                ],
-                "World"
-            ],
-            [
-                [
-                    new Process(function ($val) {
-                        return 'Hello ' . $val;
-                    }),
                     new Process(function ($val) use ($stdObject) {
                         return $stdObject->prop . $val;
                     }),
                     new Process(new CallMe()),
-                    new Process([new CallMe(), 'method']),
                     new Process([new CallMe(), 'staticMethod']),
-                    new Process([CallMe::class, 'staticMethod']),
-                    new Process('\\' . CallMe::class . '::staticMethod')
-                ],
-                "World"
-            ],
-            [
-                [
-                    function ($val) {
-                        return 'Hello ' . $val;
-                    },
-                    new Process(function ($val) use ($stdObject) {
-                        return $stdObject->prop . $val;
-                    }),
-                    new Process(new CallMe()),
-                    new Http([new CallMe(), 'method'], $this->config['httpInterruptor']['url']),
-                    new Process([new CallMe(), 'staticMethod']),
-                    new Http([CallMe::class, 'staticMethod'], $this->config['httpInterruptor']['url']),
-                    '\\' . CallMe::class . '::staticMethod'
-                ],
-                "World"
-            ],
-            [
-                [
-                    function ($val) {
-                        throw new \Exception("some error");
-                    },
-                    new Process(function ($val) use ($stdObject) {
-                        throw new \Exception("some error");
-                    }),
-                    new CallMe(),
-                    [new CallMe(), 'method'],
                     '\\' . CallMe::class . '::staticMethod'
                 ],
                 "World"
@@ -112,30 +64,11 @@ class ExtractorTest extends \PHPUnit_Framework_TestCase
     /**
      * @param $callbacks
      * @param $value
-     * @dataProvider provider_multiplexerType()
+     * @dataProvider provider_type()
      */
     public function test_extractQueue($callbacks, $value)
     {
-        $this->object = new Extractor($this->queueName );
-        foreach ($callbacks as $callback){
-            $job = new Job($callback, $value);
-            $this->queue->addMessage($job->serializeBase64());
-        }
-        $i = 0;
-        while($this->object->extract()){
-            $i++;
-        };
-        $this->assertEquals(count($callbacks), $i);
-    }
-
-    /**
-     * @param $callbacks
-     * @param $value
-     * @dataProvider provider_multiplexerType()
-     */
-    public function test_extractQueueWithInterruptor($callbacks, $value)
-    {
-        $this->object = new Extractor($this->queueName, true);
+        $this->object = new Extractor($this->queue);
         foreach ($callbacks as $callback){
             $job = new Job($callback, $value);
             $this->queue->addMessage($job->serializeBase64());

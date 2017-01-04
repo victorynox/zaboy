@@ -21,39 +21,32 @@ class Extractor
     /** @var Queue */
     protected $queue;
 
-    /** @var bool  */
-    protected $forceInterruptor;
-
-    /** @var string */
-    protected $interruptorType;
-
-    public function __construct($queueName, $forceInterruptor = false, $interruptorType = Process::class)
+    /**
+     * Extractor constructor.
+     * @param Queue $queue
+     */
+    public function __construct(Queue $queue)
     {
-        $this->queue = new Queue($queueName);
-        $this->forceInterruptor = $forceInterruptor;
-        $this->interruptorType = $interruptorType;
+        $this->queue = $queue;
     }
 
+    /**
+     * Extract queue and call callback
+     * @return bool
+     * @throws QueueException
+     */
     public function extract()
     {
         $message = $this->queue->getMessage();
         if (isset($message)){
             $job = Job::unserializeBase64($message->getData());
-            $callback = $this->warpInInterruptor($job->getCallback());
-            $value = $job->getValue();
             try{
-                call_user_func($callback, $value);
-            } catch (\Exception $e) {}
+                call_user_func($job->getCallback(), $job->getValue());
+            } catch (\Exception $e) {
+                throw new QueueException("Extract queue error!", 500, $e);
+            }
             return true;
         }
         return false;
-    }
-
-    protected function warpInInterruptor(callable $callback)
-    {
-        return ($this->forceInterruptor
-            && !$callback instanceof InterruptorInterface
-            && !$callback instanceof PromiserInterface)
-            ? new $this->interruptorType($callback) : $callback;
     }
 }

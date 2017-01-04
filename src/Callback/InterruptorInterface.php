@@ -10,5 +10,5 @@ namespace zaboy\Callback;
 
 interface InterruptorInterface
 {
-
+    public function __invoke($value);
 }
