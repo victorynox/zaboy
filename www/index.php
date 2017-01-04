@@ -26,6 +26,7 @@
 if (getenv('APP_ENV') === 'dev') {
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
+    $env = 'develop';
 }
 
 // Change to the project root, to simplify resolving paths
@@ -39,6 +40,10 @@ use zaboy\async\Promise\Promise;
 use zaboy\Callback\Interruptor\Process;
 use zaboy\res\Di\InsideConstruct;
 use zaboy\Callback\Promiser;
+use zaboy\Ticker\Ticker;
+
+print_r((new Ticker('trim', 60, 1))->secBySec60ticks());
+exit;
 
 InsideConstruct::setContainer($container);
 

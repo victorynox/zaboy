@@ -10,26 +10,23 @@ chdir(__DIR__ . '/../../../../');
 require './vendor/autoload.php';
 
 use zaboy\async\Callback\CallbackException;
-use zaboy\Callback\Interruptor\Process;
 use zaboy\res\Di\InsideConstruct;
+use zaboy\Callback\Interruptor\Job;
 
 /** @var Zend\ServiceManager\ServiceManager $container */
 $container = include './config/container.php';
 InsideConstruct::setContainer($container);
 
 $paramsString = isset($_SERVER['argv'][1]) ? $_SERVER['argv'][1] : null;
-$paramsArray = is_null($paramsString) ? null : unserialize(base64_decode($paramsString));
-
-$callback = array_key_exists(Process::CALLBACK_KEY, $paramsArray) ?
-        $paramsArray[Process::CALLBACK_KEY] : null;
-
-$value = array_key_exists(Process::VALUE_KEY, $paramsArray) ?
-        $paramsArray[Process::VALUE_KEY] : null;
 
 try {
-    if (!is_callable($callback)) {
-        throw new CallbackException('Callback is not callable');
+    if (is_null($paramsString)) {
+        throw new CallbackException('There is not params string');
     }
+    /* @var $job Job */
+    $job = Job::unserializeBase64($paramsString);
+    $callback = $job->getCallback();
+    $value = $job->getValue();
     call_user_func($callback, $value);
     exit(0);
 } catch (\Exception $e) {
