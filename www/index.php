@@ -3,6 +3,7 @@
 // Change to the project root, to simplify resolving paths
 chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
+use zaboy\Callback\Pipe\Factory\CronReceiverFactory;
 use zaboy\Callback\Pipe\Factory\HttpReceiverFactory;
 use Zend\Diactoros\Server;
 use zaboy\rest\Pipe\MiddlewarePipeOptions;
@@ -18,8 +19,12 @@ $container = include 'config/container.php';
 $HttpReceiverFactory = new HttpReceiverFactory();
 $http = $HttpReceiverFactory($container, '');
 
+$CronReceiverFactory = new CronReceiverFactory();
+$cron = $CronReceiverFactory($container, '');
+
 $app = new MiddlewarePipeOptions(['env' => isset($env) ? $env : null]); //['env' => 'develop']
 $app->pipe('/api/http', $http);
+$app->pipe('/api/cron', $cron);
 
 $server = Server::createServer($app, $_SERVER, $_GET, $_POST, $_COOKIE, $_FILES);
 $server->listen();

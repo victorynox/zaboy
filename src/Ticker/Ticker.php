@@ -46,6 +46,7 @@ class Ticker
 
     public function secBySec60ticks()
     {
+        $result= [];
         for ($index = 0; $index < 60; $index++) {
             $startTime = UtcTime::getUtcTimestamp(5);
             $result[$startTime] = $this->everySec($index) . PHP_EOL . '<br>';
@@ -58,19 +59,18 @@ class Ticker
 
     public function everySec()
     {
-
         return UtcTime::getUtcTimestamp(5);
     }
 
     public function everyMin()
     {
-
+        $result= [];
         return $result;
     }
 
     public function everyHour()
     {
-
+        $result= [];
         return $result;
     }
 
