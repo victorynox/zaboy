@@ -4,13 +4,14 @@ namespace zaboy\test\Queues;
 
 use zaboy\Queues\Queue;
 use zaboy\async\Promise\Promise;
+use zaboy\Queues\QueueInterface;
 use zaboy\res\Di\InsideConstruct;
 
 class QueueTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * @var Queue
+     * @var QueueInterface
      */
     protected $object;
 

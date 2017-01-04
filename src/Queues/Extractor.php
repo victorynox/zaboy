@@ -18,14 +18,14 @@ use zaboy\Callback\PromiserInterface;
 class Extractor
 {
 
-    /** @var Queue */
+    /** @var QueueInterface */
     protected $queue;
 
     /**
      * Extractor constructor.
-     * @param Queue $queue
+     * @param QueueInterface $queue
      */
-    public function __construct(Queue $queue)
+    public function __construct(QueueInterface $queue)
     {
         $this->queue = $queue;
     }
