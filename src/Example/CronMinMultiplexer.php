@@ -17,17 +17,16 @@ use zaboy\Ticker\Example\TickerCron;
 
 class CronMinMultiplexer extends Multiplexer
 {
+
+    const QUERY_NAME = 'test_cron_min_multiplexer';
+
     public function __construct($interruptors)
     {
         parent::__construct($interruptors);
-        $queue = new Queue('test_cron_min_multiplexer');
-        $extractor = new Extractor($queue);
-        $this->interruptors[] = new Process(function () {
-            $ticker = new TickerCron();
-            $ticker->secBySec60ticks();
-        });
-        $this->interruptors[] = new Process(function () use ($extractor) {
-            return $extractor->extract();
+        $queue = new Queue(static::QUERY_NAME);
+        $this->interruptors[] = new Process(function () use ($queue) {
+            $extractor = new Extractor($queue);
+            $extractor->extract();
         });
     }
 

@@ -10,13 +10,13 @@ namespace zaboy\Middleware;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use zaboy\Callback\Interruptor\Process;
 use zaboy\Ticker\Example\TickerCron;
 use Zend\Diactoros\Response\JsonResponse;
 use Zend\Stratigility\MiddlewareInterface;
 
 class CronReceiver implements MiddlewareInterface
 {
-
     /**
      * Process an incoming request and/or response.
      *
@@ -45,7 +45,10 @@ class CronReceiver implements MiddlewareInterface
     public function __invoke(Request $request, Response $response, callable $out = null)
     {
         $ticker = new TickerCron();
-        $ticker->everyMin();
+        $interruptor = new Process(function () use ($ticker){
+            $ticker->everyMin();
+        });
+        $interruptor("start");
         return new JsonResponse(['']);
     }
 }

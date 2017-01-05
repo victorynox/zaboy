@@ -16,13 +16,15 @@ use zaboy\Queues\Queue;
 
 class CronSecMultiplexer extends Multiplexer
 {
+    const QUERY_NAME = 'test_cron_sec_multiplexer';
+
     public function __construct($interruptors)
     {
         parent::__construct($interruptors);
-        $queue = new Queue('test_cron_sec_multiplexer');
-        $extractor = new Extractor($queue);
-        $this->interruptors[] = new Process(function () use ($extractor) {
-            return $extractor->extract();
+        $queue = new Queue(static::QUERY_NAME);
+        $this->interruptors[] = new Process(function () use ($queue) {
+            $extractor = new Extractor($queue);
+            $extractor->extract();
         });
     }
 
