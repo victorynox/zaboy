@@ -18,10 +18,6 @@ use Zend\Http\Client;
 
 class CronTest extends \PHPUnit_Framework_TestCase
 {
-    const LOG_FILE_NAME = __DIR__. DIRECTORY_SEPARATOR .
-    '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR .
-    'www' . DIRECTORY_SEPARATOR . 'logs';
-
     /** @var Queue */
     protected $minQueue;
 
@@ -88,10 +84,6 @@ class CronTest extends \PHPUnit_Framework_TestCase
     public function test__cron()
     {
         $this->setJob();
-        $log = realpath(static::LOG_FILE_NAME);
-
-        file_put_contents($log, "CronTest->test__cron" . "\n", FILE_APPEND);
-
         $httpClient = new Client($this->url);
         $headers['Content-Type'] = 'text/text';
         $headers['Accept'] = 'application/json';

@@ -34,7 +34,7 @@ class Queue extends InterruptorAbstract implements InterruptorInterface
         $job = new Job($callback, $value);
         $this->queue->addMessage($job->serializeBase64());
 
-        $result[static::MACHINE_NAME_KEY] = getenv(static::ENV_VAR_MACHINE_NAME);
+        $result[static::MACHINE_NAME_KEY] = constant(static::ENV_VAR_MACHINE_NAME);
 
         $result[static::INTERRUPTOR_TYPE_KEY] = static::class;
         return $result;

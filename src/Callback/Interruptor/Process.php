@@ -59,7 +59,7 @@ class Process extends InterruptorAbstract implements InterruptorInterface
 
         //from apache - $command = 'nohup '.$this->command.' > /dev/null 2>&1 & echo $!';
         $result[self::PID_KEY] = trim(shell_exec($cmd));
-        $result[static::MACHINE_NAME_KEY] = getenv(static::ENV_VAR_MACHINE_NAME);
+        $result[static::MACHINE_NAME_KEY] = constant(static::ENV_VAR_MACHINE_NAME);
         return $result;
 
 //        $errors = $this->parser->parseFile($stdErrFilename);

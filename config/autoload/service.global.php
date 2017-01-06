@@ -8,9 +8,9 @@
 
 return [
     'httpInterruptor' => [
-        'url' => 'http://localhost:9090/api/http'
+        'url' => 'http://' . constant('HOST') .'/api/http'
     ],
     'cronQueue' => [
-        'url' => 'http://localhost:9090/api/cron'
+        'url' => 'http://' . constant('HOST') .'/api/cron'
     ],
 ];

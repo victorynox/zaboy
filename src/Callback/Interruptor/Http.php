@@ -60,7 +60,7 @@ class Http extends InterruptorAbstract implements InterruptorInterface
         $response = $client->send();
 
         $result['data'] = $this->jsonDecode($response->getBody());
-        $result[static::MACHINE_NAME_KEY] = getenv(static::ENV_VAR_MACHINE_NAME);
+        $result[static::MACHINE_NAME_KEY] = constant(static::ENV_VAR_MACHINE_NAME);
         $result[static::INTERRUPTOR_TYPE_KEY] = static::class;
         return $result;
     }

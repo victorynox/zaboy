@@ -48,7 +48,7 @@ class Multiplexer implements InterruptorInterface
             }
         }
 
-        $result[InterruptorAbstract::MACHINE_NAME_KEY] = getenv(InterruptorAbstract::ENV_VAR_MACHINE_NAME);
+        $result[InterruptorAbstract::MACHINE_NAME_KEY] = constant(InterruptorAbstract::ENV_VAR_MACHINE_NAME);
         $result[InterruptorAbstract::INTERRUPTOR_TYPE_KEY] = static::class;
         return $result;
     }

@@ -3,6 +3,8 @@
 // Change to the project root, to simplify resolving paths
 chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
+require_once 'config/env_configurator.php';
+
 use zaboy\Callback\Pipe\Factory\CronReceiverFactory;
 use zaboy\Callback\Pipe\Factory\HttpReceiverFactory;
 use Zend\Diactoros\Server;

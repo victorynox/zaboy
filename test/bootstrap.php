@@ -7,4 +7,5 @@ chdir(dirname(__DIR__));
 $testCase = 'Promise';
 // Setup autoloading
 require 'vendor/autoload.php';
+require_once 'config/env_configurator.php';
 
