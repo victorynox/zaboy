@@ -10,4 +10,4 @@
 - [Promise](https://github.com/avz-cmf/zaboy/tree/master/src/async/Promise)
 - [Callback](https://github.com/avz-cmf/zaboy/tree/master/src/Callback)
 - [DI - InsideConstruct](https://github.com/avz-cmf/zaboy/tree/master/src/Di)
-
+- [CronReceiver]((https://github.com/avz-cmf/zaboy/tree/master/CronReceiver.md))
